@@ -5,6 +5,7 @@ You will need to rewrite and expand sections to support the types of queries ove
 
 from flask import *
 from service import GeneralQueryService, TranslateService
+from datetime import date
 
 app = Flask(__name__)
 
@@ -16,17 +17,15 @@ def show_index_page():
 
 
 # display results page for first set of results and "next" sets.
-@app.route("/results", defaults={'page': 1}, methods=['GET'])
-@app.route("/results/<page>", methods=['GET'])
-def results(page):
+@app.route("/results", methods=['GET'])
+def results():
     query_str = request.args.get('query')
     author_str = request.args.get('author')
     min_time_str = request.args.get('mintime')
     max_time_str = request.args.get('maxtime')
-    page_num = page
+    page_num = int(request.args.get('page'))
 
     query_option = None
-    a = request.args.get('type')
     if request.args.get('type') == 'conjunctive':
         query_option = GeneralQueryService.CONJUNCTIVE_OPTION
     elif request.args.get('type') == 'disjunctive':
@@ -34,19 +33,30 @@ def results(page):
     else:
         raise RuntimeError("Illegal Request")
 
+    max_date = date.max
+    if len(max_time_str) != 0:
+        max_date = date.fromisoformat(max_time_str)
+
+    min_date = date.min
+    if len(min_time_str) != 0:
+        min_date = date.fromisoformat(min_time_str)
+
     translate_service = TranslateService()
     translated_query_str = translate_service.translate(query_str, TranslateService.CHINESE_OPTION,
                                                        TranslateService.ENGLISH_OPTION)
 
     query_service = GeneralQueryService("sample_covid_19_index")
-    result = query_service.query(query_str, author_str, min_time_str, max_time_str, query_option, page_num)
+    result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
 
     result_dict = result['result_dict']
     stops_words_included = result['stop_words_included']
-    a = request.args.to_dict()
+    total_hits = result['total_hits']
+
+    queries = request.args.to_dict()
+    queries.pop('page')
     return render_template('result.html', stop_len=len(stops_words_included), stops=stops_words_included,
-                           results=result_dict, res_num=len(result_dict),
-                           page_num=page, queries=request.args.to_dict())
+                           results=result_dict, res_num=total_hits,
+                           page_num=page_num, queries=queries)
 
 
 # display suggestion for autocompletion

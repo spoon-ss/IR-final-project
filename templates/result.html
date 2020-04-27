@@ -59,37 +59,34 @@ p.cannotfind {
 
 <div class="searchbox" >
 <h3 class="header">  Covid_19 Database Search </h3>
-<form action="/results" name="search" method="post">
+<form action="/results" name="search" method="get">
 <dl>
     <dd><textarea rows="3" cols="150"  name="query">{{queries['query']}}</textarea>
    <dd>Text search optins:
     {% if queries['type'] == "conjunctive" %}
-        <input type="radio" id="conjunctive" name="combination" value="conjunctive" checked = checked>
+        <input type="radio" id="conjunctive" name="type" value="conjunctive" checked = checked>
     {% else %}
-        <input type="radio" id="conjunctive" name="combination" value="conjunctive" >
+        <input type="radio" id="conjunctive" name="type" value="conjunctive" >
     {% endif %}
         <label for="conjunctive">Conjunctive</label>
     {% if queries['type'] == "disjunctive" %}
-        <input type="radio" id="disjunctive" name="combination" value="disjunctive" checked = checked>
+        <input type="radio" id="disjunctive" name="type" value="disjunctive" checked = checked>
     {% else %}
-        <input type="radio" id="disjunctive" name="combination" value="disjunctive">
+        <input type="radio" id="disjunctive" name="type" value="disjunctive">
     {% endif %}
         <label for="disjunctive">Disjunctive</label><br>
     <dd>Search in authors: <input type="text" style="width:300px" name="author" value="{{queries['author']}}">
     <dd>Runtime: min <input type="text" class="form-control" name="mintime" value={{queries['mintime']}}> max <input type="text" class="form-control" name="maxtime" value={{queries['maxtime']}}>
+    <input type="text" hidden="hidden" name="page" value="1">
     <dd><input type="submit" value="Search">
 </dl>
 </form>
 <p style="font-size:14px">Found {{res_num}} results. Showing {{ 1+(page_num-1)*10 }} - {% if (10+(page_num-1)*10) > res_num %}{{res_num}}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
 {% if page_num > 1 %}
-    <form action="/results/{{page_num-1}}" name="previouspage" method="get">
-    <input style="width:60px;float:left;clear:right" type="submit" value="Previous">
-    </form>
+    <a href = {{ url_for('results', page=page_num - 1, **queries) }}>Previous</a>
 {% endif %}
 {% if ((res_num/10)|round(0,'ceil')) > page_num %}
-    <form action="/results/{{page_num + 1}}" name="nextpage" method="get">
-    <input style="width:60px;float:left" type="submit" value="Next">
-    </form>
+     <a href = {{ url_for('results', page=page_num + 1, **queries) }}>Next</a>
 {% endif %}
 
 </div>

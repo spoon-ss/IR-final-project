@@ -96,16 +96,6 @@ class GeneralQueryService:
               query_option=DISJUNCTIVE_OPTION,
               page=1) -> dict:
 
-        if len(max_time_query) != 0:
-            max_time_query = date.fromisoformat(max_time_query)
-        else:
-            max_time_query = date.max
-        if len(min_time_query) != 0:
-            min_time_query = date.fromisoformat(min_time_query)
-        else:
-            min_time_query = date.min
-
-        # Create a search object to query our index
 
         # search for runtime using a range query
         s = self.search.query('range', publish_time={'gte': min_time_query, 'lte': max_time_query})
@@ -116,7 +106,7 @@ class GeneralQueryService:
 
         response = s.execute()
         result_dict = _extract_response(response)
-        return {"result_dict": result_dict, "stop_words_included": extract_stop_words(query_text)}
+        return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text)}
 
 
     def autocomplete(self, text):
