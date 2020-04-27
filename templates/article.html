@@ -1,0 +1,12 @@
+<!doctype html>
+
+<body bgcolor="white">
+
+<h3>{{title|safe}}</h3>
+<div class="film" style="word-wrap:break-word; padding:10px;">
+    {% for term in film %}
+        <pre style="white-space: pre-wrap;"><strong>{{term}}</strong>: {{film[term] | safe}}</pre>
+    {% endfor %}
+</div>
+
+</body>
