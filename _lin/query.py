@@ -6,10 +6,7 @@ You will need to rewrite and expand sections to support the types of queries ove
 import re
 from flask import *
 from index import Article
-from pprint import pprint
-from elasticsearch_dsl import Q
 from elasticsearch_dsl.utils import AttrList
-from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search
 from datetime import date, datetime
 
@@ -28,7 +25,7 @@ gresults = {}
 # display query page
 @app.route("/")
 def search():
-    return render_template('page_query.html')
+    return render_template('index.html')
 
 
 # display results page for first set of results and "next" sets.
@@ -71,7 +68,7 @@ def results(page):
         else:
             operation = 'or'
 
-        # update global variable template data
+        # update global variable templates data
         tmp_text = text_query
         tmp_author = author_query
         tmp_min = mintime
@@ -186,7 +183,7 @@ def results(page):
 
     # if we find the results, extract title and text information from doc_data, else do nothing
     if result_num > 0:
-        return render_template('page_SERP.html', stop_len=len(stops), stops=stops, results=resultList, res_num=result_num, page_num=page, queries=shows)
+        return render_template('result.html', stop_len=len(stops), stops=stops, results=resultList, res_num=result_num, page_num=page, queries=shows)
     else:
         message = []
         if len(text_query) > 0:
@@ -194,7 +191,7 @@ def results(page):
         if len(author_query) > 0:
             message.append('Cannot find author: ' + author_query)
 
-        return render_template('page_SERP.html', stop_len=len(stops), stops=stops, results=message, res_num=result_num, page_num=page, queries=shows)
+        return render_template('result.html', stop_len=len(stops), stops=stops, results=message, res_num=result_num, page_num=page, queries=shows)
 
 # display suggestion for autocompletion
 @app.route("/autocomplete", methods=['GET'])
@@ -230,7 +227,7 @@ def documents(res):
     articledic = doc.to_dict()
     article['author'] = str(articledic['author'])
     article['publish_time'] = str(articledic['publish_time'])
-    return render_template('page_targetArticle.html', article=article, title=articletitle)
+    return render_template('article.html', article=article, title=articletitle)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+        $( function() {
+          $('input[name="mintime"]').datepicker({
+              dateFormat: "yy-mm-dd",
+              keyboardNavigation: false
+          })
+        });
+        $( function() {
+          $('input[name="maxtime"]').datepicker({
+              dateFormat: "yy-mm-dd",
+              keyboardNavigation: false
+          })
+        });
+  </script>
+</head>
+<body bgcolor="white">
+<title>Search Results</title>
+<style>
+.sansserif {
+    font-family: "Times New Roman", Times, sans-serif;
+    font-weight: bold;
+}
+p.results {
+    color:grey;
+    line-height:20px;
+    height:60px;
+    overflow:hidden;
+    font-size:14px
+}
+p.cannotfind {
+    background-color:pink;
+    text-align:center;
+    border-left: 6px solid red;
+}
+.header {
+    background-color:black;
+    color:lightgrey;
+}
+.searchbox {
+    position:fixed;
+    top:0;
+    width:100%;
+    float:left;
+    background-color:white;
+    border-bottom: 2px dotted black;
+}
+.contents{
+    margin-top:320px;
+    padding:0;
+    clear:left;
+}
+</style>
+
+<div class="searchbox" >
+<h3 class="header">  Covid_19 Database Search </h3>
+<form action="/results" name="search" method="post">
+<dl>
+    <dd><textarea rows="3" cols="150"  name="query">{{queries['query']}}</textarea>
+   <dd>Text search optins:
+    {% if queries['type'] == "conjunctive" %}
+        <input type="radio" id="conjunctive" name="combination" value="conjunctive" checked = checked>
+    {% else %}
+        <input type="radio" id="conjunctive" name="combination" value="conjunctive" >
+    {% endif %}
+        <label for="conjunctive">Conjunctive</label>
+    {% if queries['type'] == "disjunctive" %}
+        <input type="radio" id="disjunctive" name="combination" value="disjunctive" checked = checked>
+    {% else %}
+        <input type="radio" id="disjunctive" name="combination" value="disjunctive">
+    {% endif %}
+        <label for="disjunctive">Disjunctive</label><br>
+    <dd>Search in authors: <input type="text" style="width:300px" name="author" value="{{queries['author']}}">
+    <dd>Runtime: min <input type="text" class="form-control" name="mintime" value={{queries['mintime']}}> max <input type="text" class="form-control" name="maxtime" value={{queries['maxtime']}}>
+    <dd><input type="submit" value="Search">
+</dl>
+</form>
+<p style="font-size:14px">Found {{res_num}} results. Showing {{ 1+(page_num-1)*10 }} - {% if (10+(page_num-1)*10) > res_num %}{{res_num}}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
+{% if page_num > 1 %}
+    <form action="/results/{{page_num-1}}" name="previouspage" method="get">
+    <input style="width:60px;float:left;clear:right" type="submit" value="Previous">
+    </form>
+{% endif %}
+{% if ((res_num/10)|round(0,'ceil')) > page_num %}
+    <form action="/results/{{page_num + 1}}" name="nextpage" method="get">
+    <input style="width:60px;float:left" type="submit" value="Next">
+    </form>
+{% endif %}
+
+</div>
+
+<div class="contents">
+<p>
+    {% if stop_len %}
+        Ignoring term:
+        {% for stop in stops %}
+            {{ stop }}
+        {% endfor %}
+    {% endif%}
+</p>
+    {% if res_num %}
+        {% for res in results %}
+        <ul>
+            <pre class="sansserif"><a href="/documents/{{res}}" target="_blank">  {{ results[res]['title']|safe }} </a>    score: {{results[res]['score']}} </pre>
+            <p>{{ results[res]['author'] | safe}}</p>
+            <p class="results">{{results[res]['abstract'] | safe}}</p>
+        </ul>
+        {% endfor %}
+    {% else %}
+        {% for res in results %}
+            <p class="cannotfind">{{res}}</p>
+        {% endfor %}
+    {% endif %}  
+</div>
+</body>
+
+</html>
