@@ -1,12 +1,45 @@
 <!doctype html>
-
+<style>
+.article {
+    top:0;
+    width:100%;
+    float:left;
+    background-color:white;
+    border-bottom: 2px dotted black;
+}
+p.results {
+    color:grey;
+    line-height:20px;
+    height:60px;
+    overflow:hidden;
+    font-size:14px
+}
+.contents{
+    padding: 10px;
+    clear:left;
+}
+</style>
 <body bgcolor="white">
 
-<h3>{{title|safe}}</h3>
-<div class="film" style="word-wrap:break-word; padding:10px;">
-    {% for term in film %}
-        <pre style="white-space: pre-wrap;"><strong>{{term}}</strong>: {{film[term] | safe}}</pre>
+<h3>{{article[title]|safe}}</h3>
+<div class="article" style="word-wrap:break-word; padding:10px;">
+    {% for term in article %}
+        <pre style="white-space: pre-wrap;"><strong>{{term}}</strong>: {{article[term] | safe}}</pre>
     {% endfor %}
 </div>
 
+<div class="contents">
+
+    {% if more_like_this %}
+
+        {% for res in more_like_this %}
+        <ul>
+            <pre class="sansserif"><a href="/documents/{{res}}" target="_blank">  {{ more_like_this[res]['title']|safe }} </a>    score: {{more_like_this[res]['score']}} </pre>
+            <p class="results">{{more_like_this[res]['abstract'] | safe}}</p>
+        </ul>
+        {% endfor %}
+
+    {% endif %} 
+
+</div>
 </body>

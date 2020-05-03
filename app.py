@@ -70,7 +70,8 @@ def autocomplete():
 # display a particular document given a result number
 @app.route("/documents/<res>", methods=['GET'])
 def documents(res):
-    return render_template('article.html')
+    article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(res)
+    return render_template('article.html', article=article_dic, more_like_this=more_like_this_dic)
 
 
 if __name__ == "__main__":

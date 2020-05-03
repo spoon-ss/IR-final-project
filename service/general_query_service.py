@@ -126,3 +126,15 @@ class GeneralQueryService:
             if option['_source']['title'] not in results:
                 results.append(option['_source']['title'])
         return results
+
+    def doc_result(self, query_id):
+        # get article detail and the 'more like this' result
+        response = self.search.query('ids', values=query_id).execute()
+        article_dic = dict()
+        article_dic['Title'] = response.hits[0].title
+        article_dic['Abstract'] = response.hits[0].abstract
+        article_dic['Author'] = response.hits[0].author
+        article_dic['Publish Time'] = response.hits[0].publish_time
+        text = article_dic['Title'] +article_dic['Abstract']
+        more_like_this_dic = get_more_like_this(self.search, text)
+        return article_dic, more_like_this_dic
