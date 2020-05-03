@@ -116,9 +116,8 @@ class GeneralQueryService:
         return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text)}
 
     def autocomplete(self, text):
-        search = Search(index='covid_index')
         # do suggest on the query term
-        s = search.suggest('autocomplete', text=text, completion={'field': 'suggestion'})
+        s = self.search.suggest('autocomplete', text=text, completion={'field': 'suggestion'})
         response = s.execute()
         options = response.suggest.autocomplete[0].options
         results = list()
