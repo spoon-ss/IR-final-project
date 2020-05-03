@@ -2,6 +2,7 @@ from datetime import date
 
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search
+from elasticsearch_dsl.query import MoreLikeThis
 import re
 
 
@@ -81,6 +82,12 @@ def extract_stop_words(query_text):
     stops = [term for term in query_text.lower().split() if term in stop_words]
     return stops
 
+def get_more_like_this(s, query_text):
+    
+    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract']))
+    # get first top 10 similar articles
+    response = s[1:11].execute()   
+    return _extract_response(response)
 
 class GeneralQueryService:
     CONJUNCTIVE_OPTION = "and"
@@ -107,7 +114,6 @@ class GeneralQueryService:
         response = s.execute()
         result_dict = _extract_response(response)
         return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text)}
-
 
     def autocomplete(self, text):
         search = Search(index='covid_index')
