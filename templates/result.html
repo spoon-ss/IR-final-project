@@ -61,7 +61,7 @@ p.cannotfind {
 <h3 class="header">  Covid_19 Database Search </h3>
 <form action="/results" name="search" method="get">
 <dl>
-    <dd><textarea rows="3" cols="150"  name="query">{{queries['query']}}</textarea>
+    <dd><textarea rows="3" cols="150" id="autocomplete"  name="query">{{queries['query']}}</textarea>
    <dd>Text search optins:
     {% if queries['type'] == "conjunctive" %}
         <input type="radio" id="conjunctive" name="type" value="conjunctive" checked = checked>
@@ -114,6 +114,16 @@ p.cannotfind {
         {% endfor %}
     {% endif %}  
 </div>
+<script type="text/javascript">
+        $("#autocomplete").autocomplete({
+            source: function(request, response) {
+                $.getJSON('{{ url_for("autocomplete") }}', {
+                    search: request
+                }, response);
+            },
+            minLength: 2
+        });
+    </script>
 </body>
 
 </html>

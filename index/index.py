@@ -3,7 +3,7 @@ import re
 import time
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
-from elasticsearch_dsl import Index, Document, Text, Keyword, Integer, Nested, Date
+from elasticsearch_dsl import Index, Document, Text, Keyword, Integer, Nested, Date, Completion
 from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl.analysis import tokenizer, analyzer
 from elasticsearch_dsl.query import MultiMatch, Match
@@ -21,9 +21,9 @@ es = Elasticsearch()
 text_analyzer = analyzer('custom',
                          tokenizer='standard',
                          filter=['lowercase', 'stop'])
-author_analyzer = analyzer('custom',
-                           tokenizer='standard',
-                           filter=['lowercase'])
+# author_analyzer = analyzer('custom',
+#                            tokenizer='standard',
+#                            filter=['lowercase'])
 
 
 # --- Add more analyzers here ---
@@ -36,9 +36,10 @@ author_analyzer = analyzer('custom',
 class Article(Document):
     sha = Text()
     title = Text(analyzer=text_analyzer)
-    abstract = Text(analyzer='simple')
-    authors = Text(analyzer=author_analyzer)
+    abstract = Text(analyzer=text_analyzer)
+    authors = Text(analyzer='standard')
     publish_time = Date()
+    suggestion = Completion()
 
     # --- Add more fields here ---
     # What data type for your field? List?
@@ -61,6 +62,7 @@ def buildIndex():
     if covid_index.exists():
         covid_index.delete()  # Overwrite any previous version
     # film_index.analyzer()  # register your customized analyzer
+    covid_index.document(Article)  # register the document mapping
     covid_index.create()
 
     # Open the json film corpus
@@ -76,19 +78,20 @@ def buildIndex():
     def actions():
         # mid is movie id (used as key into movies dictionary)
         for mid in range(1, size + 1):
-            print("document: " + str(mid))
-            print(convert_date(data_dict[str(mid)]['publish_time']))
+            # print("document: " + str(mid))
+            # print(convert_date(data_dict[str(mid)]['publish_time']))
             yield {
                 "_index": "sample_covid_19_index",
-                "_type": 'doc',
+                "_type": '_doc',
                 "_id": mid,
                 "sha": data_dict[str(mid)]['sha'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
                 "author": data_dict[str(mid)]['authors'],
-                "publish_time": convert_date(data_dict[str(mid)]['publish_time'])
+                "publish_time": convert_date(data_dict[str(mid)]['publish_time']),
                 # movies[str(mid)]['runtime'] # You would like to convert runtime to integer (in minutes)
                 # --- Add more fields here ---
+                "suggestion": data_dict[str(mid)]['title']
             }
 
     helpers.bulk(es, actions())

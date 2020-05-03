@@ -63,8 +63,8 @@ def results():
 @app.route("/autocomplete", methods=['GET'])
 def autocomplete():
     text = request.args.getlist('search[term]')
-    general_query_service = GeneralQueryService()
-    return jsonify(general_query_service.autocomplete(text))
+    general_query_service = GeneralQueryService("sample_covid_19_index").autocomplete(text)
+    return jsonify(general_query_service)
 
 
 # display a particular document given a result number
