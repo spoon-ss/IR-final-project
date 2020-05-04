@@ -4,24 +4,64 @@ from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import MoreLikeThis
 import re
+from elasticsearch_dsl import Q
 
 
 def _do_abstraction_query(s, abstraction_query, query_option):
     if len(abstraction_query) > 0:
+        '''
         # if hypen is in the query, add double quotes around the term with hypen and then do simple_query_string query
         if "-" in abstraction_query:
             text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
             t_query = abstraction_query.split(" ")
-            # print(t_query)
+            print(t_query)
             for i, q in enumerate(t_query):
                 if q in text:
                     t_query[i] = "\"" + q + "\""
             t_query = " ".join(t_query)
+            print(t_query)
             s = s.query('simple_query_string', query=t_query, fields=['title^1.5', 'abstract'],
                         default_operator=query_option)
-        else:
-            s = s.query('multi_match', query=abstraction_query, type='cross_fields', fields=['title^3', 'abstract'],
-                        operator=query_option)
+        '''
+        #find all phrases with " "
+        pattern = re.compile(r'(?:\B\")(.*?)(?:\b\")')
+        phrases = pattern.findall(abstraction_query)
+        abstraction_query = pattern.sub('', abstraction_query).strip()
+        phrases = phrases + abstraction_query.split()
+        #find all hyphen
+        text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
+        for i in range(len(phrases)):
+            if phrases[i] in text:
+                phrases[i] = "\"" + phrases[i] + "\""
+        if query_option == "or": 
+            q0 = phrases.pop()
+            if '"' in q0:
+                q = Q('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+            else:
+                if len(q0) >= 4:
+                    q = Q('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                else:
+                    q = Q('multi_match', query = q0, fields = ['title^2', 'abstract'])
+            while len(phrases) > 0:
+                q0 = phrases.pop()
+                if '"' in q0:
+                    q |= Q('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+                else:
+                    if len(q0) >= 4:
+                        q |= Q('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                    else:
+                        q |= Q('multi_match', query = q0, fields = ['title^2', 'abstract'])
+            s = s.query(q)
+        elif query_option == "and":
+            while len(phrases) > 0:
+                q0 = phrases.pop()
+                if '"' in q0:
+                    s = s.query('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+                else:
+                    if len(q0) >= 4:
+                        s = s.query('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                    else:
+                        s = s.query('multi_match', query = q0, fields = ['title^2', 'abstract'])
     return s
 
 

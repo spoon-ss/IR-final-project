@@ -7,9 +7,17 @@ from elasticsearch_dsl import Index, Document, Text, Keyword, Integer, Nested, D
 from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl.analysis import tokenizer, analyzer
 from elasticsearch_dsl.query import MultiMatch, Match
+from elasticsearch_dsl import token_filter
 
 # Connect to local host server
 connections.create_connection(hosts=['127.0.0.1'])
+'''
+brit_spelling_tokenfilter = token_filter(
+    'my_tokenfilter', # Any name for the filter
+    'synonym', # Synonym filter type
+    synonyms_path = "analysis/wn_s.pl"
+    )
+'''
 
 # Create elasticsearch object
 es = Elasticsearch()
