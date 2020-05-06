@@ -119,7 +119,7 @@ def buildIndex(size=None):
 # command line invocation builds index and prints the running time.
 def main():
     start_time = time.time()
-    buildIndex(20)
+    buildIndex(200)
     print("=== Built index in %s seconds ===" % (time.time() - start_time))
 
 
