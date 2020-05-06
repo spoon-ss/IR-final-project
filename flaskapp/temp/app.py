@@ -4,7 +4,7 @@ You will need to rewrite and expand sections to support the types of queries ove
 """
 
 from flask import *
-from service import GeneralQueryService, TranslateService
+from flaskapp.service import GeneralQueryService, TranslateService
 from datetime import date
 
 app = Flask(__name__)

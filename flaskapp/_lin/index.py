@@ -4,13 +4,11 @@ import time
 
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
-from elasticsearch_dsl import Index, Document, Text, Keyword, Integer, InnerDoc, Date, Completion
+from elasticsearch_dsl import Index, Document, Text, Keyword, Integer, Completion
 from elasticsearch_dsl.connections import connections
-from elasticsearch_dsl.analysis import tokenizer, analyzer
-from elasticsearch_dsl.query import MultiMatch, Match
 from datetime import date, datetime
 
-from model import Article
+from flaskapp.model import Article
 # Connect to local host server
 connections.create_connection(hosts=['127.0.0.1'])
 

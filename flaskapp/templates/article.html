@@ -4,7 +4,6 @@
     top:0;
     width:100%;
     float:left;
-    background-color:white;
     border-bottom: 2px dotted black;
 }
 p.results {
@@ -19,13 +18,17 @@ p.results {
     clear:left;
 }
 </style>
-<body bgcolor="white">
 
+
+{% extends "layout.html" %}
+{% block content %}
+<body>
 <h3>{{article[title]|safe}}</h3>
 <div class="article" style="word-wrap:break-word; padding:10px;">
     {% for term in article %}
         <pre style="white-space: pre-wrap;"><strong>{{term}}</strong>: {{article[term] | safe}}</pre>
     {% endfor %}
+    <a href="/doc/new/{{ doc_id }}"><input type=”button” value="favorite"></a>
 </div>
 
 <div class="contents">
@@ -43,3 +46,4 @@ p.results {
 
 </div>
 </body>
+{% endblock content %}

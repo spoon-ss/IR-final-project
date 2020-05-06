@@ -43,11 +43,8 @@ p.cannotfind {
     color:lightgrey;
 }
 .searchbox {
-    position:fixed;
-    top:0;
     width:100%;
     float:left;
-    background-color:white;
     border-bottom: 2px dotted black;
 }
 .contents{
@@ -57,11 +54,14 @@ p.cannotfind {
 }
 </style>
 
+
+{% extends "layout.html" %}
+{% block content %}
 <div class="searchbox" >
-<h3 class="header">  Covid_19 Database Search </h3>
+<h3>  Covid_19 Database Search </h3>
 <form action="/results" name="search" method="get">
 <dl>
-    <dd><textarea rows="3" cols="150" id="autocomplete"  name="query">{{queries['query']}}</textarea>
+    <dd><textarea rows="3" cols="100" id="autocomplete"  name="query">{{queries['query']}}</textarea>
    <dd>Text search optins:
     {% if queries['type'] == "conjunctive" %}
         <input type="radio" id="conjunctive" name="type" value="conjunctive" checked = checked>
@@ -125,5 +125,6 @@ p.cannotfind {
         });
     </script>
 </body>
+{% endblock content %}
 
 </html>

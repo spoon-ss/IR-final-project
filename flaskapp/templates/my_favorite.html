@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if docs!=[] %}
+        {% for doc in docs %}
+        <ul>
+            <pre class="sansserif"><a href="/documents/{{doc.doc_id}}" target="_blank">  {{ doc.doc_id }} </a> </pre>
+        </ul>
+        {% endfor %}
+    {% else %}
+        <p>No Favorite</p>
+    {% endif %}
+
+{% endblock content %}
