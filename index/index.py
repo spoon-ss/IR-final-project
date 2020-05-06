@@ -44,11 +44,12 @@ text_analyzer = analyzer('my_tokenfilter',
 # This defines fields and their properties (type and analysis applied).
 # You can use existing es analyzers or use ones you define yourself as above.
 class Article(Document):
-    sha = Text()
+    # sha = Text()
     title = Text(analyzer=text_analyzer)
     abstract = Text(analyzer=text_analyzer)
     authors = Text(analyzer='standard')
     publish_time = Date()
+    url = Keyword()
     suggestion = Completion()
 
     # --- Add more fields here ---
@@ -76,7 +77,7 @@ def buildIndex():
     covid_index.create()
 
     # Open the json film corpus
-    data_dict = process_json("covid_comm.json")
+    data_dict = process_json("covid_full.json")
     size = len(data_dict)
 
     # Action series for bulk loading with helpers.bulk function.
@@ -94,13 +95,14 @@ def buildIndex():
                 "_index": "sample_covid_19_index",
                 "_type": '_doc',
                 "_id": mid,
-                "sha": data_dict[str(mid)]['sha'],
+                # "sha": data_dict[str(mid)]['sha'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
                 "author": data_dict[str(mid)]['authors'],
                 "publish_time": convert_date(data_dict[str(mid)]['publish_time']),
                 # movies[str(mid)]['runtime'] # You would like to convert runtime to integer (in minutes)
                 # --- Add more fields here ---
+                "url": data_dict[str(mid)]['url'],
                 "suggestion": data_dict[str(mid)]['title']
             }
 
