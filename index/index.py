@@ -15,9 +15,10 @@ connections.create_connection(hosts=['127.0.0.1'])
 brit_spelling_tokenfilter = token_filter(
     'my_tokenfilter', # Any name for the filter
     'synonym', # Synonym filter type
-    synonyms_path = "analysis/wn_s.pl"
+    synonyms_path = "analysis/wn_s11.pl"
     )
 '''
+
 
 # Create elasticsearch object
 es = Elasticsearch()
@@ -26,7 +27,8 @@ es = Elasticsearch()
 # You can create a custom analyzer by choosing among elasticsearch options
 # or writing your own functions.
 # Elasticsearch also has default analyzers that might be appropriate.
-text_analyzer = analyzer('custom',
+text_analyzer = analyzer('my_tokenfilter',
+                         type='custom',
                          tokenizer='standard',
                          filter=['lowercase', 'stop'])
 # author_analyzer = analyzer('custom',

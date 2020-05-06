@@ -5,6 +5,8 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import MoreLikeThis
 import re
 from elasticsearch_dsl import Q
+from nltk.corpus import wordnet
+import collections
 
 
 def _do_abstraction_query(s, abstraction_query, query_option):
@@ -23,16 +25,8 @@ def _do_abstraction_query(s, abstraction_query, query_option):
             s = s.query('simple_query_string', query=t_query, fields=['title^1.5', 'abstract'],
                         default_operator=query_option)
         '''
-        #find all phrases with " "
-        pattern = re.compile(r'(?:\B\")(.*?)(?:\b\")')
-        phrases = pattern.findall(abstraction_query)
-        abstraction_query = pattern.sub('', abstraction_query).strip()
-        phrases = phrases + abstraction_query.split()
-        #find all hyphen
-        text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
-        for i in range(len(phrases)):
-            if phrases[i] in text:
-                phrases[i] = "\"" + phrases[i] + "\""
+        phrases = process_abstraction_query(abstraction_query)
+
         if query_option == "or": 
             q0 = phrases.pop()
             if '"' in q0:
@@ -107,6 +101,18 @@ def _extract_response(response):
         result_dict[hit.meta.id] = result
     return result_dict
 
+def process_abstraction_query(abstraction_query):
+        #find all phrases with " "
+        pattern = re.compile(r'(?:\B\")(.*?)(?:\b\")')
+        phrases = pattern.findall(abstraction_query)
+        abstraction_query = pattern.sub('', abstraction_query).strip()
+        phrases = phrases + abstraction_query.split()
+        #find all hyphen
+        text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
+        for i in range(len(phrases)):
+            if phrases[i] in text:
+                phrases[i] = "\"" + phrases[i] + "\""
+        return phrases
 
 def get_stop_words():
     stop_words = ["a", "an", "and", "are", "as", "at", "be", "but", "by",
@@ -115,6 +121,30 @@ def get_stop_words():
                   "that", "the", "their", "then", "there", "these",
                   "they", "this", "to", "was", "will", "with"]
     return stop_words
+
+def get_synonyms(abstraction_query):
+    phrases = process_abstraction_query(abstraction_query)
+    d = collections.defaultdict(list)
+    for p in phrases:
+        synonyms = []
+            
+        for syn in wordnet.synsets(p):
+            for l in syn.lemmas():
+                if '_' not in l.name():
+                    synonyms.append(l.name())
+            
+        d[p] = list(set(synonyms))
+        if p.lower() in d[p]:
+            d[p].sort(key = p.lower().__eq__)
+        elif len(d[p]) > 0:
+            d[p].append(p)
+    for key in d:
+        tmp = []
+        for i in range(len(phrases)):
+            if phrases[i] == key:
+                tmp.append(i)
+        d[key].append(tmp)
+    return d
 
 
 def extract_stop_words(query_text):
@@ -153,7 +183,7 @@ class GeneralQueryService:
 
         response = s.execute()
         result_dict = _extract_response(response)
-        return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text)}
+        return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text), "synonyms": get_synonyms(query_text) }
 
     def autocomplete(self, text):
         # do suggest on the query term
