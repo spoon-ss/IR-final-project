@@ -1,0 +1,1469 @@
+{
+    "paper_id": "0deef7e050171f0fb38e0d0733c9de67298891f7",
+    "metadata": {
+        "title": "Spatio-temporal propagation of COVID-19 epidemics",
+        "authors": [
+            {
+                "first": "Bnaya",
+                "middle": [],
+                "last": "Gross",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Bar-Ilan University",
+                    "location": {
+                        "settlement": "Ramat-Gan 52900",
+                        "country": "Israel"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Zhiguo",
+                "middle": [],
+                "last": "Zheng",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Beihang University",
+                    "location": {
+                        "postCode": "100191",
+                        "settlement": "Beijing",
+                        "country": "China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Shiyan",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Beihang University",
+                    "location": {
+                        "postCode": "100191",
+                        "settlement": "Beijing",
+                        "country": "China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Xiaoqi",
+                "middle": [],
+                "last": "Chen",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Beihang University",
+                    "location": {
+                        "postCode": "100191",
+                        "settlement": "Beijing",
+                        "country": "China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Alon",
+                "middle": [],
+                "last": "Sela",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Bar-Ilan University",
+                    "location": {
+                        "settlement": "Ramat-Gan 52900",
+                        "country": "Israel"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Jianxin",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Beihang University",
+                    "location": {
+                        "postCode": "100083",
+                        "settlement": "Beijing",
+                        "country": "China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Daqing",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Beihang University",
+                    "location": {
+                        "postCode": "100191",
+                        "settlement": "Beijing",
+                        "country": "China"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Shlomo",
+                "middle": [],
+                "last": "Havlin",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Bar-Ilan University",
+                    "location": {
+                        "settlement": "Ramat-Gan 52900",
+                        "country": "Israel"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "The new coronavirus known as COVID-19 is rapidly spreading since December 2019. Without any vaccination or medicine, the means of controlling it are limited to quarantine and social distancing.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "Here we study the spatio-temporal propagation of the COVID-19 virus in China and compare it to other global locations. Our results suggest that the disease propagation is highly related to population migration from Hubei resembling a L\u00e9vy flight which is characteristic of human mobility. Our results also suggest that the disease spread in a city in China is characterized by two-stages process. At early times, at order of few days, the infection rate in the city is almost constant probably due to the lack of means to detect infected individuals before infection signs are observed and at later times it decays approximately exponentially due to quarantines. These two stages can explain the significant differences between the propagation in China and in other world-wide locations. While most Chinese cities control the disease which resulted in the decaying stage, in other world-wide countries the situation is still becoming worse probably due to less control. arXiv:2003.08382v1 [physics.soc-ph] ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "Since December 2019 the world is fiercely struggling against an epidemics of a novel Coronavirus named COVID-19 identified in Wuhan, a city of 11 million people in Hubei Provence, China. A medical cure from the disease is yet unavailable and the number of infected cases is still increasing (Fig. 1a) . In China, the number of infected individuals exceeds 80000 as for 18 of March 2020 and the virus has already spread to more than 100 countries around the world. Furthermore, the virus shows a mortality rate of 2.5% of all infected persons [1] (4% as for 18 of March 2020), compared to 9.6% in SARS [2] or 0.6% for the H1N1 influenza [3] . This high mortality rate together with the lack of a cure for the COVID-19 virus, are the reasons for the severe restrictions on those that were in contact with COVID-19 confirmed cases, which mainly includes strict quarantine of 14 days. The high mortality rates of COVID-19 are not uniformly distributed through different ages. Rather the mortality rate is as high as 5%-11% for ages over 70 with an increased risk for patients with cardiovascular diseases, diabetes, respiratory diseases or cancer [4] .",
+            "cite_spans": [
+                {
+                    "start": 542,
+                    "end": 545,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 601,
+                    "end": 604,
+                    "text": "[2]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 636,
+                    "end": 639,
+                    "text": "[3]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1143,
+                    "end": 1146,
+                    "text": "[4]",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 291,
+                    "end": 300,
+                    "text": "(Fig. 1a)",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "I. INTRODUCTION"
+        },
+        {
+            "text": "In the absence of both medicine and vaccination, strategies of effective distributing of them are not considered yet [5] and the options to stop the propagation of the disease are currently to quarantines the infected individuals [6] and social distancing [7] in order to cut the infection channels. Statistical estimations of the incubating (latency) period of the virus which includes no signs of illness vary between different populations and found to be of about 4-6 days [8] while a long incubation period of 19 days has also been observed [9] . The 14 days quarantine period, which has been adopted by many countries, is a result of the higher limit of the 95% confidence levels [10] of this incubating period. Under this quarantine strategy, the virus spreading could be alleviated.",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 120,
+                    "text": "[5]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 230,
+                    "end": 233,
+                    "text": "[6]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 256,
+                    "end": 259,
+                    "text": "[7]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 476,
+                    "end": 479,
+                    "text": "[8]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 545,
+                    "end": 548,
+                    "text": "[9]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 685,
+                    "end": 689,
+                    "text": "[10]",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "I. INTRODUCTION"
+        },
+        {
+            "text": "The COVID-19 propagation is currently in a different stage in China compared to other locations in the world. Although China is the country with most infection cases (as for 18 of March 2020), the disease stopped to spread while in other countries the disease keeps propagating close to exponentially as can be seen in Figs. 1b and 1c. In fact, in most of the cities in China spreading stopped approximately after 20 days as shown in Fig. 1c , in contrast, in other location it is spreading as shown for Italy in Fig. 1d . This suggests that one can learn from the disease decay in China and apply similar measures in other locations in the world. While a general estimation of the disease evolution has been recently conducted [11, 12] , a comprehensive analysis of its spatio-temporal propagation which is important for epidemic forecast, is still missing. In this manuscript, we study the spatiotemporal propagation of the COVID-19 virus and discuss the differences between China and other countries.",
+            "cite_spans": [
+                {
+                    "start": 728,
+                    "end": 732,
+                    "text": "[11,",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 733,
+                    "end": 736,
+                    "text": "12]",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 434,
+                    "end": 441,
+                    "text": "Fig. 1c",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 513,
+                    "end": 520,
+                    "text": "Fig. 1d",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "I. INTRODUCTION"
+        },
+        {
+            "text": "We study the spatial propagation of the COVID-19 originated in Hubei and find scaling (power) laws for the number of infected individuals in each province as a function of the province population and the distance from Hubei. Furthermore, we find strong correlation between the number of infected individuals in each province and the population migration from Hubei to this province. This correlation suggests that the disease propagation is due to human mobility [13, 14] which has been suggested to follow a L\u00e9vy-Flight pattern [15] [16] [17] . A reasonable explanation for this correlation can be the strict quarantines applied in most of the cities in China after the shutdown of Wuhan traffic [18, 19] . These quarantines were effective and probably prevented infected individuals to further spread the disease to other cities. Hence, the number of infected individuals is highly correlated to the population migration from Hubei before the shutdown, Fig. 2 .",
+            "cite_spans": [
+                {
+                    "start": 463,
+                    "end": 467,
+                    "text": "[13,",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 468,
+                    "end": 471,
+                    "text": "14]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 529,
+                    "end": 533,
+                    "text": "[15]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 534,
+                    "end": 538,
+                    "text": "[16]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 539,
+                    "end": 543,
+                    "text": "[17]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 697,
+                    "end": 701,
+                    "text": "[18,",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 702,
+                    "end": 705,
+                    "text": "19]",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 955,
+                    "end": 961,
+                    "text": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "I. INTRODUCTION"
+        },
+        {
+            "text": "Our results suggest that many cities in China experience a two-stages process of the disease. At early times (of order of few days), the disease was undetectable due to the incubating period and the disease was spreading within the city. At later times, the infected individuals have been quarantined and the disease started to decay approximately exponentially in many cities. The quarantines have been effective to extinct the disease inside a city and reach a stable state with close to zero infection rate. Since quarantines were applied almost at the same time in most of the cities in China, we find that the decay stage of the disease starts almost at the same time for most of the cities no matter if they are large central cities, small cities or even Hubei province cities. For the same reason most of the cities experience a similar 10-20 days characteristic time of the disease drastic reduction.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. INTRODUCTION"
+        },
+        {
+            "text": "One of the most important properties of epidemics spreading is its spatial propagation, a characteristic which mainly depends on the epidemic mechanism, human mobility and control strategy. Thus, we assume that the number of infected individuals in different provinces in China can be generally described as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "where r is the distance of the province from Wuhan and m is the population of the province. Since r and m are independent of each others, one can assume and study the scaling relation of each of them independently,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "and",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "Since r and m are independent, Eq. (1) can assume the scaling form (in analogous with population mobility [20] ),",
+            "cite_spans": [
+                {
+                    "start": 106,
+                    "end": 110,
+                    "text": "[20]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "ref_spans": [],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "from which the relation \u03bd/\u03b1\u2212\u00b5/\u03b2 = 1 should be satisfied. Using weighted least squares regression for the scaling we find in Fig. 2a that \u03b1 \u22121.87\u00b10.23 in agreement with a recent study [21] and \u03b2 1.18\u00b10.20 as shown in Fig. 2b . The minimization of the error of the exponents relation yields that \u03bd = \u00b5 \u22120.84 \u00b1 0.09. Thus, Eq. (4) takes the form",
+            "cite_spans": [
+                {
+                    "start": 183,
+                    "end": 187,
+                    "text": "[21]",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 124,
+                    "end": 131,
+                    "text": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 216,
+                    "end": 223,
+                    "text": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "with \u03b3 = \u03bd = \u00b5 \u22120.84\u00b10.09 as shown in Fig. 2c . Thus, r/m can be regarded as a suitable distance-population parameter. The relation between these 3 exponents is,",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 38,
+                    "end": 45,
+                    "text": "Fig. 2c",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "In order to better understand the basic mechanism of the disease propagation, we examine the relation of the number of infected individuals in different provinces in China with the population migration, P m , from Hubei. Our results shown in Fig. 2d suggest an almost linear scaling relation",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 242,
+                    "end": 249,
+                    "text": "Fig. 2d",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "with \u03c6 = 0.96 \u00b1 0.25. This relation can be understood since strict quarantines were applied in most of the cities in China after the shutdown of Wuhan traffic. The quar- antines were efficient to prevent infected individuals to spread the disease to other cities leading to a close to linear relation between the number of infected individuals and the population migration from Hubei. This supports the relation between the disease propagation and human mobility.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "To further study the relation between population migration and the disease propagation we measured the population migration number, P m , as a function of the distance, population and the distance-population parameter. We assume the following scaling relations [20] , 6) within the errorbars. Interestingly,\u03b1 is lower than \u03b1 and it can be probably understood by quarantines efficiency which reduces the spatial spread of infected individuals compared to the population migration. A summary of the exponents of (2)-(8) can be found in Table I .",
+            "cite_spans": [
+                {
+                    "start": 261,
+                    "end": 265,
+                    "text": "[20]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 534,
+                    "end": 541,
+                    "text": "Table I",
+                    "ref_id": null
+                }
+            ],
+            "section": "II. SPATIAL SCALING"
+        },
+        {
+            "text": "The absence of vaccination makes the control of the disease very difficult and the main action possible is to quarantine infected individuals and those that were with them in contact, in order to prevent further spreading. This approach is effective but limited since an infected individual can spread the disease before showing illness signs. This period of time called the latency period [18, 22] and should be taken into account when temporal analysis is being conducted. To further study the effect of quarantines, we measured the infection rate in different cities in China and different provinces in Italy. The infection rate of , P (t), is measured for each city (province) using the total number of infected individuals in the city in a given day I(t) from the first day that infected individuals have been detected in the city. Since a newly detected infected individual has been infected a few days earlier due to the latency period l, the infection rate is defined as the fraction of the newly infected individuals at each day and the number of individuals l days earlier:",
+            "cite_spans": [
+                {
+                    "start": 390,
+                    "end": 394,
+                    "text": "[18,",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 395,
+                    "end": 398,
+                    "text": "22]",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "ref_spans": [],
+            "section": "III. TEMPORAL BEHAVIOUR"
+        },
+        {
+            "text": "We examined three different types of cities in China. a) cities in Hubei province, b) small cities and c) large central cities assuming latency period of l = 4 days [18, 22] as shown in Fig. 3a ,b,c respectively. In all three cases, an approximately constant infection rate is observed in early times (assuming smaller latency period show clearer constant behaviour, see SI). However, after a few days, decay is observed. Determining if the decay is exponential or power-law is uncertain due to the few data points in the samples. Assuming exponential decay [23] , Eq. (9) takes the form:",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 169,
+                    "text": "[18,",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 170,
+                    "end": 173,
+                    "text": "22]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 558,
+                    "end": 562,
+                    "text": "[23]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 186,
+                    "end": 193,
+                    "text": "Fig. 3a",
+                    "ref_id": "FIGREF3"
+                }
+            ],
+            "section": "III. TEMPORAL BEHAVIOUR"
+        },
+        {
+            "text": "where P 0 is the constant infection rate without constrains, t 0 represents the time that the first infected individual was detected in the city, t x is the time when the quarantine starts and \u03c4 is the characteristic time for the disease drastic reduction. The approximately constant infection rate in early times represents the real infection rate of the disease before quarantines were applied to control the disease while the exponential decay in later times represents the efficiency of quarantines to the infected rate. The smaller the parameter \u03c4 indicate more efficient restrictions. The constant value t x is very similar in different cities in China due to the similar emergency response of other provinces with respect to the epidemic outbreak (see SI). If indeed the decay is exponential and not power-law it indicates that quarantines are efficient to tame the disease since exponential decay has characteristic time and indeed, in the last days the infection rate is zero and no new cases are found as seen in Fig. 3 . While the latency period is assumed to be l = 4 when calculating P (t), it seems that changing this value does not change the general behaviour and only slightly changes \u03c4 and P 0 (see SI). In marked contrast, Italy is still at early stages of the disease with approximately constant infection as seen in Fig. 3c . Assuming latency period of 4 days [18, 22] , most of cities in China are characterized by P 0 in the range 0.5-2 with an average of 1.16 and a standard deviation of 0.84 as shown in Fig. 4a . The value of \u03c4 for most of the cities is 10-20 days while for a few cities the characteristic time can be longer as seen in Fig. 4b . The value of \u03c4 characterizes the efficiency of quarantines. The average value of \u03c4 is 15.9 with standard deviation 7.7. Summary of the temporal parameters can be found in Table I .",
+            "cite_spans": [
+                {
+                    "start": 1381,
+                    "end": 1385,
+                    "text": "[18,",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1386,
+                    "end": 1389,
+                    "text": "22]",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 1023,
+                    "end": 1029,
+                    "text": "Fig. 3",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1337,
+                    "end": 1344,
+                    "text": "Fig. 3c",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1529,
+                    "end": 1536,
+                    "text": "Fig. 4a",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1663,
+                    "end": 1670,
+                    "text": "Fig. 4b",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1844,
+                    "end": 1851,
+                    "text": "Table I",
+                    "ref_id": null
+                }
+            ],
+            "section": "III. TEMPORAL BEHAVIOUR"
+        },
+        {
+            "text": "The COVID-19 is spreading world-wide but stopped spreading in China. Since the spread of the disease is highly related to population migration, it follows a L\u00e9vy flight behavior which is characteristic of human mobility [20] . The long incubating period together with the L\u00e9vy flight long jumps makes the disease very hard to control and raise the alarm for the other countries. By the time that infected individual is being detectable (5 days in the best scenario), one can already perform a long-distance trip and further spread the disease. This is the reason why quarantines are so critical not only for infected persons, but also for others that were nearby infected individuals. The lifetime of the disease in a city is characterized by two stages, uncontrolled infection in early times and decaying stage at later times once quarantines are being performed. These two stages can explain the disease situation in China and predict the situation in other locations in the world if similar strategies will be adopted. The stage of the disease in China is almost stable although it is the country with most of infection cases (as for 18 of March 2020). The reasoning is that most of the infected cities in China applied strict quarantine measures, leading to exponential decay of disease. However, in other locations around the world, most of the cities are still at the early stages at which the disease is less controlled and may lead to another or even worse outbreak at high risks.",
+            "cite_spans": [
+                {
+                    "start": 220,
+                    "end": 224,
+                    "text": "[20]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "ref_spans": [],
+            "section": "IV. DISCUSSION AND SUMMARY"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Severe acute respiratory syndrome coronavirus 2 (sars-cov-2) and corona virus disease-2019 (covid-19): the epidemic and the challenges",
+            "authors": [
+                {
+                    "first": "Chih-Cheng",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Tzu-Ping",
+                    "middle": [],
+                    "last": "Shih",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wen-Chien",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                },
+                {
+                    "first": "Hung-Jen",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Po-Ren",
+                    "middle": [],
+                    "last": "Hsueh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "International journal of antimicrobial agents",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Responding to global infectious disease outbreaks: lessons from sars on the role of risk perception, communication and management. Social science & medicine",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Richard",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "63",
+            "issn": "",
+            "pages": "3113--3123",
+            "other_ids": {}
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Epidemiology of fatal cases associated with pandemic h1n1 influenza",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Vaillant",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "La Ruche",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Tarantola",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Barboza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Eurosurveillance",
+            "volume": "14",
+            "issn": "33",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Real-time estimation of the risk of death from novel coronavirus (covid-19) infection: Inference using exported cases",
+            "authors": [],
+            "year": 2020,
+            "venue": "Journal of Clinical Medicine",
+            "volume": "9",
+            "issn": "2",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "Efficient immunization strategies for computer networks and populations",
+            "authors": [
+                {
+                    "first": "Reuven",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Shlomo",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Daniel",
+                    "middle": [],
+                    "last": "Ben-Avraham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Physical Review Letters",
+            "volume": "91",
+            "issn": "24",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Early transmission dynamics in wuhan, china, of novel coronavirus-infected pneumonia",
+            "authors": [
+                {
+                    "first": "Qun",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Xuhua",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Peng",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Xiaoye",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Lei",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "Yeqing",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ruiqi",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Kathy",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Eric",
+                    "suffix": ""
+                },
+                {
+                    "first": "Jessica",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "New England Journal of Medicine",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Mathematical recommendations to fight against covid-19. Available at SSRN 3551006",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [
+                        "U"
+                    ],
+                    "last": "Chenlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wei",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Tianyuan",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ban",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Estimating the distribution of the incubation period of 2019 novel coronavirus (covid-19) infection between travelers to hubei, china and non-travelers. medRxiv",
+            "authors": [
+                {
+                    "first": "Char",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Presumed asymptomatic carrier transmission of covid-19",
+            "authors": [
+                {
+                    "first": "Yan",
+                    "middle": [],
+                    "last": "Bai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Lingsheng",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Tao",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "Fei",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "Dong-Yan",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Lijuan",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Meiyun",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Jama",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Incubation period and other epidemiological characteristics of 2019 novel coronavirus infections with right truncation: A statistical analysis of publicly available case data",
+            "authors": [
+                {
+                    "first": "Baoyin",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ryo",
+                    "middle": [],
+                    "last": "Yuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Hiroshi",
+                    "middle": [],
+                    "last": "Kinoshita",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Journal of Clinical Medicine",
+            "volume": "9",
+            "issn": "2",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Fractal kinetics of covid-19 pandemic. medRxiv",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Robert",
+                    "suffix": ""
+                },
+                {
+                    "first": "Anna",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Ziff",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Ziff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "A note on ncp diagnosis number prediction model. medRxiv",
+            "authors": [
+                {
+                    "first": "Yi",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Xianhong",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Meng",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Xiaoyu",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Meng",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Yi",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Understanding individual human mobility patterns",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Marta",
+                    "suffix": ""
+                },
+                {
+                    "first": "Cesar",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "Albert-Laszlo",
+                    "middle": [],
+                    "last": "Hidalgo",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Barabasi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "nature",
+            "volume": "453",
+            "issn": "7196",
+            "pages": "779--782",
+            "other_ids": {}
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "Modelling the scaling properties of human mobility",
+            "authors": [
+                {
+                    "first": "Chaoming",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "Pu",
+                    "middle": [],
+                    "last": "Koren",
+                    "suffix": ""
+                },
+                {
+                    "first": "Albert-L\u00e1szl\u00f3",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature Physics",
+            "volume": "6",
+            "issn": "10",
+            "pages": "818--823",
+            "other_ids": {}
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "The scaling laws of human travel",
+            "authors": [
+                {
+                    "first": "Dirk",
+                    "middle": [],
+                    "last": "Brockmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "Lars",
+                    "middle": [],
+                    "last": "Hufnagel",
+                    "suffix": ""
+                },
+                {
+                    "first": "Theo",
+                    "middle": [],
+                    "last": "Geisel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "439",
+            "issn": "7075",
+            "pages": "462--465",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "L\u00e9vy flights in human behavior and cognition",
+            "authors": [
+                {
+                    "first": "Andrea",
+                    "middle": [],
+                    "last": "Baronchelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "Filippo",
+                    "middle": [],
+                    "last": "Radicchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Chaos, Solitons & Fractals",
+            "volume": "56",
+            "issn": "",
+            "pages": "101--105",
+            "other_ids": {}
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "L\u00e9vy walks",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "V Zaburdaev",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Denisov",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Klafter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Reviews of Modern Physics",
+            "volume": "87",
+            "issn": "2",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "The effect of travel restrictions on the spread of the",
+            "authors": [
+                {
+                    "first": "Matteo",
+                    "middle": [],
+                    "last": "Chinazzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Jessica",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "Marco",
+                    "middle": [],
+                    "last": "Ajelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "Corrado",
+                    "middle": [],
+                    "last": "Gioannini",
+                    "suffix": ""
+                },
+                {
+                    "first": "Maria",
+                    "middle": [],
+                    "last": "Litvinova",
+                    "suffix": ""
+                },
+                {
+                    "first": "Stefano",
+                    "middle": [],
+                    "last": "Merler",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ana",
+                    "middle": [],
+                    "last": "Pastore Y Piontti",
+                    "suffix": ""
+                },
+                {
+                    "first": "Kunpeng",
+                    "middle": [],
+                    "last": "Mu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Luca",
+                    "middle": [],
+                    "last": "Rossi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Kaiyuan",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF20": {
+            "ref_id": "b20",
+            "title": "Covid-19 control in china during mass population movements at new year. The Lancet",
+            "authors": [
+                {
+                    "first": "Simiao",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Juntao",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Weizhong",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Chen",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Till",
+                    "middle": [],
+                    "last": "B\u00e4rnighausen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF21": {
+            "ref_id": "b21",
+            "title": "A universal model for mobility and migration patterns",
+            "authors": [
+                {
+                    "first": "Filippo",
+                    "middle": [],
+                    "last": "Simini",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Marta",
+                    "suffix": ""
+                },
+                {
+                    "first": "Amos",
+                    "middle": [],
+                    "last": "Gonz\u00e1lez",
+                    "suffix": ""
+                },
+                {
+                    "first": "Albert-L\u00e1szl\u00f3",
+                    "middle": [],
+                    "last": "Maritan",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "484",
+            "issn": "7392",
+            "pages": "96--100",
+            "other_ids": {}
+        },
+        "BIBREF22": {
+            "ref_id": "b22",
+            "title": "Space-time dependence of corona virus (covid-19) outbreak",
+            "authors": [
+                {
+                    "first": "Kathakali",
+                    "middle": [],
+                    "last": "Biswas",
+                    "suffix": ""
+                },
+                {
+                    "first": "Parongama",
+                    "middle": [],
+                    "last": "Sen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2003.03149"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "ref_id": "b23",
+            "title": "Substantial undocumented infection facilitates the rapid dissemination of novel coronavirus (covid-19). medRxiv",
+            "authors": [
+                {
+                    "first": "Ruiyun",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Sen",
+                    "middle": [],
+                    "last": "Pei",
+                    "suffix": ""
+                },
+                {
+                    "first": "Bin",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Yimeng",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "Tao",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wan",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Jeffrey",
+                    "middle": [],
+                    "last": "Shaman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF24": {
+            "ref_id": "b24",
+            "title": "Epidemic spreading in scale-free networks",
+            "authors": [
+                {
+                    "first": "Romualdo",
+                    "middle": [],
+                    "last": "Pastor",
+                    "suffix": ""
+                },
+                {
+                    "first": "-",
+                    "middle": [],
+                    "last": "Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "Alessandro",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Physical Review Letters",
+            "volume": "86",
+            "issn": "14",
+            "pages": "",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "General view of the COVID-19 propagation. (a) The number of infected cases I(t) in mainland China and other locations around the globe on a semi-log scale. The number of infected individuals in China almost reaches saturation while the number in other locations are still increasing (b) The slope (derivative) of log(I(t)). Since most of the cities in China are in the decaying stage, the disease is almost stabilized and the derivative approaches zero. However, since cities in other locations around the globe are still in their early stage, the disease is still spreading as can be seen by the almost constant or even increase of the derivative (see also (d)). (c) The number of infected cases I(t) in different locations in China and Italy since the first infection. While in most of cities in China the disease stabilized after approximately 15 days on average, the disease in Italy is still spreading almost exponentially, see dashed line and (d). The slope (derivative) of log(I(t)). The dashed lines are linear extrapolation of the last 5 points of the derivative. The trend in Italy is mixed, while some places start approaching stability, in others the disease still increasing.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Spatial propagation analysis of the COVID-19 in China. (a) The number of infected individuals I (as of March 1, 2020) as a function of the distance from Hubei. The scaling follows Eq. (2) with \u03b1 = \u22121.87 \u00b1 0.23. (b) The number of infected individuals I as a function of the city population, m. The scaling follows Eq. (3) with \u03b2 = 1.18 \u00b1 0.20. (c) The scaling of I with the distance-population ratio r/m follows Eq. (5) with \u03b3 = \u22120.84 \u00b1 0.09. The exponents within the errorbars follow Eq. (6). (d) The scaling of infected individuals with the population migration from Hubei. Almost linear scaling is observed with \u03c6 = 0.96 \u00b1 0.25 strongly relating the disease propagation to human mobility. The scaling of population migration with the (e) distance, (f ) population and (g) distance-population ratio follows Eq. (8) with\u03b1 = \u22121.37 \u00b1 0.11,\u03b2 = 1.11 \u00b1 0.09 and \u03b3 = \u22120.74 \u00b1 0.13 respectively. The large value of \u03b1 compared to\u03b1 indicate probably the quarantines efficiency.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "\u22121.37 \u00b1 0.11,\u03b2 = 1.11 \u00b1 0.09 and\u03b3 = \u22120.74 \u00b1 0.13 as shown in Figs. 2e,f,g respectively. These exponents for the population migration represent the analogy of the exponents \u03b1, \u03b2 and \u03b3 of the number of in-fected individuals and follow a similar relation as Eq. (",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Two-stages infection rate. The infection rate P (t) for different types of cities: (a) cities in Hubei province, (b) small cities in China and (c) large central cities in China and provinces in Italy. In early times an approximate constant infection rate, P0 \u223c 1.16 is usually observed (above the horizontal dashed line). After a few days, an exponential decay is observed in China representing the efficiency of the quarantines. The dashed lines are the best fit for the exponential decay, Eq. (10). The characteristic decay parameter \u03c4 in Eq. (10) represents the time it takes to control the disease. In the last few days in China, there are no points since the infection rate is zero showing that the disease stabilized and no new cases appear.In marked contrast, Italy is still in the early stage with nearly constant infection rate. Here we used a latency period of 4 days as described in Eq.(9).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Spatio-temporal scaling exponents. Spatial \u03b1 is the exponent of the spatial distribution of infected individuals, Eq. (2). \u03b2 is the scaling exponent of the population, m, Eq. (3) and \u03b3 is the scaling exponent for the scaling function of the distance-population ratio r/m, Eq. (5). The exponent \u03c6 relates the number of infected individuals to the number of population migration with almost linear scaling, Eq. (7).\u03b1,\u03b2 and\u03b3 are the exponents characterizing the scaling of the population migration with r, m and r/m respectively, Eq.(8). Temporal -P0 is the approximately constant infection rate at early times while the disease is spreading. \u03c4 is the characteristic time of the disease decay at later times, assuming exponential decay, Eq. (10).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Statistical properties of the two-stages city infection with latency period of 4 days. (a) The constant infection rate, P0 is mostly range 0.5-2 while in a few cities it can be much larger. The average value is 1.16 with standard deviation 0.84. (b) The distribution of the exponent \u03c4 characterizing the extinction of the disease which found to be in the range 5-50 days. The average value is 15.9 with standard deviation 7.7.",
+            "latex": null,
+            "type": "figure"
+        }
+    },
+    "back_matter": []
+}

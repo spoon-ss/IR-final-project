@@ -1,0 +1,3011 @@
+{
+    "paper_id": "0b70c1fd82bd1962ab7eec83bdc61fcdb9a2db56",
+    "metadata": {
+        "title": "A dynamic model for infectious diseases: The role of vaccination and treatment",
+        "authors": [
+            {
+                "first": "P",
+                "middle": [],
+                "last": "Raja",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Sekhara",
+                "middle": [],
+                "last": "Rao",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Government Polytechnic",
+                    "location": {
+                        "postCode": "201",
+                        "settlement": "Addanki",
+                        "region": "A.P. 523",
+                        "country": "India"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "M",
+                "middle": [],
+                "last": "Naresh Kumar",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Software Group",
+                    "institution": "National Remote Sensing Center (ISRO)",
+                    "location": {
+                        "postCode": "500 037",
+                        "settlement": "Hyderabad",
+                        "region": "Telangana",
+                        "country": "India"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "This article is dedicated to their research supervisor Prof. V. Sree Hari Rao for his continued inspiration.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "Understanding dynamics of an infectious disease helps in designing appropriate strategies for containing its spread in a population. Recent mathematical models are aimed at studying dynamics of some specific types of infectious diseases. In this paper we propose a new model for infectious diseases spread having susceptible, infected, and recovered populations and study its dynamics in presence of incubation delays and relapse of the disease. The influence of treatment and vaccination efforts on the spread of infection in presence of time delays are studied. Sufficient conditions for local stability of the equilibria and change of stability are derived in various cases. The problem of global stability is studied for an important special case of the model. Simulations carried out in this study brought out the importance of treatment rate in controlling the disease spread. It is observed that incubation delays have influence on the system even under enhanced vaccination. The present study has clearly brought out the fact that treatment rate even in presence of time delays would contain the disease as compared to popular belief that eradication can only be done through vaccination.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "Infectious diseases spread through media such as air, water, direct contact or carriers such as insects, flies, and mosquitoes [2, 36] . The dynamics may well be understood by modeling causes or carriers of the disease. It is not possible all the time to control the media or carriers involved in spread of the infection and sometimes it may even be beyond determination. Many a time, we may not even recognize the presence of an infection until it becomes predominant. Mathematical modeling is a tool that has been popularly employed in prevention and control of infectious diseases such as severe acute respiratory syndrome (SARS) [1] , human immunodeficiency virus infection/acquired immune deficiency syndrome (HIV/AIDS) [4] , H5N1 (avian flu) [37] and H1N1 (swine flu) [35] . Also, they have been useful in studying some of the drug resistant strains of malaria [12] , tuberculosis [5] , methicillin-resistant staphylococcus aureus (MRSA) [17] and marine bacteriophage infection [3] . Simple deterministic models are based on dividing the population into compartments such as susceptible, exposed, infected and recovered. The susceptible-Infective (SI) model is useful in understanding diseases such as feline infectious peritonitis (FIP) [26] as the host remain infected till they die. The susceptible-infective-susceptible (SIS) model is employed in studying infections such as Gonorrhea [31] as there is a possibility of host becoming susceptible to infection once again. The susceptible-infective-recovered (SIR) model is employed to understand diseases such as Syphilis [33] , wherein, immunity lasts for a limited period before waning such that the individual is once again susceptible. Dynamics of such systems are http://dx.doi.org/10.1016/j.chaos.2015.02.004 0960-0779/\u00d3 2015 Elsevier Ltd. All rights reserved. generally studied from two perspectives, (i) stability of disease-free equilibrium, and (ii) stability of endemic equilibrium. In the former case conditions under which pathogens suffer extinction leaving individuals as susceptible are studied, whereas in the later, conditions in which infective and susceptible populations coexist are established.",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 130,
+                    "text": "[2,",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 131,
+                    "end": 134,
+                    "text": "36]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 633,
+                    "end": 636,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 725,
+                    "end": 728,
+                    "text": "[4]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 748,
+                    "end": 752,
+                    "text": "[37]",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 774,
+                    "end": 778,
+                    "text": "[35]",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 867,
+                    "end": 871,
+                    "text": "[12]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 887,
+                    "end": 890,
+                    "text": "[5]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 944,
+                    "end": 948,
+                    "text": "[17]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 984,
+                    "end": 987,
+                    "text": "[3]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1244,
+                    "end": 1248,
+                    "text": "[26]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1395,
+                    "end": 1399,
+                    "text": "[31]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1580,
+                    "end": 1584,
+                    "text": "[33]",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Interactions among populations in compartments such as the susceptible \u00f0x\u00de and infected \u00f0y\u00de is the key to understand the rate at which the infection can spread in the population. Models with bilinear interaction among populations \u00f0xy\u00de tend to disease free equilibrium or endemic equilibrium [7] . Researchers have considered various interactions of non-linear type such as bx p y q [21, 22, 32, 39, 50] , xy 1\u00feax [53] , or xy 1\u00fey [13, 16, 34, [44] [45] [46] 52] for further understanding dynamics of infectious diseases. It is observed that solutions of periodic nature do exist even without periodic forcing term in the model. The existence of periodic solutions are usually attributed to the presence of time delays in the system even in case of bilinear incidence. Delays do exist in disease transmission, known as the latency period of infection, from inception to an identifiable state. For some interesting studies on infectious disease models, readers are referred to [8, 14, 24, 15, 19, 23, 25, 28, 29, 47, 49, 51] . On the other hand, fluctuations in populations may also be attributed to changes in environment, especially, in open systems. These perturbations are influenced by the environment and may be treated as noise in the system. Dynamic models of competing species under the influence of a noise are extensively studied in [6, 9, 30, 48] . Predictive models based on both clinical, incidence data pertaining to infectious diseases and epidemics in general are discussed in [40] [41] [42] .",
+            "cite_spans": [
+                {
+                    "start": 291,
+                    "end": 294,
+                    "text": "[7]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 382,
+                    "end": 386,
+                    "text": "[21,",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 387,
+                    "end": 390,
+                    "text": "22,",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 391,
+                    "end": 394,
+                    "text": "32,",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 395,
+                    "end": 398,
+                    "text": "39,",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 399,
+                    "end": 402,
+                    "text": "50]",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 413,
+                    "end": 417,
+                    "text": "[53]",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 430,
+                    "end": 434,
+                    "text": "[13,",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 435,
+                    "end": 438,
+                    "text": "16,",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 439,
+                    "end": 442,
+                    "text": "34,",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 443,
+                    "end": 447,
+                    "text": "[44]",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 448,
+                    "end": 452,
+                    "text": "[45]",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 453,
+                    "end": 457,
+                    "text": "[46]",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 458,
+                    "end": 461,
+                    "text": "52]",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 975,
+                    "end": 978,
+                    "text": "[8,",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 979,
+                    "end": 982,
+                    "text": "14,",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 983,
+                    "end": 986,
+                    "text": "24,",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 987,
+                    "end": 990,
+                    "text": "15,",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 991,
+                    "end": 994,
+                    "text": "19,",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 995,
+                    "end": 998,
+                    "text": "23,",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 999,
+                    "end": 1002,
+                    "text": "25,",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1003,
+                    "end": 1006,
+                    "text": "28,",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1007,
+                    "end": 1010,
+                    "text": "29,",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1011,
+                    "end": 1014,
+                    "text": "47,",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1015,
+                    "end": 1018,
+                    "text": "49,",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1019,
+                    "end": 1022,
+                    "text": "51]",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1342,
+                    "end": 1345,
+                    "text": "[6,",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1346,
+                    "end": 1348,
+                    "text": "9,",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1349,
+                    "end": 1352,
+                    "text": "30,",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1353,
+                    "end": 1356,
+                    "text": "48]",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1492,
+                    "end": 1496,
+                    "text": "[40]",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1497,
+                    "end": 1501,
+                    "text": "[41]",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1502,
+                    "end": 1506,
+                    "text": "[42]",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "In the earlier studies on infectious disease models, the identification of basic reproduction number gave an idea on the stability of the system either in terms of disease free environment or disease prevalence. The reproduction number represents the number of secondary cases that are caused by a primary case when introduced into a wholly susceptible population. Also, it is observed that if reproduction number is less than unity, the disease free equilibrium is stable, otherwise, the disease prevails [16] . When the nature of interaction is not known or the basic reproduction number is more than unity, one needs to find ways to restrict the disease to a minimum, manageable level, if the disease free environment cannot be provided. When it comes to the control of a disease, vaccination or preventive strategies could be a good choice during the early stages of the disease provided the population is not large enough. Emergence of vaccine resistant strains is one of the drawbacks of frequent or long term vaccination. When massive vaccination is not possible, the second stage of defensive mechanism could be medical treatment. This adds a new sub category of population called recovered class representing the population recovered by treatment.",
+            "cite_spans": [
+                {
+                    "start": 506,
+                    "end": 510,
+                    "text": "[16]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Basing on the above observations, we consider the following three compartmental system in the present paper,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "x 0 \u00bc a \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00de \u00fe az y 0 \u00bc b 1 f x\u00f0t \u00c0 s\u00de; y\u00f0t\u00de \u00f0 \u00de \u00c0 rP\u00f0y\u00de \u00c0 d 1 y z 0 \u00bc rP y\u00f0t \u00c0 d\u00de \u00f0 \u00de\u00c0 az;",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "wherein, x\u00f0t\u00de; y\u00f0t\u00de and z\u00f0t\u00de denote susceptible, infected and recovered (by treatment) populations at any time t respectively, 0 \u00bc d dt denotes the time derivative of a function, a P 0 is the growth rate of susceptible population, f denotes the non-linear incidence or infection function showing how susceptibles x are converted into infected y; b > 0 denotes the rate of contact or interaction of infected with susceptible and d is the rate of removal of such susceptible individuals from the system who are naturally immune to the infection and in no way get infected, V\u00f0x\u00de is the vaccination function (depends on susceptible population), c > 0 is the rate of successful vaccination and 0 < b 1 6 b is the rate of conversion of susceptible into infected.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "In case, b 1 \u00bc b, we may expect the infection to be at its helm and spreading 100%. If b 1 < b, we may infer that the disease is not that effective or the missing x 0 s are no more susceptible and may be removed from the system. The time delay s > 0 implies that x when gets in contact with y takes time 's' to become infected and is called the temporary immunity parameter. The parameter d 1 > 0 is the removal/death rate of the infected population-either not at all treated or inadequately treated or beyond the treatment. It may also be viewed as the rate at which infected population is kept in a quarantine, away from susceptible population avoiding any sort of contact between infected and exposed, P\u00f0y\u00de is the recovery (by treatment) function of the infected, r > 0 denotes the rate of treatment and also the recovery rate. However, the infected by a treatment procedure may recover after a time gap d. The parameter a > 0 is the rate at which a recovered (non-vaccinated) individual may be re-exposed to infection and become susceptible again. This case arises when the individual appears to be recovered by treatment but is prone to infection again. The basic interactions among various populations are shown in Fig. 1 .",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 1221,
+                    "end": 1227,
+                    "text": "Fig. 1",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "Introduction"
+        },
+        {
+            "text": "We assume the following conditions on the infection function:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "the first condition (non-negativity) is a minimum requirement for any function representing biological systems and for dynamics to make sense, the second condition arises out of the situation when there are no susceptible, i.e., y has no more influence on them and the third condition is required to create a disease-free environment. Necessity for such condition is described in Section 2.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "In addition, a non-negativity condition is to be satisfied by P as it represents the recovery (by treatment) function.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Thus, we assume P\u00f0y\u00de P 0; 8y with strict inequality holding for y > 0, as we are interested in studying the influence of treatment on spread of disease. In the absence of infected population, we have P\u00f00\u00de \u00bc 0 as no treatment effort is required.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Depending on the reproduction number of an epidemic and its availability, we need to initiate vaccination. The following are the probable cases, (i) a uniform constant supply V\u00f0x\u00de \u00bc k, (ii) proportional to susceptible population V\u00f0x\u00de \u00bc x (linear), (iii) sub-linear V\u00f0x\u00de \u00bc x k\u00fex or V\u00f0x\u00de \u00bc tanh x (have a saturation limit), and (iv) V\u00f0x\u00de may be a periodic function when the infection is fluctuating, season-dependent or cyclic. However, in case of a new infectious disease, system may not be ready with vaccines to prevent its spread, the recent case being the spread of Ebola [18] . Thus, a time gap is required to start the vaccination procedure until a vaccine is invented and supplied. So, we may have V\u00f0x\u00f0t\u00de\u00de \u00bc 0; 8t, for, 0 6 t 6 t 1 and V \u00bc V\u00f0x\u00f0t\u00de\u00de P 0; 8t > t 1 . A delay is also warranted in this section which we shall discuss in the final section.",
+            "cite_spans": [
+                {
+                    "start": 575,
+                    "end": 579,
+                    "text": "[18]",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "A basic motivation for this study stems from observations in [44] that vaccination alone is not sufficient to contain disease effectively and treatment plays an important role in the disease management. We shall analyze the model (1) keeping in view the following concerns which are important in handling infectious disease:",
+            "cite_spans": [
+                {
+                    "start": 61,
+                    "end": 65,
+                    "text": "[44]",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "1. The influence of treatment or recovery rate r, 2. Influence of vaccination effort V, 3. Combined effect of vaccination and treatment, 4. How to destabilize equilibrium \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de when y \u00c3 > 0 ? or can we make y ! 0.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "The present paper aims to provide answers to the above questions by organizing its content as follows: in Section 2, the possible equilibria are determined for the model Eqs. (1). In Section 3, local stability properties of the system are discussed. In Section 3.1, the behavior of delay-free system is discussed. Influence of time delay s > 0 on the stability of the delay-free system is studied in Section 3.2, while the influence of delay in recovery (d > 0) alone is studied in Section 3.3. Bounds for these delays, conditions for change in the direction of stability are also discussed. In Section 3.4, the general case of delays s > 0 and d > 0 is discussed. In Section 4, global stability results are derived for a special case in which both the delays are present. Examples and simulation results are presented in Section 5, while conclusions and scope for future study are deferred to Section 6 and Section 7 respectively.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Let us consider a case of the system (1) with assumptions made above as x 0 \u00bc a \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00de \u00fe az y 0 \u00bc b 1 f \u00f0x\u00f0t \u00c0 s\u00de; y\u00de \u00c0 rP\u00f0y\u00de \u00c0 d 1 y z 0 \u00bc rP\u00f0y\u00f0t \u00c0 d\u00de\u00de \u00c0 az:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Equilibria and characteristic equation"
+        },
+        {
+            "text": "By continuity of solutions of (2) and by definitions of functions f ; V and P, it is easy to see that x; y; z are all non-negative in their domains of definition.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Equilibria and characteristic equation"
+        },
+        {
+            "text": "Equilibria are the constant solutions of the system. A popular way to understand the system is to study the behavior of its equilibria. For (2), we look for two possibilities, (i) existence of an equilibrium of the type \u00f0 x; 0; 0\u00de called disease-free equilibrium whose stability implies that the infection has little influence, and (ii) a stable positive equilibrium \u00f0x;\u1ef9;z\u00de called endemic equilibrium, which denotes the disease prevalence. Unless specifically stated, \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de denotes either of these equilibria throughout the subsequent study.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Equilibria"
+        },
+        {
+            "text": "The equilibria \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de of (2) should satisfy bf \u00f0x \u00c3 ; y \u00c3 \u00de \u00fe cV\u00f0x \u00c3 \u00de \u00fe dx",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Equilibria"
+        },
+        {
+            "text": "We hypothesize that if 0 < V\u00f0 a d \u00de < 1 holds, then there shall exist a point x such that it satisfies the condition cV\u00f0 x\u00de \u00bc a \u00c0 d x. To further illustrate our hypothesis we considered a real-time dataset pertaining to SARS [27] and fitted a logistic curve of the form V\u00f0x\u00de \u00bc Fig. 2 at which the curve switches from an increasing rate of growth to a decreasing rate, clearly suggesting the existence of a disease-free equilibrium point \u00f0 x; 0; 0\u00de whose stability implies a disease-free environment. The logistic curve and the line passing through the diseasefree equilibrium point x is shown in Fig. 2 . This provides a mechanism to design the vaccination (V) methods for containing the disease.",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 229,
+                    "text": "[27]",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 277,
+                    "end": 283,
+                    "text": "Fig. 2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 596,
+                    "end": 602,
+                    "text": "Fig. 2",
+                    "ref_id": "FIGREF2"
+                }
+            ],
+            "section": "Equilibria"
+        },
+        {
+            "text": "Linearizing the system (2) around the equilibrium",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "The characteristic equation of (4) is given by",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "F\u00f0k\u00de k 3 \u00c0 \u00f0A \u00fe C \u00c0 a\u00dek 2 \u00fe \u00bdAC \u00c0 a\u00f0A \u00fe C\u00dek \u00fe aCA \u00c0 B\u00f0a \u00fe k\u00deDe \u00c0ks \u00c0 DaEe \u00c0k\u00f0s\u00fed\u00de \u00bc 0:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "Letting l \u00bc a \u00c0 \u00f0A \u00fe C\u00de; m \u00bc AC \u00c0 a\u00f0A \u00fe C\u00de; n \u00bc aCA; l 1 \u00bc \u00c0BD; m 1 \u00bc \u00c0BaD; n 1 \u00bc \u00c0DaE, we denote (5) as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "F\u00f0k\u00de k 3 \u00fe lk 2 \u00fe mk \u00fe n \u00fe l 1 ke \u00c0ks \u00fe m 1 e \u00c0ks \u00fe n 1 e \u00c0k\u00f0s\u00fed\u00de \u00bc 0: (6) and separating the real and imaginary parts of F\u00f0l \u00fe im\u00de, we have real and imaginary parts (denoted hereafter by R\u00f0:\u00de and I\u00f0:\u00de) of F\u00f0k\u00de as R\u00f0F\u00f0k\u00de\u00de \u00bc l 3 \u00c0 3lm 2 \u00fe l\u00f0l 2 \u00c0 m 2 \u00de \u00fe ml \u00fe n \u00fe l 1 \u00bdl cos ms \u00fe msinmse \u00c0ls \u00fe m 1 e \u00c0ls cos ms \u00fe n 1 cos m\u00f0s \u00fe d\u00dee \u00c0l\u00f0s\u00fed\u00de I\u00f0F\u00f0k\u00de\u00de \u00bc \u00c0m 3 \u00fe 3l 2 m \u00fe 2llm \u00fe mm \u00fe l 1 \u00bdm cos ms \u00c0 lsinmse \u00c0ls \u00c0 m 1 e \u00c0ls sin ms \u00c0 n 1 sin m\u00f0s \u00fe d\u00dee \u00c0l\u00f0s\u00fed\u00de :",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "3. Local stability",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Characteristic equation"
+        },
+        {
+            "text": "We shall first consider the case when there are no delays in contracting the disease (s \u00bc 0) and in recovery (d \u00bc 0). The Eq. (6) reduces to",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "The elementary algebra says that if (i) l > 0; l 1 \u00fe m > 0, and (ii) n \u00fe m 1 \u00fe n 1 > 0 hold, all the roots of the above equation have negative real parts. Thus, we have the Theorem 3.1 which needs no proof. (2) is locally asymptotically stable provided that the parameters satisfy l > 0; l 1 \u00fe m > 0 and n \u00fe m 1 \u00fe n 1 > 0.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "Remark 3.1. In particular, if D \u00bc 0; C 6 0 hold, and when V 0 \u00f0x\u00de P 0; @f @x P 0, we have A 6 0 then the characteristic Eq. (6) reduces to",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "which is delay free. Clearly, all its coefficients are non-negative and there is no possibility of a root with positive real part. Thus, the equilibrium \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de is stable when D \u00bc 0; C 6 0 and A 6 0. Thus, we need to explore possibilities of finding a disease-free equilibrium at which these conditions hold -implying the possibility of disease-free environment. The choice of parameters, selection of We may further infer the following:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "1. In case the system has both a disease free equilibrium E 0 and an endemic equilibrium E 1 and if conditions of Theorem 3.1 hold at E 0 then we may say that the disease has no influence, 2. If E 0 is either unstable (at least one of the roots of the above equation has a positive real part) or does not exist at all, then we check for the stability of the endemic equilibrium E 1 , 3. If E 1 is stable, we have to explore the possibilities of destabilizing it by increasing (i) vaccination efforts, (ii) treatment rate or by (iii) delay in process of infection, 4. In case E 1 is unstable but the solutions are exhibiting the dominance of the disease or the system has no E 1 , we need to study the behavior of solutions in a way to handle the infected population (such as finding an > 0; T > 0 such that y\u00f0t\u00de 6 for t > T).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "We shall provide some answers to these towards the end of this article. We shall now study the influence of time delays on the system. First, we start with a delay in incubation but no delay in the recovery of treated.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay-free system"
+        },
+        {
+            "text": "To understand the influence of the time delay in converting the exposed population to infected only, we allow d \u00bc 0 in Eq. (6). We get",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Equations of the type (8) are well studied in literature (e.g., [8, 10, 11] ). Letting a 0 \u00bc n 2 \u00c0 \u00f0m 1 \u00fe n 1 \u00de 2 ; a 1 \u00bc m 2 \u00c0 2ln \u00c0 l 2 1 and a 2 \u00bc l 2 \u00c0 2m, a straight forward application of Theorem 4.1 of [8] yields the Theorem 3.2.",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 67,
+                    "text": "[8,",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 68,
+                    "end": 71,
+                    "text": "10,",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 72,
+                    "end": 75,
+                    "text": "11]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 209,
+                    "end": 212,
+                    "text": "[8]",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Notice that Theorem 3.2 (or Theorem 4.1 of [8] ) ensures the preservation of stability (instability) but does not specify the values of lengths of delay for which this holds. The following result helps us in estimating delay in such cases. We need the following result ( [20] ) as utilized in [43] for our study. ",
+            "cite_spans": [
+                {
+                    "start": 43,
+                    "end": 46,
+                    "text": "[8]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 271,
+                    "end": 275,
+                    "text": "[20]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 293,
+                    "end": 297,
+                    "text": "[43]",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "where, T denotes the pseudo delay and is related to s as s \u00bc 2 m \u00bdtan \u00c01 \u00f0mT\u00de \u00fe kp], 8k 2 Z.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "The conditions (i) in Lemma 1 ensures stability for s \u00bc 0, (ii) confirms that no pure imaginary zeros in the limiting case and condition (iii) establishes the absence of imaginary zeros. It may be observed that F 1 ; F 2 ; F 3 are obtained from",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "F\u00f0k; s\u00de by letting e \u00c0ks \u00bc 1; \u00c01; \u00f01 \u00c0 kT\u00de=\u00f01 \u00fe kT\u00de respectively. The Lemma 1 is a necessary and sufficient condition and violation of any of the conditions (i), (ii) or (iii) reflects corresponding change in stability of characteristic equation ( [20] ).",
+            "cite_spans": [
+                {
+                    "start": 248,
+                    "end": 252,
+                    "text": "[20]",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Employing Lemma 1, we shall present another set of conditions for preservation or change of stability of the system. To apply above lemma, we shall denote (8) as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "1. Let e \u00c0ks \u00bc 1 in (9). The characteristic polynomial becomes",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "clearly F 1 \u00f0k\u00de -0 for R\u00f0k\u00de P 0, by our Theorem 3.1. This ensures stability for s \u00bc 0.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "2. Let e \u00c0ks \u00bc \u00c01 in (9) to get F 2 \u00f0k\u00de P\u00f0k\u00de \u00c0 Q\u00f0k\u00de \u00bc k 3 \u00fe lk 2 \u00fe \u00f0m \u00c0 l 1 \u00dek \u00fe \u00f0n \u00c0 m 1 \u00c0 n 1 \u00de:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "holds. Clearly F 2 \u00f0k\u00de -0 for R\u00f0k\u00de \u00bc 0; k -0 provided any of the following conditions (a) m \u00c0 l 1 6 0 or (b) l\u00f0n \u00c0 m 1 \u00c0 n 1 \u00de 6 0 or l\u00f0m \u00c0 l 1 \u00den \u00c0 m 1 \u00c0 n 1 holds, ensuring the presence of no imaginary zeros in the limiting case. 3. Let e \u00c0ks \u00bc 1\u00c0kT 1\u00fekT from some T > 0. Then (9) becomes, (9) has no pure imaginary zeros, ensuring no change of stability. Now,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "\u00bc 0 and separating the real and imaginary parts, we get real part as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": ". The following cases arise:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "1. no real m satisfies this if \u00f0l 1 \u00fem\u00de\u00fe\u00f0n\u00c0m 1 \u00c0n 1 \u00deT 1\u00felT < 0 holds for any T > 0. This after a rearrangement gives l\u00f0n \u00c0 m 1 \u00c0 n 1 \u00deT 2 \u00fe \u00bdl\u00f0l 1 \u00fe m\u00de \u00fe\u00f0n \u00c0 m 1 \u00c0 n 1 \u00deT \u00fe \u00f0l 1 \u00fe m\u00de < 0. Thus, if l\u00f0n \u00c0 m 1 \u00c0 n 1 \u00de > 0; \u00bdl\u00f0l 1 \u00fe m\u00de \u00fe \u00f0n \u00c0 m 1 \u00c0 n 1 \u00de > 0 and \u00f0l 1 \u00fe m\u00de > 0, no real m exists, thus, establishing the no change of stability for s P 0 given earlier.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "2. using the value of m 2 from imaginary part in real part, we get",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "This after a rearrangement becomes \u00c0 l\u00f0n \u00c0 m 1 \u00c0 n 1 \u00de\u00f0m \u00c0 l 1 \u00deT 3 \u00fe \u00f0n \u00c0 m 1 \u00c0 n 1 \u00de 2 h \u00c0 \u00f0m 2 \u00c0 l 2 1 \u00del \u00fe l 2 \u00f0n \u00c0 m 1 \u00c0 n 1 \u00de h",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "This may be written as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "We summarize the above discussion in Theorem 3.3 as Here, s \u00fe \u00bc 2 m\u00fe tan \u00c01 \u00f0m \u00fe T \u00fe \u00de; m \u00fe \u00bc l 1 \u00fem\u00fe\u00f0n\u00c0m 1 \u00c0n 1 \u00deT\u00fe 1\u00felT\u00fe and T \u00fe > 0 is a solution of (10).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "We shall now study the influence of time delay only in recovery on the stability of the system. We wish to understand clearly whether the time delays s and d influence independently or are they introduced out of mathematical curiosity. To be specific, if d has no influence on the system, better we ignore it and proceed with s only.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "3.3. Case in which the parameters s \u00bc 0 and d > 0",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "In this case the characteristic Eq. (6) reduces to",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "We shall utilize Lemma 1 again to analyze the stability behavior of the system in this case also. The following cases may arise 1. Let e \u00c0kd \u00bc 1 in (11) to get F 1 \u00f0k\u00de k 3 \u00fe lk 2 \u00fe \u00f0l 1 \u00fe m\u00dek \u00fe n \u00fe m 1 \u00fe n 1 \u00bc 0:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Recalling Theorem 3.1, F 1 \u00f0k\u00de -0 for R\u00f0k\u00de P 0. 2. Let e \u00c0kd \u00bc \u00c01 in (11) to get F 2 \u00f0k\u00de k 3 \u00fe lk 2 \u00fe \u00f0l 1 \u00fe m\u00dek \u00fe n \u00fe m 1 \u00c0 n 1 \u00bc 0:",
+            "cite_spans": [
+                {
+                    "start": 69,
+                    "end": 73,
+                    "text": "(11)",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Letting k \u00bc im, and separating real and imaginary parts, we get F 2 \u00f0im\u00de \u00bc n \u00fe m 1 \u00c0 n 1 \u00c0 lm 2 \u00fe \u00f0l 1 \u00fe m \u00c0 m 2 \u00demi:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "It is easy to see that F 2 \u00f0im\u00de -0 if",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "This condition ensures no pure imaginary zeros in limiting case. 3. Consider e \u00c0kd \u00bc 1\u00c0kT 1\u00fekT . Then (11) gives",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "For pure imaginary zeros, we let k \u00bc im in the above. Separating real and imaginary parts, we get real part as \u00bdm 4 \u00c0 \u00f0l 1 \u00fe m\u00dem 2 T \u00c0 lm 2 \u00fe n \u00fe m 1 \u00fe n 1 \u00bc 0:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "and imaginary part as \u00bd\u00c0lm 3 \u00fe \u00f0n \u00fe m 1 \u00c0 n 1 \u00demT \u00fe \u00bd\u00c0m 3 \u00fe \u00f0l 1 \u00fe m\u00dem \u00bc 0:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "Eliminating T and rearranging we get for m -0 m 6 \u00fe \u00f0l 2 \u00c0 2\u00f0l 1 \u00fe m\u00de\u00dem 4 \u00fe \u00bd\u00f0l 1 \u00fe m\u00de 2 \u00c0 2l\u00f0n \u00fe m 1 \u00dem 2 \u00fe \u00f0n \u00fe m 1 \u00de 2 \u00c0 n 2 1 \u00bc 0:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "If the inequalities l 2 \u00c0 2\u00f0l 1 \u00fe m\u00de P 0; \u00f0l 1 \u00fe m\u00de 2 \u00c0 2l\u00f0n \u00fe m 1 \u00de P 0 and \u00f0n \u00fe m 1 \u00de 2 \u00c0 n 2 1 P 0 \u00f014\u00de hold then (13) yields no real solution for m. Thus, the stability/instability of (11) is preserved for any length of delay d.",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 121,
+                    "text": "(13)",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Delay only in incubation"
+        },
+        {
+            "text": "The following cases may arise:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "1. If any of the following conditions \u00f0i\u00de:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "hold, a change of sign indicates that (13) We now consider the characteristic equation of the system (2) given by (6) . The condition for a change in stability (occurrence of Hopf bifurcation) is indicated by a zero of the real part of k \u00bc l \u00fe im of (6). Letting l \u00bc 0 in (7) we get R\u00f0F\u00f0im\u00de\u00de \u00bc \u00c0lm 2 \u00fe n \u00fe n 1 cos m\u00f0s \u00fe d\u00de \u00fe l 1 m sin ms \u00fe m 1 cosms:",
+            "cite_spans": [
+                {
+                    "start": 114,
+                    "end": 117,
+                    "text": "(6)",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "I\u00f0F\u00f0im\u00de\u00de \u00bc \u00c0m 3 \u00fe mm \u00c0 n 1 sin m\u00f0s \u00fe d\u00de \u00fe l 1 mcosms \u00fe m 1 sin ms:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "Squaring and adding, we get W\u00f0m\u00de m 6 \u00fe \u00f0l 2 \u00c0 2m\u00dem 4 \u00fe \u00f0m 2 \u00c0 2ln \u00c0 l 2 1 \u00dem 2 \u00fe \u00f0n 2 \u00fe n 2 1 \u00c0 m 2 1 \u00de \u00fe 2\u00f0n \u00c0 lm 2 \u00de cos m\u00f0s \u00fe d\u00de \u00fe 2\u00f0mm \u00c0 m 3 \u00de sin m\u00f0s \u00fe d\u00de:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "We establish the following result. can show that W\u00f0m 0 \u00de > 0 then the stability/instability is preserved. Without loss of generality, let m 0 be the smallest positive root of R\u00f0F\u00f0im\u00de\u00de \u00bc 0. Since, n 1 cos m\u00f0s \u00fe d\u00de 6 jn 1 j; l 1 m sin ms 6 jl 1 jm and m 1 cosms 6 jm 1 j for any positive m we have lm 2 \u00c0 n 6 jn 1 j \u00fe jl 1 jm \u00fe jm 1 j, from R\u00f0F\u00f0im\u00de\u00de. Consider lm 2 \u00c0 jl 1 jm \u00c0 \u00f0n \u00fe jn 1 j \u00fe jm 1 j\u00de \u00bc 0. This has clearly two roots and the bigger one is given by holds. Since m 0 6 m \u00fe this inequality is satisfied provided (19) holds. Thus, W\u00f0m 0 \u00de > 0, and hence, no change of stability (instability) occurs.",
+            "cite_spans": [
+                {
+                    "start": 521,
+                    "end": 525,
+                    "text": "(19)",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "Again, from (18), we observe that W\u00f00\u00de < 0 if n 2 \u00fe 2n \u00fe n 2 1 < m 2 1 holds and W\u00f0m\u00de > 0 for large m and therefore, W\u00f0m\u00de \u00bc 0 has a real positive solution. Let m \u00fe denote smallest such root. Now (18) may be written as",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "where,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "For the value of m \u00fe so obtained, we have from (20),",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Change of stability"
+        },
+        {
+            "text": "We consider an important special case of (2) in which f \u00f0x; y\u00de xy, the simple interaction term. We further assume that, p\u00f0y\u00de y and V\u00f0x\u00de x, the recovery and the vaccination, are linear, then (2) takes the form",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "for which the equilibrium points are given by the solutions of",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "Clearly, a c\u00fed ; 0; 0 is always a solution of (22) and is a disease-free equilibrium of (21) . If y \u00c3 -0, then from (22),",
+            "cite_spans": [
+                {
+                    "start": 46,
+                    "end": 50,
+                    "text": "(22)",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 88,
+                    "end": 92,
+                    "text": "(21)",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "giving rise to a positive equilibrium solution of (21), provided that bx \u00c3r; \u00f0a \u00c0 \u00f0c \u00fe d\u00dex \u00c3 \u00de\u00f0bx \u00c3 \u00c0 r\u00de > 0 or simply if",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "holds. Since, b 1 ",
+            "cite_spans": [
+                {
+                    "start": 16,
+                    "end": 17,
+                    "text": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "Hence, (23) is a necessary and sufficient condition for the existence of a positive (endemic) equilibrium for (21) .",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 114,
+                    "text": "(21)",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "entire YZ plane becomes the equilibria. Now assuming \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de is a positive equilibrium of (21) we formulate the Theorem 4.1 as Proof of Theorem 4.1. Using (22) in (21) we rewrite (21) as",
+            "cite_spans": [
+                {
+                    "start": 166,
+                    "end": 170,
+                    "text": "(22)",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "x 0 \u00bc \u00c0by\u00f0x \u00c0 x \u00c3 \u00de \u00c0 bx \u00c3 \u00f0y \u00c0 y \u00c3 \u00de \u00c0 \u00f0c \u00fe d\u00de\u00f0x \u00c0 x \u00c3 \u00de \u00fe a\u00f0z \u00c0 z \u00c3 \u00de y 0 \u00bc b 1 \u00f0x\u00f0t \u00c0 s\u00de \u00c0 x \u00c3 \u00dey z 0 \u00bc r\u00f0y\u00f0t \u00c0 d\u00de \u00c0 y \u00c3 \u00de \u00c0 a\u00f0z \u00c0 z \u00c3 \u00de: \u00f024\u00de Now consider the function V\u00f0x; y; z\u00de jx \u00c0 x \u00c3 j \u00fe j log y \u00c0 log y \u00c3 j \u00fe jz \u00c0 z \u00c3 j\u00fe b 1 Z t t\u00c0s jx\u00f0u\u00de \u00c0 x \u00c3 jdu \u00fe r Z t t\u00c0d jy\u00f0u\u00de \u00c0 y \u00c3 jdu:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Global stability results"
+        },
+        {
+            "text": "V\u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de \u00bc 0 and V\u00f0x; y; z\u00de P 0 for x P 0; y P 0; z P 0 and V ! 1 as x; y; z ! 1.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "The Upper Dini derivative of V, along the solutions of (24), is",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "by hypotheses:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "The rest of the argument follows from standard arguments and the proof is complete.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "We shall now provide a result for the global stability of the disease-free equilibrium. Suppose that x\u00f0t\u00de < d 1 \u00fer b 1 , for all t. Now solving the second equation of (21) as a linear equation in y, we get, y\u00f0t\u00de \u00bc y\u00f00\u00dee \u00f0b 1 xs\u00c0d 1 \u00c0r\u00det ! 0 for sufficiently large t. Using this in the third equation of (21), we have for large t, z\u00f0t\u00de ! z\u00f00\u00dee \u00c0at ! 0; then the first equation of (21) for sufficiently large t becomes",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "x 0 \u00f0t\u00de \u00bc a \u00c0 \u00f0c \u00fe d\u00dex\u00f0t\u00de whose solution is ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Clearly"
+        },
+        {
+            "text": "We have carried out simulations using subroutines developed in Matlab. Further, we have employed built-in function DDE23 [38] , a variable step size numerical integration routine for solving delay differential equations in Matlab. For more details on the DDE23 solver readers may refer to www.mathworks.com/dde_tutorial. We have utilized the plot function and other advanced graphical tools available in Matlab to obtain results and figures presented in this work.",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 125,
+                    "text": "[38]",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Examples and simulations"
+        },
+        {
+            "text": "In all figures, curves drawn with dash-dot line and diamond marker (\u00c0:r\u00c0.) denote exposed populations, while infected are represented by dashed line with pentagram marker (\u00c0 \u00c0 I \u00c0 \u00c0) and curves denoted by solid line with square marker (\u00c0\u00c3\u00c0) stand for recovered populations. Simulations are carried out for various lengths of delays in all three cases s > 0; d \u00bc 0; s \u00bc 0; d > 0 and s > 0; d > 0. Figures generated stand for all these cases unless specified. Whenever there is a change in stability for a particular length of delay, the delay length is specified.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Examples and simulations"
+        },
+        {
+            "text": "First, we consider the system (21) or (2) with f \u00f0x; y\u00de xy; V\u00f0x\u00de x and P\u00f0y\u00de y to illustrate the results.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Examples and simulations"
+        },
+        {
+            "text": "Consider the system, ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.1"
+        },
+        {
+            "text": "Consider the system,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.2"
+        },
+        {
+            "text": "wherein, all the parameters are same as in (25) except that r \u00bc 4 here. This example studies the influence of a higher treatment rate of the effected people than in earlier exam-",
+            "cite_spans": [
+                {
+                    "start": 43,
+                    "end": 47,
+                    "text": "(25)",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Example 5.2"
+        },
+        {
+            "text": "\u00f05; 0; 0\u00de is an equilibrium solution of (26). The characteristic Eq. (5) further reduces to",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.2"
+        },
+        {
+            "text": ". This clearly shows that (26) is stable and behaves as a delay free system. This is further supported by the observation that the conditions of Theorem 4.2 for the global stability of \u00f05; 0; 0\u00de are satisfied, and thus, the disease has no influence. Dynamics of the system (26) are shown in Fig. 4 .",
+            "cite_spans": [
+                {
+                    "start": 273,
+                    "end": 277,
+                    "text": "(26)",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 291,
+                    "end": 297,
+                    "text": "Fig. 4",
+                    "ref_id": null
+                }
+            ],
+            "section": "Example 5.2"
+        },
+        {
+            "text": "Consider the system, x 0 \u00bc 10 \u00c0 xy \u00c0 4x \u00fe z y 0 \u00bc x\u00f0t \u00c0 s\u00dey \u00c0 2y",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.3"
+        },
+        {
+            "text": "We now study the influence of choosing higher amount of vaccination i.e, we set the parameter c \u00bc 3 in the Example",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.3"
+        },
+        {
+            "text": "Applying Theorem 3.1, we get stability of the delay-free system. Now (10) takes the form G\u00f0T\u00de 42T 3 \u00c0 46T 2 \u00c0 117T \u00c0 8 \u00bc 0. This equation has a positive solution for T, T \u00fe \u00bc 2:325\u00f0approx\u00de. Further, ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.3"
+        },
+        {
+            "text": "Consider the system,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "x 0 \u00bc 10 \u00c0 2xy \u00c0 4x \u00fe z y 0 \u00bc 2x\u00f0t \u00c0 s\u00dey \u00c0 5y",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "We have chosen r \u00bc 4;",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "We shall study the influence of high recovery rate and vaccination rate together when the infection rate is doubled when compared to earlier examples.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "\u00f02:5; 0; 0\u00de is an equilibrium solution of (28) . As in Example 5.2, the characteristic equation is F\u00f0k\u00de \u00bc k 3 \u00fe 3k 2 \u00fe 4k \u00bc 0 for which both the non zero roots certainly have negative real parts. Thus, the disease-free equilibrium is locally stable.",
+            "cite_spans": [
+                {
+                    "start": 42,
+                    "end": 46,
+                    "text": "(28)",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "In the subsequent examples we choose non-linear functions for f ; V and/or p. 5.5. Example 5.5.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "Consider the system, 5.6. Example 5.6.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "Consider the system,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "with non-linearities both in infection and vaccination. The parameters chosen are r \u00bc 3; We shall now introduce a non-linear recovery function in our model. Consider the system,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "wherein, a \u00bc 1: ; 0; 0 which is locally asymptotically stable for all delays s and d as may be seen in Fig. 7 .",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 103,
+                    "end": 109,
+                    "text": "Fig. 7",
+                    "ref_id": "FIGREF13"
+                }
+            ],
+            "section": "Example 5.4."
+        },
+        {
+            "text": "The System (25) in Example 5.1 provides a situation where disease-free equilibrium \u00f05; 0; 0\u00de and an endemic equilibrium \u00f02; 6; 6\u00de do exist. However, conditions are conducive for both local and global stability of \u00f02; 6; 6\u00de. This indicates the prevalence of infection irrespective of a time delay and provide no scope for disease-free environment.",
+            "cite_spans": [
+                {
+                    "start": 11,
+                    "end": 15,
+                    "text": "(25)",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "In Example 5.2, we have raised the treatment rate from r \u00bc 1 in (25) to r \u00bc 4 in (26) . All other parameters and functional relations are kept as they are in (25) . In this case only a disease-free equilibrium \u00f05; 0; 0\u00de exists and there is no possibility of an endemic equilibrium. Theory says that \u00f05; 0; 0\u00de is asymptotically stable both locally and globally creating an eventual infection-free environment. From this we notice that as more and more infected are treated, the possibility of infected contacting the susceptible comes down and spread of disease considerably reduced and more susceptible (x \u00c3 \u00bc 5) remain in the system as compared to x \u00c3 \u00bc 2 in the Example 5.1.",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 68,
+                    "text": "(25)",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 81,
+                    "end": 85,
+                    "text": "(26)",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 158,
+                    "end": 162,
+                    "text": "(25)",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "In order to understand the influence of vaccination effort on the system in Example 5.1, we raised the vaccination parameter from c \u00bc 1 in system (25) to c \u00bc 3 in system (27) (Example 5.3). All other parameters are kept as they are in Example 5.1. The system possesses two equilibria \u00f02:5; 0; 0\u00de and \u00f02; 2; 2\u00de. When compared to the situation in Example 5.1, the equilibrium values of infected and recovered populations are considerably reduced from y \u00c3 \u00bc 6 \u00bc z \u00c3 to y \u00c3 \u00bc 2 \u00bc z \u00c3 , may be due to increased vaccination efforts. For small values of time delays, the disease equilibrium \u00f02; 2; 2\u00de is stable but as delay in incubation increases the equilibrium becomes unstable as predicted by the theory. Wild fluctuations in populations are noticed for delay parameter s > 4 which may be seen in Figs. 6f. This indicates that time delay in incubation has an influence on the system even under enhanced vaccination.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "In Example 5.4 (system 28), though the rate of conversion of susceptible into infected, that is b 1 has been doubled from b 1 \u00bc 1 in (25) to b 1 \u00bc 2 in (28), we have stability of disease free equilibrium \u00f02:5; 0; 0\u00de under the influence of higher vaccination and treatment \u00f0c \u00bc 3; r \u00bc 4\u00de in (28) compared to c \u00bc 1; r \u00bc 1 of (25).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "The nonlinear function for infection chosen in Example 5.5 (see system (29) ) provides no scope for the existence of a disease free equilibrium and infection prevails in all cases. Similarly, nonlinear functions of vaccination, infection and treatment are considered in Examples 5.6 and 5.7. In both these cases, the corresponding disease free equilibrium is locally asymptotically stable independent of time delays.",
+            "cite_spans": [
+                {
+                    "start": 71,
+                    "end": 75,
+                    "text": "(29)",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "Remark 5.1. For the systems in Examples 5.2, 5.4, 5.6 and 5.7, we notice that only a disease-free equilibrium exists. Further, D \u00bc 0; C \u00bc 0 and A 6 0 at this equilibrium and for the choice of functions made. As we have noticed in Remark 3.1, the system is, thus, behaving like a delay-free system and the disease-free equilibrium is locally asymptotically stable, while Examples 5.1, 5.3 and 5.5 provide a disease environment.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Observations"
+        },
+        {
+            "text": "In this paper, we proposed a mathematical model describing the dynamics of a population consisting of susceptible, infected and recovered by treatment categories. Existence of equilibria and their local stability are studied in detail. An attempt is made to understand the influence of vaccination and treatment on the populations in the presence of time delays in infection, recovery. Results on global stability are also established for a special case of the proposed model. Situations where the effect of time delays on the stability of the equilibria is null and void are identified in this special case. It is important and interesting to further explore this view point for more general cases. In [2] it is observed that the vaccination threshold rate is admissible, beyond which the infection gets eradicated. But Examples 5.1 and 5.3 illustrate that vaccination alone cannot eradicate infection but it is the treatment rate that is playing a key role in controlling the disease when the system is influenced by time delays.",
+            "cite_spans": [
+                {
+                    "start": 703,
+                    "end": 706,
+                    "text": "[2]",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "The present study raises some basic questions such as, 1. In Example 5.3, it is noticed that the equilibrium \u00f02; 2; 2\u00de is locally stable as long as the time delay in infection s < 4. Thereafter this equilibrium becomes unstable as predicted by the theory (see results in Sections 3 and 4). At the same time, simulations show that for s > 4 the system is behaving very wild and large fluctuations are observed in infected and recovered populations. This situation is more vulnerable than having a stable endemic equilibrium where the situation may not be much beyond control. Thus, existence of a stable endemic equilibrium may sometimes be a better choice. Further, the behavior of the system under the simultaneous influence of time delays (general case, Section 3.4) needs to be investigated in detail. For commensurate delays, study in Section 3.4 may provide an estimate but for other types of delays, more explicit estimates are required. However, we need to analyze such situations further. 2. Most of the mathematical studies on biological models concentrate on the stability of equilibria (known or identifiable solutions) of the system. Consider the following system.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "x 0 \u00bc 10 \u00c0 3xy \u00c0 2x \u00fe z y 0 \u00bc 3x\u00f0t \u00c0 s\u00dey \u00c0 5y",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "This has both disease free \u00f05; 0; 0\u00de and endemic \u00f0 5 3 ; 20 9 ; 20 9 \u00de equilibria. But neither Theorem 4.2 nor Theorem 4.1 holds for this case. Also system (29) in Example 5.5 allows no possibility for existence of a disease free equilibrium, and hence, no scope for disease free environment. Comments made in Section 2.1 are aimed at such situations. In such cases, we have to study the ways of controlling the infected populations rather than the stability of the system. This raises the following questions. How to control y? Can we find a small P 0 such that y\u00f0t\u00de 6 for some t P T. Can we create an inactive state (a 'zone of no activation') for the spreading of the disease? That means can we identify and keep the infected people in a quarantine (at least till vaccination is effective or treatment available is sufficient to meet the requirements)? This would be the point of contention in our future exposition.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 160,
+                    "text": "(29)",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "It is observed in [40] that for diseases like Chagas, the effort of vaccination is not adequate to control the disease and treatment is recommended in both acute and chronic stages of diseases. System (2) through Examples 5.1 illustrates such cases. Our examples conclude that when the treatment rate is high, a disease-free environment is created (stability of \u00f02; 6; 6\u00de -Example 5.1 to stability of \u00f05; 0; 0\u00de -Example 5.2). In the presence of improved vaccination effort alone, the infected and hence, recovered populations are lowered (stability of \u00f02; 6; 6\u00de -Example 5.1 to stability of \u00f02; 2; 2\u00de -Example 5.3). Under the influence of better vaccination in addition to high treatment rate, we notice a considerable decrease in susceptible population due to increased rate of infection (stability of \u00f05; 0; 0\u00de -Example 5.2 to stability of \u00f02:5; 0; 0\u00de -Example 5.4). It would be interesting to see how far our model explains the dynamics of Chagas disease.",
+            "cite_spans": [
+                {
+                    "start": 18,
+                    "end": 22,
+                    "text": "[40]",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "On the whole, our common expectations on the model really come true and this prompts us to analyze this model further with regard to its applicability for understanding various infectious diseases -this would be our scope of future study. We need to present simpler conditions on parameters and provide results for global asymptotic stability for general infection functions f \u00f0x; y\u00de.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "Also, global stability analysis of the model with general interaction, vaccination and recovery functions is in the offing. Infection rate, treatment rate and vaccination are the three important parameters that essentially decide the dynamics of the spread of a disease. An effort has to be made for estimation of these parameters in order to decide the measures of control of disease. Our investigation on these lines will be made open soon.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "Discussion and open research problems away from the system (isolation) or measures taken up by society for controlling the spread of the disease. Of course, a b\u00f0t; y\u00de < 0 condition says that the situation is encouraging for growth of infected population.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "7."
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Numerical study of SARS epidemic model with the inclusion of diffusion in the system",
+            "authors": [
+                {
+                    "first": "Naheed",
+                    "middle": [],
+                    "last": "Afia",
+                    "suffix": ""
+                },
+                {
+                    "first": "Lucy",
+                    "middle": [],
+                    "last": "Singh Manmohan",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "David",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Appl Math Comput",
+            "volume": "2209",
+            "issn": "",
+            "pages": "480--98",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Mathematical models of vaccination",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Scherer Almut",
+                    "suffix": ""
+                },
+                {
+                    "first": "Angela",
+                    "middle": [],
+                    "last": "Mclean",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Br Med Bull",
+            "volume": "62",
+            "issn": "",
+            "pages": "187--99",
+            "other_ids": {}
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Modeling and analysis of a marine bacteriophage infection",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Beretta",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kuang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Math Biosci",
+            "volume": "149",
+            "issn": "",
+            "pages": "57--76",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "A multi-stage compartmental model for HIV-infected individuals: I waiting time approach",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Billarda",
+                    "suffix": ""
+                },
+                {
+                    "first": "Pwa",
+                    "middle": [],
+                    "last": "Dayananda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Math Biosci",
+            "volume": "249",
+            "issn": "",
+            "pages": "92--101",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Mathematical analysis of a three-strain tuberculosis transmission model",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Bhunu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Appl Math Model",
+            "volume": "35",
+            "issn": "9",
+            "pages": "4647--60",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "A simple noise model with memory for biological systems",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Chichigina",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Valenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Spagnalo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Fluct Noise Lett",
+            "volume": "5",
+            "issn": "2",
+            "pages": "243--50",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Mathematical Epidemiology of Infectious Disease: Model building, analysis and interpretation",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Diehmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Three species food-chain models with mutual interference and time delays",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Erbe",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Freedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Sree",
+                    "middle": [
+                        "Hari"
+                    ],
+                    "last": "Hi",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Math Biosci",
+            "volume": "80",
+            "issn": "",
+            "pages": "57--80",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Nonmonotonic behavior of spatiotemporal pattern formation in a noisy Lotka-Volterra system",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fiasconaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Valenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Spagnolo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Acta Phys Pol B",
+            "volume": "35",
+            "issn": "",
+            "pages": "491--1500",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Stability criteria for a system involving two time delays",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Freedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Sree",
+                    "middle": [
+                        "Hari"
+                    ],
+                    "last": "Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "SIAM J Appl Math",
+            "volume": "46",
+            "issn": "4",
+            "pages": "552--60",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "persistence and extinction in predator -prey system with discrete and continuous time delays",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Freedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Sree",
+                    "middle": [
+                        "Hari"
+                    ],
+                    "last": "Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                },
+                {
+                    "first": "Jaya",
+                    "middle": [],
+                    "last": "Lakshmi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Stability",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "WSSIAA",
+            "volume": "1",
+            "issn": "",
+            "pages": "221--259",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Mathematical analysis of an age-structured model for malaria transmission dynamics",
+            "authors": [
+                {
+                    "first": "Forouzannia",
+                    "middle": [],
+                    "last": "Farinaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "Gumel",
+                    "middle": [],
+                    "last": "Abba",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Math Biosci",
+            "volume": "247",
+            "issn": "",
+            "pages": "80--94",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Global stability for SIR and SEIR epidemic models with nonlinear incidence rate",
+            "authors": [
+                {
+                    "first": "Huanga",
+                    "middle": [],
+                    "last": "Gang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Takeuchi",
+                    "middle": [],
+                    "last": "Yasuhiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ma",
+                    "middle": [],
+                    "last": "Wanbiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wei",
+                    "middle": [],
+                    "last": "Deijun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Bull Math Biol",
+            "volume": "72",
+            "issn": "5",
+            "pages": "1192--207",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "A stochastic model for epidemics based on renewal equation",
+            "authors": [
+                {
+                    "first": "Jlw",
+                    "middle": [],
+                    "last": "Gielen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Biol Syst",
+            "volume": "8",
+            "issn": "",
+            "pages": "1--20",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "A stochastic differential equation SIS epidemic model",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gray",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Greenhalgh",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Mao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "SIAM J Appl Math",
+            "volume": "71",
+            "issn": "3",
+            "pages": "876--902",
+            "other_ids": {}
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "Global stability of a SIR epidemic model with constant immigration",
+            "authors": [
+                {
+                    "first": "Li",
+                    "middle": [],
+                    "last": "Guihua",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wendi",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Chen",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Chaos, Solitons Fractals",
+            "volume": "30",
+            "issn": "",
+            "pages": "1012--1021",
+            "other_ids": {}
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "Transmission dynamics of methicillin-resistant Staphylococcus aureus in a medical intensive care unit",
+            "authors": [
+                {
+                    "first": "Im",
+                    "middle": [
+                        "Iain"
+                    ],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "Steve",
+                    "middle": [],
+                    "last": "Barrass",
+                    "suffix": ""
+                },
+                {
+                    "first": "Didier",
+                    "middle": [],
+                    "last": "Leach",
+                    "suffix": ""
+                },
+                {
+                    "first": "Stphane",
+                    "middle": [],
+                    "last": "Pittet",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Hugonnet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J R Soc Interface",
+            "volume": "9",
+            "issn": "75",
+            "pages": "2639--52",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "Largest-ever outbreak of Ebola virus disease thrusts experimental therapies vaccines into spotlight",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hampton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "JAMA",
+            "volume": "312",
+            "issn": "10",
+            "pages": "987--996",
+            "other_ids": {
+                "DOI": [
+                    "10.1001/jama.2014.11170"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "Epidemics in two competing species",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pugliese",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nonlinear Anal: Real World Appl",
+            "volume": "10",
+            "issn": "2",
+            "pages": "723--767",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "Simplified analytical stability test for systems with commensurate time delays",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hertz",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Jury",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Zeheb",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "IEE Proc Control Theory Appl",
+            "volume": "131",
+            "issn": "1",
+            "pages": "52--58",
+            "other_ids": {}
+        },
+        "BIBREF20": {
+            "ref_id": "b20",
+            "title": "An epidemic model with delay and a nonlinear incidence rate",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Driessche",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "J Math Biol",
+            "volume": "27",
+            "issn": "",
+            "pages": "49--64",
+            "other_ids": {}
+        },
+        "BIBREF21": {
+            "ref_id": "b21",
+            "title": "Some epidemic models with nonlinear incidence",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Driessche",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J Math Biol",
+            "volume": "29",
+            "issn": "",
+            "pages": "271--87",
+            "other_ids": {}
+        },
+        "BIBREF22": {
+            "ref_id": "b22",
+            "title": "Nonlinear oscillations in epidemic models",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Stetch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Driessche",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "SIAM J Appl Math",
+            "volume": "40",
+            "issn": "",
+            "pages": "1--9",
+            "other_ids": {}
+        },
+        "BIBREF23": {
+            "ref_id": "b23",
+            "title": "Stability analysis of a stochastic SIR epidemic model with specific nonlinear incidence rate",
+            "authors": [
+                {
+                    "first": "Adnani",
+                    "middle": [],
+                    "last": "Jihad",
+                    "suffix": ""
+                },
+                {
+                    "first": "Hattaf",
+                    "middle": [],
+                    "last": "Khalid",
+                    "suffix": ""
+                },
+                {
+                    "first": "Yousfi",
+                    "middle": [],
+                    "last": "Noura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Int J Stoch Anal",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2013/431257"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "ref_id": "b24",
+            "title": "Stability and bifurcation analysis in a delayed SIR model",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Chaos, Solitons Fractals",
+            "volume": "35",
+            "issn": "3",
+            "pages": "609--628",
+            "other_ids": {}
+        },
+        "BIBREF25": {
+            "ref_id": "b25",
+            "title": "Global stability for an epidemic model with applications to feline infectious peritonitis and tuberculosis",
+            "authors": [
+                {
+                    "first": "Nadeau",
+                    "middle": [],
+                    "last": "Julie",
+                    "suffix": ""
+                },
+                {
+                    "first": "Mccluskey",
+                    "middle": [],
+                    "last": "Connell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Appl Math Comput",
+            "volume": "230",
+            "issn": "",
+            "pages": "473--83",
+            "other_ids": {}
+        },
+        "BIBREF26": {
+            "ref_id": "b26",
+            "title": "A simple stochastic model for an epidemic: numerical experiments with Matlab",
+            "authors": [
+                {
+                    "first": "Ang",
+                    "middle": [],
+                    "last": "Keng-Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Electron J Math Technol",
+            "volume": "1",
+            "issn": "2",
+            "pages": "117--145",
+            "other_ids": {}
+        },
+        "BIBREF27": {
+            "ref_id": "b27",
+            "title": "A Lyapunov function and global properties for SIR and SEIR epidemiological models with nonlinear incidence",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Korobeinikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Maini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Math Biosci Eng",
+            "volume": "1",
+            "issn": "",
+            "pages": "52--60",
+            "other_ids": {}
+        },
+        "BIBREF28": {
+            "ref_id": "b28",
+            "title": "Global properties of a delayed SIR model with temporary immunity and nonlinear incidence rate",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [
+                        "N"
+                    ],
+                    "last": "Kyrychko",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [
+                        "B"
+                    ],
+                    "last": "Blyuss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nonlinear Anal Real World Appl",
+            "volume": "6",
+            "issn": "3",
+            "pages": "495--507",
+            "other_ids": {}
+        },
+        "BIBREF29": {
+            "ref_id": "b29",
+            "title": "Dynamics of two competing species in the presence of Levy noise sources",
+            "authors": [
+                {
+                    "first": "La",
+                    "middle": [],
+                    "last": "Cognata",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Valenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dubkov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Spagnolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Phys Rev E",
+            "volume": "82",
+            "issn": "",
+            "pages": "1--9",
+            "other_ids": {}
+        },
+        "BIBREF30": {
+            "ref_id": "b30",
+            "title": "Dynamics of continuous and discrete time siv models of Gonorrhea transmission",
+            "authors": [
+                {
+                    "first": "Ikc",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Gopalsamy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Dyn Contin Discrete Impuls Syst Ser B Appl Algorithms",
+            "volume": "19",
+            "issn": "",
+            "pages": "351--75",
+            "other_ids": {}
+        },
+        "BIBREF31": {
+            "ref_id": "b31",
+            "title": "Dynamical behaviour of epidemiological models with nonlinear incidence rates",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Levin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Math Biol",
+            "volume": "25",
+            "issn": "4",
+            "pages": "359--80",
+            "other_ids": {}
+        },
+        "BIBREF32": {
+            "ref_id": "b32",
+            "title": "A new mathematical model of syphilis",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Milner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Math Model Nat Phenom",
+            "volume": "5",
+            "issn": "6",
+            "pages": "96--108",
+            "other_ids": {}
+        },
+        "BIBREF33": {
+            "ref_id": "b33",
+            "title": "Stability analysis of a time delayed epidemic model with nonlinear incidence rate",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Naresh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tripathi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Tchuenche",
+                    "suffix": ""
+                },
+                {
+                    "first": "Sharma",
+                    "middle": [],
+                    "last": "Dileep",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Comput Math Appl",
+            "volume": "58",
+            "issn": "2",
+            "pages": "348--59",
+            "other_ids": {}
+        },
+        "BIBREF34": {
+            "ref_id": "b34",
+            "title": "Dynamics of a new strain of the H1N1 influenza a virus incorporating the effects of repetitive contacts",
+            "authors": [
+                {
+                    "first": "Pongsumpun",
+                    "middle": [],
+                    "last": "Puntani",
+                    "suffix": ""
+                },
+                {
+                    "first": "I-Ming",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Comput Math Methods Med",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF35": {
+            "ref_id": "b35",
+            "title": "Emerg Epidemics Manag Control",
+            "authors": [
+                {
+                    "first": "Bisen",
+                    "middle": [],
+                    "last": "Prakash",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                },
+                {
+                    "first": "Raghuvanshi",
+                    "middle": [],
+                    "last": "Ruchika",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF36": {
+            "ref_id": "b36",
+            "title": "Sree Hari Rao V. Modeling the spread of bird flu and predicting outbreak diversity",
+            "authors": [
+                {
+                    "first": "Kumari",
+                    "middle": [],
+                    "last": "Upadhyay Ranjit Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Nitu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nonlinear Anal Real World Appl",
+            "volume": "9",
+            "issn": "4",
+            "pages": "1638--1686",
+            "other_ids": {}
+        },
+        "BIBREF37": {
+            "ref_id": "b37",
+            "title": "Solving DDEs in MATLAB",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Shampine",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Appl Numer Math",
+            "volume": "37",
+            "issn": "",
+            "pages": "441--58",
+            "other_ids": {}
+        },
+        "BIBREF38": {
+            "ref_id": "b38",
+            "title": "Estimation of the parameters of an infectious disease model using neural networks",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sree Hari Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Naresh",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nonlinear Anal Real World Appl",
+            "volume": "11",
+            "issn": "3",
+            "pages": "1810--1818",
+            "other_ids": {}
+        },
+        "BIBREF39": {
+            "ref_id": "b39",
+            "title": "Predictive dynamics: modeling for virological surveillance and clinical management of dengue",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sree Hari Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Naresh",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Dynamics models of infectious diseases. Vector borne diseases",
+            "volume": "I",
+            "issn": "",
+            "pages": "1--41",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-1-4614-3961-51"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "ref_id": "b40",
+            "title": "A new intelligence-based approach for computer-aided diagnosis of dengue fever",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sree Hari Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Naresh",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Inf Technol Biomed IEEE Trans",
+            "volume": "16",
+            "issn": "1",
+            "pages": "112--120",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/TITB.2011.2171978"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "ref_id": "b41",
+            "title": "Dynamics models of infectious diseases. Non vector-borne diseases",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sree Hari Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Naresh",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "",
+            "volume": "II",
+            "issn": "",
+            "pages": "1--30",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-1-4614-9224-51"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "ref_id": "b42",
+            "title": "Stability of differential systems involving time lags",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sree Hari Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Phaneendra",
+                    "middle": [],
+                    "last": "Bhrm",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Adv Math Sci Appl",
+            "volume": "8",
+            "issn": "2",
+            "pages": "948--64",
+            "other_ids": {}
+        },
+        "BIBREF43": {
+            "ref_id": "b43",
+            "title": "Local stability of a SIR model and effect of time delay",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Tchuenche",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nwagwo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Math Models Appl Sci",
+            "volume": "32",
+            "issn": "16",
+            "pages": "2160--75",
+            "other_ids": {}
+        },
+        "BIBREF44": {
+            "ref_id": "b44",
+            "title": "Global behaviour of a SIR epidemic model with time delay",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Tchuenche",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nwagwo",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Levins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Math Models Appl Sci",
+            "volume": "30",
+            "issn": "6",
+            "pages": "733--782",
+            "other_ids": {}
+        },
+        "BIBREF45": {
+            "ref_id": "b45",
+            "title": "Stability analysis of a delayed SIR epidemic model with stage structure and nonlinear analysis",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Discrete Dyn Nat Soc",
+            "volume": "17",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF46": {
+            "ref_id": "b46",
+            "title": "A stochastic model for early HIV-I population dynamics",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Tuckwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "Le",
+                    "middle": [],
+                    "last": "Corfec",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Theorl Biol",
+            "volume": "195",
+            "issn": "",
+            "pages": "451--63",
+            "other_ids": {}
+        },
+        "BIBREF47": {
+            "ref_id": "b47",
+            "title": "Environmental metal pollution considered as noise: effects on the spatial distribution of benthic forminifera in two coastal marine areas of Sicily(Southern Italy)",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Valenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Tranchina",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Brai",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Caruso",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cosentino",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Spagnolo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Ecol Model",
+            "volume": "213",
+            "issn": "",
+            "pages": "449--62",
+            "other_ids": {}
+        },
+        "BIBREF48": {
+            "ref_id": "b48",
+            "title": "Modeling diseases with latency and relapse",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Van Den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Math Biosci Eng",
+            "volume": "4",
+            "issn": "",
+            "pages": "205--224",
+            "other_ids": {}
+        },
+        "BIBREF49": {
+            "ref_id": "b49",
+            "title": "Analysis of a SIR model with bilinear incidence rate",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Zhen Jin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nonlinear Anal Real World Appl",
+            "volume": "11",
+            "issn": "4",
+            "pages": "2390--402",
+            "other_ids": {}
+        },
+        "BIBREF50": {
+            "ref_id": "b50",
+            "title": "Influence of nonlinear incidence rates upon the behaviour of SIRS epidemiological models",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wei-Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "Levin",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                },
+                {
+                    "first": "Iwasa",
+                    "middle": [],
+                    "last": "Yoh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "J Math Biol",
+            "volume": "23",
+            "issn": "2",
+            "pages": "187--204",
+            "other_ids": {}
+        },
+        "BIBREF51": {
+            "ref_id": "b51",
+            "title": "Global stability of a delayed SIR epidemic model with density dependent birth and death rates",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Yoshida",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Comput Appl Math",
+            "volume": "201",
+            "issn": "2",
+            "pages": "339--386",
+            "other_ids": {}
+        },
+        "BIBREF52": {
+            "ref_id": "b52",
+            "title": "Global asymptotic stability of a delayed SEIRS epidemic model with saturation incidence",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Teng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Chaos, Solitons Fractals",
+            "volume": "37",
+            "issn": "5",
+            "pages": "1456--68",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "1\u00feAexp \u00c0Bx to the number of reported SARS cases (x) in a given time interval. We estimated parameters of the logistic curve from data asC \u00bc 206; B \u00bc 0:1542 and A \u00bc 102. The inflection point of the logistic curve give by ln A B ; C 2 \u00c0 \u00c1 is the point \u00f030; 103\u00de shown in",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "The flow dynamics of a general infectious disease model(1).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Disease-free equilibrium point. vaccination function, identification of infection function and recovery may render this possible.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Theorem 1,[20]). A system with characteristic equation F\u00f0k; s\u00de P\u00f0k\u00de \u00fe Q \u00f0k\u00dee \u00c0ks \u00bc 0 is asymptotically stable if and only if the following conditions are satisfied,",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Assume that the equilibrium solution of (2) is stable for s \u00bc 0 and d \u00bc 0. Then the system preserves its stability for any length of delay s > 0 and d \u00bc 0 provided either of the following cases 1. l\u00f0n \u00c0 m 1 \u00c0 n 1 \u00de > 0; l\u00f0l 1 \u00fe m\u00de \u00fe \u00f0n \u00c0 m 1 \u00c0 n 1 \u00de > 0; l 1 \u00fe m > 0, 2. A P 0; B P 0; C P 0; D P 0 hold, 3. a change of stability occurs at s \u00bc s \u00fe > 0 if any of the coefficients A; B; C; D is negative.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "has one m 2 > 0 yielding two possibilities for m. For these values of m, we have T \u00bc m 2 \u00c0 \u00f0l 1 \u00fe m\u00de n \u00fe m 1 \u00c0 n 1 \u00c0 lm 2 \u00f016\u00de d \u00bc 2 m \u00bdtan \u00c01 mT \u00fe kp; 8k 2 Z: Certainly, T > 0 exists if m 2 lies between l 1 \u00fe m and n\u00fem 1 \u00c0n 1 l and at least one of these terms is positive. This gives rise to a change of stability. 2. If conditions l 2 < 2\u00f0l 1 \u00fe m\u00de\u00de; \u00f0l 1 \u00fe m\u00de 2 > 2l\u00f0n \u00fe m 1 \u00de and \u00f0n \u00fe m 1 \u00de 2 < n 2 1 \u00f017\u00de hold, (13) yields two values for m 2 > 0 and there will be four real values for m. Again from (16) we get two values each for T say T 1 and T 2 and d say d 1 and d 2 . If 0 < d 1 < d 2 holds, then a change in stability occurs first at d 1 and a second bifurcation at d 2 . Similar arguments extend to the three values of m 2 > 0. We consolidate the above discussion as Theorem 3.4 Theorem 3.4. (i) The stability/instability of \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de is preserved for any length of delay d if the conditions (12) and conditions (14) together hold. (ii) If any of the conditions (15) holds then there exists \u00e3 m wherem 2 lies between l 1 \u00fe m and n\u00fem 1 \u00c0n 1 l satisfying (13) and there is a change in stability for d \u00bc 2 m tan \u00c01m e T , where e T \u00bcm 2 \u00c0\u00f0l 1 \u00fem\u00de n\u00fem 1 \u00c0n 1 \u00c0lm 2 > 0. (iii) If (17) holds then there is a possibility of a second bifurcation.3.4. General case in which the parameters s > 0; d > 0",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Assume that the equilibrium solution \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de of (2) is stable (unstable) for s \u00bc 0 and d \u00bc 0.(i) The stability (instability) of \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de is preserved for any s > 0 and d > 0 provided the conditions ) A change of stability or instability occurs if the condition n 2 \u00fe 2n \u00fe n 2 1 < m 2 1 holds.Proof of Theorem 3.5. The conditions for preservation of stability or instability are given by R\u00f0F\u00f0im\u00de\u00de \u00bc 0 andI\u00f0F\u00f0im\u00de\u00de > 0 at any m \u00bc m 0 at l \u00bc 0. Equivalently, if we",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Then clearly m 0 6 m \u00fe . Now from (18), we have W\u00f0m\u00de > 0 is implied if m 6 \u00fe \u00f0l 2 \u00c0 2m\u00dem 4 \u00fe \u00f0m 2 \u00c0 2ln \u00c0 l \u00dem The left hand side is positive quantity and the inequality clearly holds if,",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "The positive equilibrium solution \u00f0x \u00c3 ; y \u00c3 ; z \u00c3 \u00de of (21) is globally asymptotically stable, independent of time delays, provided the parameters satisfy the condition b 1 < min b\u00f0d 1 \u00fer\u00de r ; \u00f0c \u00fe d\u00de n o .",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "and a \u00bc 10. Clearly (2,6,6) is a positive equilibrium of (25). It is easy to see that for s \u00bc 0; d \u00bc 0 \u00bc 756; B \u00bc 1488; C \u00bc 500; D \u00bc 84, all are positive and Eq. (12) becomes 756T 3 \u00fe 1488T 2 \u00fe 500T \u00fe 84 \u00bc 0 and has no solution for T > 0. Thus, the positive equilibrium of the system (25) remains stable for any length of delay s > 0 when d \u00bc 0.Again the conditions of (15) are satisfied, and hence, by Theorem 3.4, d > 0; s \u00bc 0 have no influence on the stability. Also, it may be noticed that the parametric conditions of Theorem 4.1 are satisfied here, and hence, \u00f02; 6; 6\u00de is globally asymptotically stable by virtue of Theorem 4.1, showing that the infection is widely prevalent.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF10": {
+            "text": "Global stability of endemic equilibrium \u00f02; 6; 6\u00de of System (25) in Example 5.1 for all s P 0; d P 0.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF11": {
+            "text": "3\u00c0T 1\u00fe6T > 0 yields m \u00bc m \u00fe \u00bc 0:2125. For these values, we have s \u00fe \u00bc 2 m\u00fe \u00bdtan \u00c01 mT \u00bc 4:3204. As G 0 \u00f0T\u00de > 0 for T > 2 there is no further change of stability after s \u00bc s \u00fe \u00bc 4:3204. Thus, (2,2,2) remains unstable for s > s \u00fe \u00bc 4:3204. Since a 0 \u00bc \u00c04 < 0, the instability of \u00f02; 2; 2\u00de prevails for s > s \u00fe as per Theorem 3.2. Again the condition n 2 \u00fe 2n \u00fe n 2 1 < m 2 1 of Theorem 3.5 is satisfied, also indicating a change in stability of the delay free system in general case. The behavior of solutions of (27) for various lengths of delay are shown in Figs. 5a, 5b and 5c. For s \u00bc 4 damped oscillations are observed as shown inFig. 6a, whereas for s \u00bc 5; 6; 7; 8; 9, periodic solutions are observed in the simulations as may be seen fromFig. 6b-6frespectively. Thus, simulations support theoretical predictions. Disease free and delay free environment in System (26): solutions approaching disease free equilibrium \u00f05; 0; 0\u00de for all lengths of delays under a high treatment rate. Solutions of (27) for various incubation delays; Endemic equilibrium (2, 2, 2) is stable for small delays under higher vaccination effort as compared to system(25).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF12": {
+            "text": "Solutions of (27) for various incubation delays; System(27)is behaving violently as delay s goes on increasing beyond the estimated value of s\u00fe \u00bc 4:3204 showing that endemic equilibrium is unstable.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF13": {
+            "text": "Dynamics of the system (31) for various length of delays in both s and d; Disease free equilibrium ffiffiffiffi 57 p \u00c03 4 ; 0; 0 remains stable under non-linearities in infection, vaccination and treatment.",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": "x\u00f00\u00dee \u00c0\u00f0c\u00fed\u00det :",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "and a \u00bc 1",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": [
+        {
+            "text": "The authors wish to thank the anonymous reviewers for their useful and constructive suggestions.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Acknowledgement"
+        },
+        {
+            "text": "We shall now propose some modifications to (1) taking into consideration some realistic phenomena. We present the following cases as open research problems that would form a part of our further research, 1. We have assumed the growth rate of susceptible population a in (1) as a fixed constant. This assumption holds good when the susceptible population receives input from a large society and the disease visits for a limited period during which the reproduction of susceptible, infected and/or recovered population is not significant. However, in case of chronic diseases such as AIDS, Chagas e.t.c., offspring of all three populations may make sizeable contribution to the system. Thus, we may consider,x 0 \u00bc aU\u00f0x; y; z\u00de \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00de \u00fe azhere aU\u00f0x; y; z\u00de denotes the growth function of susceptible population. 2. Vaccination well before an attack by the disease is rare.May be it is possible in a well prepared society? But in most of the cases, vaccine is not readily available and a delay in its preparation or supply is natural. This may be viewed in two directions.(a) Vaccine takes time c > 0 to develop immunity so that susceptible population vaccinated at time t \u00c0 c are immune at time t. Hence, such population may be removed from the system. Thus, we haveNotice that we have taken V\u00f0x\u00f0t\u00de\u00de V\u00f0t \u00c0 c\u00de in (1) for this case.(b) Vaccination effort being carried out at time t depends on a previous estimation of population.That is, we choose V\u00f0x\u00f0t\u00de\u00de \u00bc V\u00f0x\u00f0t \u00c0 g\u00de\u00de in (1). We have x 0 \u00bc a \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00f0t \u00c0 g\u00de\u00de \u00fe az y 0 \u00bc b 1 f x\u00f0t \u00c0 s\u00de; y\u00f0t\u00de \u00f0 \u00de \u00c0 rP\u00f0y\u00de \u00c0 d 1 y z 0 \u00bc rP y\u00f0t \u00c0 d\u00de \u00f0 \u00de\u00c0az:3. Recovered population may take time to become susceptible again. That means, they could retain health for some time, say, l > 0. This may be represented in (1) as,x 0 \u00bc a \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00de \u00fe az\u00f0t \u00c0 l\u00de y 0 \u00bc b 1 f x\u00f0t \u00c0 s\u00de; y\u00f0t\u00de \u00f0 \u00de \u00c0 rP\u00f0y\u00de \u00c0 d 1 y z 0 \u00bc rP y\u00f0t \u00c0 d\u00de \u00f0 \u00de\u00c0az:4. Though mathematical models can describe many plausible realistic phenomena, their usefulness is acceptable only if they stand the test on the real time data. Thus, it would be interesting to test the results of this article with available real time data so that necessary modifications or improvement of (1) may be taken up suitably. 5. Consider the influence of sudden environmental changes or other measures taken up to control the spread of disease (may be described as noise in the system). Introducing such term in (1), we havex 0 \u00bc a \u00c0 bf \u00f0x; y\u00de \u00c0 dx \u00c0 cV\u00f0x\u00de \u00fe az y 0 \u00bc b 1 f x\u00f0t \u00c0 s\u00de; y\u00f0t\u00de \u00f0 \u00de \u00c0 rP\u00f0y\u00de \u00c0 d 1 y \u00c0 b\u00f0t; y\u00de z 0 \u00bc rP y\u00f0t \u00c0 d\u00de \u00f0 \u00de\u00c0az; \u00f037\u00de here b\u00f0t; y\u00de P 0 for all t; y may be understood as the rate at which infected population is decreasing owing to changes in environment that are non-conducive for infection or measures taken up to keep the infected",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "annex"
+        }
+    ]
+}
