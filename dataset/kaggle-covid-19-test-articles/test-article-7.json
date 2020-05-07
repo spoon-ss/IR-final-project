@@ -1,0 +1,1961 @@
+{
+    "paper_id": "0d90a077ea399c29a8b22105bd6a6bc61613579c",
+    "metadata": {
+        "title": "\"Hi Sigma, do I have the Coronavirus?\": Call for a New Artificial Intelligence Approach to Support Health Care Professionals Dealing With The COVID-19 Pandemic",
+        "authors": [
+            {
+                "first": "Brian",
+                "middle": [],
+                "last": "Subirana",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Auto-ID Laboratory",
+                    "institution": "Massachusetts Institute of Technology",
+                    "location": {
+                        "settlement": "Cambridge",
+                        "region": "MA",
+                        "country": "USA"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Ferran",
+                "middle": [],
+                "last": "Hueto",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Auto-ID Laboratory",
+                    "institution": "Massachusetts Institute of Technology",
+                    "location": {
+                        "settlement": "Cambridge",
+                        "region": "MA",
+                        "country": "USA"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "S",
+                "middle": [],
+                "last": "",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "W",
+                "middle": [],
+                "last": "",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Prithvi",
+                "middle": [],
+                "last": "Rajasekaran",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Auto-ID Laboratory",
+                    "institution": "Massachusetts Institute of Technology",
+                    "location": {
+                        "settlement": "Cambridge",
+                        "region": "MA",
+                        "country": "USA"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Jordi",
+                "middle": [],
+                "last": "Laguarta",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Auto-ID Laboratory",
+                    "institution": "Massachusetts Institute of Technology",
+                    "location": {
+                        "settlement": "Cambridge",
+                        "region": "MA",
+                        "country": "USA"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Susana",
+                "middle": [],
+                "last": "Puig",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Institut d'Investigacions biom\u00e8diques August Pi i SUnyer (IDIBAPS)",
+                    "institution": "Universitat de Barcelona",
+                    "location": {
+                        "settlement": "Barcelona, Barcelona",
+                        "region": "Catalonia, Catalonia",
+                        "country": "Spain, Spain"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Josep",
+                "middle": [],
+                "last": "Malvehy",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Institut d'Investigacions biom\u00e8diques August Pi i SUnyer (IDIBAPS)",
+                    "institution": "Universitat de Barcelona",
+                    "location": {
+                        "settlement": "Barcelona, Barcelona",
+                        "region": "Catalonia, Catalonia",
+                        "country": "Spain, Spain"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Oriol",
+                "middle": [],
+                "last": "Mitja",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Fight AIDS and Infectious Disease Foundation. A Coordinaci\u00f3n General Acad\u00e9mica",
+                    "institution": "Hospital Universitari Germans Trias i Pujol",
+                    "location": {
+                        "settlement": "Badalona",
+                        "region": "Catalonia",
+                        "country": "Spain"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Antoni",
+                "middle": [],
+                "last": "Trilla",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Institut d'Investigacions biom\u00e8diques August Pi i SUnyer (IDIBAPS)",
+                    "institution": "Universitat de Barcelona",
+                    "location": {
+                        "settlement": "Barcelona, Barcelona",
+                        "region": "Catalonia, Catalonia",
+                        "country": "Spain, Spain"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Carlos",
+                "middle": [],
+                "last": "Iv\u00e1n",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Moreno",
+                "middle": [
+                    "A"
+                ],
+                "last": "",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Jos\u00e9",
+                "middle": [],
+                "last": "Francisco Mu\u00f1oz Valle B",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidad de Guadalajara",
+                    "location": {
+                        "settlement": "Guadalajara",
+                        "region": "Jalisco",
+                        "country": "M\u00e9xico"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Ana",
+                "middle": [
+                    "Esther"
+                ],
+                "last": "Mercado Gonz\u00e1lez B,C",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidad de Guadalajara",
+                    "location": {
+                        "settlement": "Guadalajara",
+                        "region": "Jalisco",
+                        "country": "M\u00e9xico"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Barbara",
+                "middle": [],
+                "last": "Vizmanos",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidad de Guadalajara",
+                    "location": {
+                        "settlement": "Guadalajara",
+                        "region": "Jalisco",
+                        "country": "M\u00e9xico"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "B",
+                "middle": [],
+                "last": "Sanjay Sarma",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "Auto-ID Laboratory",
+                    "institution": "Massachusetts Institute of Technology",
+                    "location": {
+                        "settlement": "Cambridge",
+                        "region": "MA",
+                        "country": "USA"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "Just like your phone can detect what song is playing in crowded spaces, we show that Artificial Intelligence transfer learning algorithms trained on cough phone recordings results in diagnostic tests for COVID-19. To gain adoption by the health care community, we plan to validate our results in a clinical trial and three other venues in Mexico, Spain and the USA 1 . However, if we had data from other on-going clinical trials",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "and volunteers, we may do much more. For example, for confirmed stay-at-home COVID-19 patients, a longitudinal audio test could be developed to determine contact-with-hospital recommendations, and for the most critical COVID-19 patients a success ratio forecast test, including patient clinical data, to prioritize ICU allocation. As a challenge to the engineering community and in the context of our clinical trial, the authors suggest distributing cough recordings daily, hoping other trials and crowdsourcing users will contribute more data. Previous approaches to complex AI tasks have either used a static dataset or were private efforts led by large corporations. All existing COVID-19 trials published also follow this paradigm. Instead, we suggest a novel open collective approach to large-scale real-time health care AI. We will be posting updates at https://opensigma.mit.edu. Our personal view is that our approach is the right one for large scale pandemics, and therefore is here to stay -will you join?",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Neither Siri, Alexa, nor Google can tell us if we have the Coronavirus despite the millions of expensive programing man-hours invested in them, nor can they support operational efficiency of related health care processes. Early detection of COVID-19 patients could drastically lower the spread of the disease 1,2 , but it is not common practice yet because existing tests are not available at scale, require health care professionals' already limited time, are lengthy, and, are often wasted due to the lack of a reliable pre-screening test.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "The goal of our research is weather such a test can be performed simply through phone-based cough recordings. In the past, speech recognition algorithms have been demonstrated to be able to perform various tasks related to cough detection. 3 In several cases involving different neurological conditions, researchers were able to develop machine learning algorithms that used free-flow speech to predict disease onset earlier than human experts, including psychosis with a sample size of less than 50, 4 and cognitive impairment with less than a thousand 5 . These studies effectively demonstrate the potential for Artificial Intelligence (AI) to achieve superhuman diagnosis capabilities, which we now believe can also be leveraged for COVID-19 diagnosis. Previous research shows audio recordings can be used to diagnose pneumonia 6 , even from cheap cell phone recordings, 7 similar to the COVID-19 example shown in Figure 1 . Dysphonia can be caused by and lead to the detection of inflammatory conditions such as allergies 8 , infections 9 , reflux 10 , smoking 11 Details of our implementation will be published elsewhere. After trying a few models, we modified a biologically inspired SOP, trained on regular speech. To do so, we started with a convolutional neural network trained on a regular speech dataset and then applied transfer learning. Transfer learning is a field of machine learning that focuses on improving the predictive power of an algorithm on a specific task by learning from a similar but distinct task. In formal terms, we can define a domain that is composed by a feature space and marginal distribution ( ). A task for a given domain is defined as a label space and predictive function , which is based on a conditional distribution ( | ). We can therefore define a source domain",
+            "cite_spans": [
+                {
+                    "start": 240,
+                    "end": 241,
+                    "text": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1065,
+                    "end": 1067,
+                    "text": "11",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 917,
+                    "end": 925,
+                    "text": "Figure 1",
+                    "ref_id": null
+                }
+            ],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "Transfer learning refers to the action of improving on the target task \" 's predictive function \" from the applicable transferable information learned from ! and ! , where \" \u2260 ! and \" \u2260 ! . Note that transfer learning does not care about the predictive power of ! once \" has been updated, which is a field called multi-task learning 16 . Our implementation uses transfer learning from the domain of speech audio recordings !&''() to the target domain of COVID infected cough audio recordings *+,-) . Assuming audio recording and preprocessing is similar between both domains, we can define the specific case of !&''() = *+,-) , but distinct label spaces !&''() \u2260 *+,-) , which in the field of transfer learning is formally defined as heterogeneous transfer learning. This specific case of heterogeneous transfer learning requires for a domain adaption, which is to minimize the distance between marginal distributions ( 4 !&''() 5 \u2260 ( *+,-) )), and marginal distributions",
+            "cite_spans": [
+                {
+                    "start": 333,
+                    "end": 335,
+                    "text": "16",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": ". Feature based approaches (e.g. 17 18 19 ) can be used",
+            "cite_spans": [
+                {
+                    "start": 33,
+                    "end": 41,
+                    "text": "17 18 19",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "where is a transformation function derived from features based transfer learning approaches. From this point on, this becomes a homogeneous transfer learning problem, which has been tackled in the past (and continues to be so) notably within instance-based (e.g. 20 21 ), symmetric and asymmetric feature-based (e.g. 22 23 ), parameter based (e.g. 24 25 ) and relational-based (e.g. 26 27 ) transfer learning approaches 28 .",
+            "cite_spans": [
+                {
+                    "start": 263,
+                    "end": 268,
+                    "text": "20 21",
+                    "ref_id": null
+                },
+                {
+                    "start": 317,
+                    "end": 322,
+                    "text": "22 23",
+                    "ref_id": null
+                },
+                {
+                    "start": 348,
+                    "end": 353,
+                    "text": "24 25",
+                    "ref_id": null
+                },
+                {
+                    "start": 383,
+                    "end": 388,
+                    "text": "26 27",
+                    "ref_id": null
+                },
+                {
+                    "start": 420,
+                    "end": 422,
+                    "text": "28",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "Specifically, within the field of deep learning, a popular approach for transfer learning is \"off-theshelf\" feature generation 29 , where a pretrained model from a source domain is used to generate a set of features from the task domain. These features are then processed using a shallow classifier (e.g. logistic regression, SVM, k-Nearest-Neighbors). This approach is especially utilized when the target domain \" has very few labeled examples, which is the case within our application, but tends to be surpassed by \"fine-tuning\" approaches when more data is available 30 , by retraining specific layers from data within the target domain. We also tested this approach by pre-training DenseNet201 31 and ResNet50 32 architectures with samples from the speech dataset. We then used the output of the last layer of each of the models to generate features from our small set of cough recordings from COVID19 diagnosed and healthy patients (0.7 train, 0.3 test split).",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 129,
+                    "text": "29",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "We believe that the first stage in the transfer learning, i.e. that of selecting the non-cough domain, is what can have most impact in the results of the model. In fact, we evaluated the performance of four shallow machine learning classification algorithms (SVM, k-Nearest Neighbors, Random Forest, Logistic Regression) over a set of 5 cross validation test splits (see Figure 2 ). We then used Principal Component Analysis 33 to generate a visualization demonstrating the clustering between healthy and COVID-19 coughs respectively (see results on Figure 3 and 4). Our immediate next steps are to validate and grow our model as we get more data from our clinical trial.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 371,
+                    "end": 379,
+                    "text": "Figure 2",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 550,
+                    "end": 558,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "In the next two sections we describe how we may do so collectively.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "An onset pre-screening test for COVID-19 is possible simply using cough phone recordings"
+        },
+        {
+            "text": "To further validate and grow our model we aim to collect data on 150 patients and 3000 contacts as part of the clinical trial motioned in the abstract, which is focused on the COVID-19 onset. A second concurrent effort will look at Hospital Cl\u00ednic de Barcelona patients focusses on symptomatic patients. We have also recently initiated data collection in Mexico and the USA. These four concurrent efforts may offer increased chances for transfer learning for our original screening test goal. We believe that if we broaden our sampling goals, we can also incorporate two news tests:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "What else may speech-based diagnosis tell you about COVID-19?"
+        },
+        {
+            "text": "-For confirmed stay-at-home COVID-19 patients, a longitudinal audio test to determine contact-with-hospital recommendations. -For the most critical COVID-19 patients, a success ratio to prioritize intensive care unit (ICU) allocation.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "What else may speech-based diagnosis tell you about COVID-19?"
+        },
+        {
+            "text": "Thus, we have started a process to collect short audio-recording segments of 12 seconds for COVID-19 positive and control individuals, accepting them via WhatsApp, Web, Email or using an MIT developed Mobile App. Our underlying hypothesis is that several second-long voice samples can ultimately save millions of lives. We are focusing on four types of daily samples for each donating individual:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "What else may speech-based diagnosis tell you about COVID-19?"
+        },
+        {
+            "text": "-Cough sounds -The digits from 0 to 9 -The word \"Ommmmmmm\", with the \"m\" sound extending for the 12 seconds when possible",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "What else may speech-based diagnosis tell you about COVID-19?"
+        },
+        {
+            "text": "The rational for these choices follows from what is standard practice in the speech recognition community. 34 We conjecture that numeral pronunciation can signal type of voice patterns, while the extended \"Om\" sound may be detectably related to lung conditions. Metadata useful to subject matter experts is often also helpful in developing AI algorithms (see supplementary table I for the one we will be collecting). It is difficult to say at the current time how important such metadata may be. In some cases, metadata not used by humans can yield superhuman results in AI algorithms. For example, unlike human specialists, AI can detect gender information from retina scans. 35 Until we have a sizable and longitudinal sample database, we cannot be sure how many useful tests a COVID-19 detection algorithm can extract from sound signals. Indeed, it would be irresponsible to set upper or lower limits at this point. The data may be heavily biased towards one particular language, or the model may only apply to the onset of the disease -where the clinical trial is focusing on. As we discuss next, that is why we suggest an additional and different approach, one that depends on you the reader and many others.",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 109,
+                    "text": "34",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 677,
+                    "end": 679,
+                    "text": "35",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "ref_spans": [],
+            "section": "What else may speech-based diagnosis tell you about COVID-19?"
+        },
+        {
+            "text": "Prevalent approaches to AI either enjoy a continuous pipeline of training data, such as the ones available to the FAANGs 2 , or have the benefit of accessing a growing base of code, as in open source projects. The need for a new approach perhaps explains why AI has been largely absent from the infectious disease management debate, including all the current COVID-19 clinical trials we know of. Bill Gates did not even mention AI in his prophetic Ted Talk \"The next outbreak? We are not ready\" 3 . Others have advocated non-diagnostic uses of AI 36, 37, 38 .",
+            "cite_spans": [
+                {
+                    "start": 547,
+                    "end": 550,
+                    "text": "36,",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 551,
+                    "end": 554,
+                    "text": "37,",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 555,
+                    "end": 557,
+                    "text": "38",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        },
+        {
+            "text": "In contrast, we suggest a rapid development approach we call Sigma, where both data and code are shared real time. This approach means a novel collective effort by the Health and Engineering communities, where the first sets directions and provides patient samples in real time, while the second creates algorithms to improve infection management practices. Both groups will share samples, models and insights on a daily basis, further iterating sampling requirements, health practices and engineering efforts.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        },
+        {
+            "text": "Sigma's objective is to set a research and engineering pipeline where daily samples received are immediately posted with an open source license for world-wide collaboration. The goal is to maximize the exposure of the samples to leverage talent worldwide as quickly as possible, with the three tests above as an initial challenge. AI algorithms have shown to be able to process unstructured data from various sources while incorporating cognitive data from experts. We will report elsewhere some of the legal hurdles we are encountering.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        },
+        {
+            "text": "Sigma may become a template for future collaborations between engineering and medical professionals, but the urgent priority now is that other Hospitals join us in promoting the effort to feed the open sample database as quickly as possible. We are doing the groundwork so that MIT can accept samples donated by participating Hospitals and crowdsourcing individuals that are de-identified. This means that there is no reasonable basis to identify the recorded individual, and, that identifiers are not included as part of the metadata associated with the sample (such as names, telephone, age above 89, geographic subdivision of a certain size, etc.).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        },
+        {
+            "text": "The three tests above are not the only urgent priority we may address collectively. As a byproduct of the data capturing process, we feel that voice interfaces can vastly increase ICU operational efficiency while minimizing infections. We expect other byproducts as a benefit of the Sigma approach. For example, the possibility for Physicians where the Pandemic has not yet arrived, to hear COVID-19 cough sounds or to see chest X-Rays for training. Or that the partial shutdown of the economy means vast idle computational and human resources may temporarily be donated to this effort.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        },
+        {
+            "text": "Our suggested approach is unique because data is offered real time, as soon as is curated, allowing engineers to immediately test and improve candidate AI processing pipelines. Will you join? Figure 3 with samples a few days a part.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 192,
+                    "end": 200,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": "Our personal view is that the rapid response to COVID-19-like pandemics calls for a new approach to Artificial Intelligence"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Taking the right measures to control COVID-19",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Torok",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Lancet Infect Dis",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Clinical Characteristics of 138 Hospitalized Patients With 2019 Novel Coronavirus-Infected Pneumonia in Wuhan, China",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "JAMA",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1001/jama.2020.1585"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Automatic identification of wet and dry cough in pediatric patients with respiratory diseases",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Swarnkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Abeyratne",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "B"
+                    ],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Amrulloh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Setyati",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Triasih",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Annals of biomedical engineering",
+            "volume": "41",
+            "issn": "5",
+            "pages": "1016--1028",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Automated analysis of free speech predicts psychosis onset in high-risk youths",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bedi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Carrillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Cecchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Slezak",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sigman",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [
+                        "B"
+                    ],
+                    "last": "Mota",
+                    "suffix": ""
+                },
+                {
+                    "first": ".",
+                    "middle": [
+                        "."
+                    ],
+                    "last": "Corcoran",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Role-specific Language Models for Processing Neuropsychological Exams",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Alhanai",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Au",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "NAACL",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "Spoken Language Biomarkers for Detecting Cognitive Impairment",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Alhanai",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Au",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "IEEE ASRU",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Wavelet augmented cough analysis for rapid childhood pneumonia diagnosis",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kosasih",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Abeyratne",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Swarnkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Triasih",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "IEEE Transactions on Biomedical Engineering",
+            "volume": "62",
+            "issn": "4",
+            "pages": "1185--1194",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Diagnosis of pneumonia from sounds collected using low cost cell phones",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "2015 International joint conference on neural networks (IJCNN)",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Vocal Symptoms and Allergy-A Pilot Study",
+            "authors": [
+                {
+                    "first": "Susanna",
+                    "middle": [],
+                    "last": "Simberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Journal of Voice",
+            "volume": "23",
+            "issn": "1",
+            "pages": "136--139",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Effect of chronic otitis media on language and speech development",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Zeisel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1969,
+            "venue": "Pediatrics",
+            "volume": "43",
+            "issn": "5",
+            "pages": "833--839",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Laryngopharyngeal Reflux: Position Statement of the Committee on Speech, Voice, and Swallowing Disorders of the American Academy of Otolaryngology-Head and Neck Surgery",
+            "authors": [
+                {
+                    "first": "James",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Koufman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Otolaryngology-Head and Neck Surgery",
+            "volume": "127",
+            "issn": "1",
+            "pages": "32--35",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Cigarette smoking and voice fundamental frequency",
+            "authors": [
+                {
+                    "first": "David",
+                    "middle": [],
+                    "last": "Sorensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "Journal of Communication Disorders",
+            "volume": "15",
+            "issn": "2",
+            "pages": "135--144",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Spasmodic Dysphonia Subsequent to Head Trauma",
+            "authors": [
+                {
+                    "first": "Terese",
+                    "middle": [],
+                    "last": "Finitzo",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Arch Otolaryngol Head Neck Surg",
+            "volume": "113",
+            "issn": "10",
+            "pages": "1107--1110",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "Automatic identification of wet and dry cough in pediatric patients with respiratory diseases",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Swarnkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Abeyratne",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "B"
+                    ],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Amrulloh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Setyati",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Triasih",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Annals of biomedical engineering",
+            "volume": "41",
+            "issn": "5",
+            "pages": "1016--1028",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Deep Learning System to Screen Coronavirus Disease 2019 Pneumonia",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Du",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lv",
+                    "suffix": ""
+                },
+                {
+                    "first": ".",
+                    "middle": [
+                        "."
+                    ],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2002.09334"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "A survey on transfer learning",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "IEEE Trans Knowl Data Eng",
+            "volume": "22",
+            "issn": "10",
+            "pages": "1345--59",
+            "other_ids": {}
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "Regularized multi--task learning",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Evgeniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pontil",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining",
+            "volume": "",
+            "issn": "",
+            "pages": "109--117",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "Feature-based transfer learning for network security",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shetty",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Pan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "MILCOM 2017-2017 IEEE Military Communications Conference (MILCOM)",
+            "volume": "",
+            "issn": "",
+            "pages": "17--22",
+            "other_ids": {}
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "Simultaneous deep transfer across domains and tasks",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tzeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Darrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Saenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Proceedings of the IEEE International Conference on Computer Vision",
+            "volume": "",
+            "issn": "",
+            "pages": "4068--4076",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "Deep transfer network with joint distribution adaptation: A new intelligent fault diagnosis framework for industry application",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "ISA transactions",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF20": {
+            "ref_id": "b20",
+            "title": "Double-bootstrapping source data selection for instance-based transfer learning",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "An",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Pattern Recognition Letters",
+            "volume": "34",
+            "issn": "11",
+            "pages": "1279--1285",
+            "other_ids": {}
+        },
+        "BIBREF21": {
+            "ref_id": "b21",
+            "title": "Multi-source domain adaptation and its application to early detection of fatigue",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chattopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Panchanathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Davidson",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "ACM Trans Knowl Dis Data",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF22": {
+            "ref_id": "b22",
+            "title": "Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vincent",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Larochelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Lajoie",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bengio",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Manzagol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Journal of machine learning research",
+            "volume": "11",
+            "issn": "",
+            "pages": "3371--3408",
+            "other_ids": {}
+        },
+        "BIBREF23": {
+            "ref_id": "b23",
+            "title": "Asymmetric transfer learning with deep gaussian processes",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kandemir",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "International Conference on Machine Learning",
+            "volume": "",
+            "issn": "",
+            "pages": "730--738",
+            "other_ids": {}
+        },
+        "BIBREF24": {
+            "ref_id": "b24",
+            "title": "The more you know, the less you learn: from knowledge transfer to one-shot learning of object categories",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tommasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Caputo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "BMVC",
+            "volume": "",
+            "issn": "",
+            "pages": "1--11",
+            "other_ids": {}
+        },
+        "BIBREF25": {
+            "ref_id": "b25",
+            "title": "Safety in numbers: learning categories from few examples with multi model knowledge transfer",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tommasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Orabona",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Caputo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "IEEE Conf Comput Vision Pattern Recog",
+            "volume": "2010",
+            "issn": "",
+            "pages": "3081--3089",
+            "other_ids": {}
+        },
+        "BIBREF26": {
+            "ref_id": "b26",
+            "title": "Relational knowledge transfer for zero-shot learning",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhuang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Thirtieth AAAI Conference on Artificial Intelligence",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF27": {
+            "ref_id": "b27",
+            "title": "Transfer learning from minimal target data by mapping across relational domains",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Mihalkova",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Mooney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Twenty-First International Joint Conference on Artificial Intelligence",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF28": {
+            "ref_id": "b28",
+            "title": "A survey of transfer learning",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Khoshgoftaar",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Journal of Big data",
+            "volume": "3",
+            "issn": "1",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF29": {
+            "ref_id": "b29",
+            "title": "CNN features off-the-shelf: an astounding baseline for recognition",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sharif Razavian",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Azizpour",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Carlsson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proceedings of the IEEE conference on computer vision and pattern recognition workshops",
+            "volume": "",
+            "issn": "",
+            "pages": "806--813",
+            "other_ids": {}
+        },
+        "BIBREF30": {
+            "ref_id": "b30",
+            "title": "How transferable are features in deep neural networks?",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yosinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Clune",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bengio",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lipson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Advances in neural information processing systems",
+            "volume": "",
+            "issn": "",
+            "pages": "3320--3328",
+            "other_ids": {}
+        },
+        "BIBREF31": {
+            "ref_id": "b31",
+            "title": "Densenet: Implementing efficient convnet descriptor pyramids",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Iandola",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Moskewicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karayev",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Girshick",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Darrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Keutzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:1404.1869"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "ref_id": "b32",
+            "title": "Identity mappings in deep residual networks",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "European conference on computer vision",
+            "volume": "",
+            "issn": "",
+            "pages": "630--645",
+            "other_ids": {}
+        },
+        "BIBREF33": {
+            "ref_id": "b33",
+            "title": "Sparse principal component analysis",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hastie",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tibshirani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of computational and graphical statistics",
+            "volume": "15",
+            "issn": "2",
+            "pages": "265--286",
+            "other_ids": {}
+        },
+        "BIBREF34": {
+            "ref_id": "b34",
+            "title": "See for example the 2020 ADReSS Challenge (Alzheimer's Dementia Recognition through Spontaneous Speech",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF35": {
+            "ref_id": "b35",
+            "title": "Prediction of cardiovascular risk factors from retinal fundus photographs via deep learning",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Poplin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Varadarajan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Blumer",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Mcconnell",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Corrado",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Webster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Nature Biomedical Engineering",
+            "volume": "2",
+            "issn": "3",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF36": {
+            "ref_id": "b36",
+            "title": "On the Coronavirus (COVID-19) Outbreak and the Smart City Network: Universal Data Sharing Standards Coupled with Artificial Intelligence (AI) to Benefit Urban Health Monitoring and Management",
+            "authors": [
+                {
+                    "first": "Zaheer",
+                    "middle": [],
+                    "last": "Allam",
+                    "suffix": ""
+                },
+                {
+                    "first": "David",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Healthcare",
+            "volume": "8",
+            "issn": "1",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF37": {
+            "ref_id": "b37",
+            "title": "Identification of COVID-19 Can be Quicker through Artificial Intelligence framework using a Mobile Phone-Based Survey in the Populations when Cities/Towns Are Under Quarantine",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vazquez",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Infection Control & Hospital Epidemiology",
+            "volume": "",
+            "issn": "",
+            "pages": "1--18",
+            "other_ids": {
+                "DOI": [
+                    "10.1017/ice.2020.61"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "ref_id": "b38",
+            "title": "A Viral Warning for Change. The Wuhan Coronavirus Versus the Red Cross: Better Solutions Via Blockchain and Artificial Intelligence. The Wuhan Coronavirus Versus the Red Cross: Better Solutions Via Blockchain and Artificial Intelligence",
+            "authors": [
+                {
+                    "first": "Syren",
+                    "middle": [],
+                    "last": "Johnstone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF39": {
+            "ref_id": "b39",
+            "title": "Clinical characteristics of 138 hospitalized patients with 2019 novel coronavirus-infected pneumonia in Wuhan, China",
+            "authors": [
+                {
+                    "first": "Dawei",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Jama",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF40": {
+            "ref_id": "b40",
+            "title": "Speech commands: A dataset for limited-vocabulary speech recognition",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Warden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:1804.03209"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "ref_id": "b41",
+            "title": "Computing mel-frequency cepstral coefficients on the power spectrum",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Molau",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schluter",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "2001 IEEE International Conference on Acoustics, Speech, and Signal Processing. Proceedings (Cat. No. 01CH37221)",
+            "volume": "1",
+            "issn": "",
+            "pages": "73--76",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Results from ResNet50 and DenseNet201 off-the-shelf features classified for COVID-19 diagnostic using four shallow machine learning algorithms (SVM, kNN, Random Forest and Logistic Regression)..",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Discriminating a COVID-19 cough from others is essential for the population of patients that don't exhibit any other significant synthoms. Using transfer learning from a spoken digit discrimination deep neural network, we have been able to automatically discriminate COVID-9 coughs from healthy coughs on a small dataset of under 200 samples, which includes such type of patients. Healthy and COVID-19 diagnosed tussication samples were run through the spoken digit model, 1024 features were extracted from the last convolutional layer and, for the purposes of the right plot, subsequently dimensionally reduced using Principal Component Analysis. The right plot demonstrates the addition of samples from the same individual at different stages of the disease.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure IV",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Comparison of same \"blue\" subject as in",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF1": {
+            "text": "Sample Metadata included in the ongoing collaborative open project Comorbid conditions (most importantly the ones detected in COVID-19 research such as cardiovascular disease, pulmonary disease, diabetes or hypertension) 39 -Concomitant medication -In \"in care\" patients other information included as available: o RT-PCR for COVID-19 o Blood test,including serologies for COVID-19 o Thorax RX o Lung CT Scan o Need for ICU admission o Treatment Figure IFigure 1: Illustration of the differences between free speech, healthy cough and COVID-19 cough as recorded by a phone and received via WhatsApp. Digit samples were obtained from Google's Speech Commands Dataset 40 , and stored in 1-channel 16.000 frame-rate, 2-byte sample width, non-compressed WAV files. The phone-recorded cough samples were sliced and converted from .OGG file format to match the same specifications. The sample plots where produced using Mel Frequency Cepstral Coefficients 41 on 0.99 second long raw audio files.",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": []
+}

@@ -1,0 +1,1455 @@
+{
+    "paper_id": "0cda048d50c1e093a9c5c6f126836a7e12a14eb7",
+    "metadata": {
+        "title": "Spatiotemporal fluctuation scaling law and metapopulation modeling of the novel coronavirus (COVID-19) and SARS outbreaks",
+        "authors": [
+            {
+                "first": "Zhanshan",
+                "middle": [],
+                "last": "",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Sam",
+                "middle": [],
+                "last": "Ma",
+                "suffix": "",
+                "affiliation": {},
+                "email": "ma@vandals.uidaho.edu"
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "We comparatively analyzed the spatiotemporal fluctuations of the 2019-novel coronavirus and SARS outbreaks to understand their epidemiological characteristics.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "Methodologically, we introduced TPL (Taylor's power law) to characterize their spatiotemporal heterogeneity/stability and Hubbell's (2001) unified neutral theory of biodiversity (UNTB) [specifically Harris et al. (2015) HDP-MSN model (hierarchical Dirichlet process-multi-site neutral)] to approximate the metapopulation of coronavirus infections. First, TPL analysis suggested that the coronaviruses appear to have a specific heterogeneity/stability scaling parameter (TPL-b) slightly exceeding 2 for cumulative infections or exceeding 1 for daily incremental infections, suggesting their potentially 'chaotic', unstable outbreaks. Another TPL parameter (M 0 ) (i.e., infection critical threshold) depends on virus kinds (COVID-19/SARS), time (disease-stages), space (regions) and public-health interventions (e.g., quarantines and mobility control). M 0 measures the infection level, at which infections are random (Poisson distribution) and below which infections follow uniform distribution and may die off if M 0 coincides or below the level of Allee effects. For example, M 0 =5.758 (COVID-19, China, or 196=M 0 x34 in total) vs. M 0 =2.701 (COVID-19, World) vs. M 0 =9.475 (SARS, World) suggested",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "that the potentially 'stabilized' infection level of COVID-19 in China is nearly \u00bd lower than that of SARS worldwide, but twice higher than that of COVID-19 worldwide. This may indicate that COVID-19 outbreak seems nearly twice more risky than SARS, and the lower infection threshold may be due to its lower lethality than SARS since lower fatality rates can facilitate the survival and spread of pathogen. Second, metacommunity UNTB neutrality testing seems appropriate for approximating metapopulation of coronavirus infections. Specifically, two parameters \u03b8 and M, borrowed from neutral theory, may be used to assess the relative 2 significance of \"infection through local contagion\" vs. \"infection through migration\", both of which may depend on time, space, virus kinds, and particularly public-health interventions. Third, comparing the levels of TPL-M 0 and \u03b8 may leverage the complementary nature of TPL analysis and metapopulation modeling. For example, their difference (\u03b8-M 0 =0.6) for the COVID-19 in China confirmed the critical importance of controlling migration (mobility) in suppressing the outbreak, although migration may have been a primary driving force for the initial outbreaks in several regions of China.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "The spatial and/or temporal distributions of many biological populations including microbes and humans follows Taylor's power law (TPL) (Taylor 1961 , Taylor et al. 1977 , 1983 , 1988 , and recent studies have also revealed its applicability at the community scale (Ma 2012a , Li & Ma 2019 , Taylor 2019 , Ma & Taylor 2020 . TPL has been verified by hundreds if not thousands of field observations in nature (Taylor 2019), and it has also found cross-disciplinary applications beyond its original domains of biology and ecology in disciplines such as computer science, natural disaster modeling, and experimental physics (Eisler et al. 2008 , Ma 2012b , Tippett & Cohen 2016 , Helmrich et al. 2020 . Despite that TPL was proposed more than a half century ago (Taylor 1961) and there is not yet a consensus on the underlying mechanisms generating TPL (Eisler 2008 , Stumpf & Porter 2012 , there seems to be a recent resurgence of interests in this near universal model that captures the relationship between the population mean (m) and variance (V) in the form of a simple power function (i.e., V=am b ) (e.g., Cohen & Schuster 2012 , Cohen & Xu 2015 , Giometto et al. 2015 , Kalinin et al. 2018 , Oh et al. 2016 , Reuman et al. 2017 ). Among the numerous existing studies on TPL, there have already been its applications to the analyses of spatial variation of human population (Cohen et al. 2013) , human mortality (Bohk et al. 2015) , and epidemiology (Rhodes & Anderson 1996) . Given these previous applications to human demography and epidemiology, we postulate that TPL should also be applicable to the outbreak analyses of coronavirus infection diseases such as the still ongoing 2019 novel coronavirus (2019-nCoV) or COVID-19 (coronavirus-infected Pneumonia disease) (https://www.who.int/emergencies/diseases/novel-coronavirus-2019) (Li et al. 2020 , Thompson et al. 2020 , Kucharski et al. 2020 , Zhang et al. 2020 and 2003 SARS (Severe Acute Respiratory Syndrome) (https://www.who.int/csr/sars). In the present report, we test this hypothesis and further explore possible epidemiological processes (mechanisms) underlying the outbreak of COVID-19 infections.",
+            "cite_spans": [
+                {
+                    "start": 136,
+                    "end": 148,
+                    "text": "(Taylor 1961",
+                    "ref_id": null
+                },
+                {
+                    "start": 149,
+                    "end": 169,
+                    "text": ", Taylor et al. 1977",
+                    "ref_id": null
+                },
+                {
+                    "start": 170,
+                    "end": 176,
+                    "text": ", 1983",
+                    "ref_id": null
+                },
+                {
+                    "start": 177,
+                    "end": 183,
+                    "text": ", 1988",
+                    "ref_id": null
+                },
+                {
+                    "start": 265,
+                    "end": 274,
+                    "text": "(Ma 2012a",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 275,
+                    "end": 289,
+                    "text": ", Li & Ma 2019",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 290,
+                    "end": 303,
+                    "text": ", Taylor 2019",
+                    "ref_id": null
+                },
+                {
+                    "start": 304,
+                    "end": 322,
+                    "text": ", Ma & Taylor 2020",
+                    "ref_id": null
+                },
+                {
+                    "start": 621,
+                    "end": 640,
+                    "text": "(Eisler et al. 2008",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 641,
+                    "end": 651,
+                    "text": ", Ma 2012b",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 652,
+                    "end": 674,
+                    "text": ", Tippett & Cohen 2016",
+                    "ref_id": null
+                },
+                {
+                    "start": 675,
+                    "end": 697,
+                    "text": ", Helmrich et al. 2020",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 759,
+                    "end": 772,
+                    "text": "(Taylor 1961)",
+                    "ref_id": null
+                },
+                {
+                    "start": 850,
+                    "end": 862,
+                    "text": "(Eisler 2008",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 863,
+                    "end": 885,
+                    "text": ", Stumpf & Porter 2012",
+                    "ref_id": null
+                },
+                {
+                    "start": 1110,
+                    "end": 1131,
+                    "text": "Cohen & Schuster 2012",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1132,
+                    "end": 1149,
+                    "text": ", Cohen & Xu 2015",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1150,
+                    "end": 1172,
+                    "text": ", Giometto et al. 2015",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1173,
+                    "end": 1194,
+                    "text": ", Kalinin et al. 2018",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1195,
+                    "end": 1211,
+                    "text": ", Oh et al. 2016",
+                    "ref_id": null
+                },
+                {
+                    "start": 1212,
+                    "end": 1232,
+                    "text": ", Reuman et al. 2017",
+                    "ref_id": null
+                },
+                {
+                    "start": 1378,
+                    "end": 1397,
+                    "text": "(Cohen et al. 2013)",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1416,
+                    "end": 1434,
+                    "text": "(Bohk et al. 2015)",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1454,
+                    "end": 1478,
+                    "text": "(Rhodes & Anderson 1996)",
+                    "ref_id": null
+                },
+                {
+                    "start": 1840,
+                    "end": 1855,
+                    "text": "(Li et al. 2020",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1856,
+                    "end": 1878,
+                    "text": ", Thompson et al. 2020",
+                    "ref_id": null
+                },
+                {
+                    "start": 1879,
+                    "end": 1902,
+                    "text": ", Kucharski et al. 2020",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1903,
+                    "end": 1922,
+                    "text": ", Zhang et al. 2020",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "While TPL can be harnessed to investigate the spatiotemporal fluctuations of coronaviruses, specifically, the scaling (changes) law of coronaviruses infections over space and time, we also aim to understand the spread of the virus infections from both local contagion (endemic) and external migration (epidemic and pandemic) perspectives. Nevertheless, this can be rather challenging given the lack of controlled experimental data, which is ethically infeasible to collect obviously. In principle, all of the infections existing globally constitute a metapopulation of people infected by the coronavirus, but constructing standard epidemiological models (e.g., Wang et al. 2018 , Rivers et al. 2019 with existing data is rather difficult. We realized that Hubbell's (2001) neutral theory of biodiversity, which is one of the four major metacommunity models (the other three include species sorting, mass effect, and patch dynamics) (Rosindell et al. 2011 (Rosindell et al. , 2012 Vellend 2010 Vellend , 2016 , might be adapted to approximate the meta-population dynamics. This approximation allows us to obtain, to the minimum, an educated guess for the local contagion spread and global dispersal (migration) parameters of the coronavirus infections.",
+            "cite_spans": [
+                {
+                    "start": 661,
+                    "end": 677,
+                    "text": "Wang et al. 2018",
+                    "ref_id": null
+                },
+                {
+                    "start": 678,
+                    "end": 698,
+                    "text": ", Rivers et al. 2019",
+                    "ref_id": null
+                },
+                {
+                    "start": 756,
+                    "end": 772,
+                    "text": "Hubbell's (2001)",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 932,
+                    "end": 954,
+                    "text": "(Rosindell et al. 2011",
+                    "ref_id": null
+                },
+                {
+                    "start": 955,
+                    "end": 979,
+                    "text": "(Rosindell et al. , 2012",
+                    "ref_id": null
+                },
+                {
+                    "start": 980,
+                    "end": 992,
+                    "text": "Vellend 2010",
+                    "ref_id": null
+                },
+                {
+                    "start": 993,
+                    "end": 1007,
+                    "text": "Vellend , 2016",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "Overall, this study sets two primary objectives: (i) to investigate the spatiotemporal fluctuation scaling law and (ii) to obtain an educated guess for the local contagion spread and global migration parameters of the COVID-19 infections. In addition, we also perform comparative analyses with the SARS to get more general insights on the epidemiology of coronavirus infections. To the best of our knowledge, this should be the first systematic application of TPL and UNTB in epidemiology, and obtained scaling/contagion/migration parameters should also be of significant biomedical importance.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "We collected the worldwide, daily incremental and cumulative infections of 2019 novel coronavirus and SARS, respectively. For the datasets collected in China, the unit of data collections was set to Chinese provinces. In addition, for the COVID-19 infections, we also collected the datasets of 17 cities of Hubei province of China. For the worldwide COVID-19 infections, the unit of data collections was set to country or region recognized by the WHO (world health organization). The date range for collecting the SARS data was between March 17 and August 7 of 2003 (136 days), and that for COVID-19 was between January 19 and Feb 29, 2020 (40 Days). Since the COVID-19 infections are still continuing, the analyses conducted in this report may be updated periodically. Taylor (1961) discovered that the relationship between mean abundance (m) and corresponding variance (V) of biological populations follows the following power function,",
+            "cite_spans": [
+                {
+                    "start": 770,
+                    "end": 783,
+                    "text": "Taylor (1961)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "Datasets of COVID-19 and SARS infections"
+        },
+        {
+            "text": "where b is termed population aggregation parameter and is thought to be species-specific, and a is initially thought to be related to sampling schemes used to obtain the data. The relationship is known as Taylor ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 211,
+                    "text": "Taylor",
+                    "ref_id": null
+                }
+            ],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "TPL was initially discovered in fitting the spatial or cross-sectional sampling data (Taylor 1961) and later found that it is equally applicable to temporal or time-series sampling data (Taylor 2019). In the context of time-series modeling, b measures the population stability (variability).",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 98,
+                    "text": "(Taylor 1961)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "More recently, it was found that TPL can be extended to community level from its original population level (Ma 2015) . At the community level, the four Taylor's power law extensions (TPLE), can be used to measure the community spatial (temporal) heterogeneity ( on both the general principle of TPL (explained above) and system-or data-specific information (such as the biology of COVID or SARS).",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 116,
+                    "text": "(Ma 2015)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "Specifically, regarding the first aspect or the fitting of TPL, we adopt two fitting approaches: one is the simple linear regression via log-transformation [Eqn.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "(2)] and another is the geometric mean regression (GMR) (Clark and Perry 1995, Warton et al 2007) . The advantage of the first approach is its computational simplicity and the advantage of the second or GMR is that it is more robust for small sample size (N<15 according to Clark and Perry 1995) . Both approaches preserve the scale invariance of power law. Regarding the second aspect or the interpretation of the TPL, there is controversy on the claim that TPL parameter (b) is species specific, in particular when there are changes in sampling method, life stage, environment or spatial scale (Taylor et al. 1988, Clark and Perry 1995) . Our opinion is that, unlike parameter a, parameter b is primarily shaped by evolutionary forces and less influenced by ecological or environmental factors. However, we do not take the \"invariance\" or \"constancy\" at ecological time scale or with environmental factors as granted. Instead, we draw conclusions based on rigorous statistical tests of the differences in parameter b among treatments. In the case of this study, we perform the permutation (randomization) test to judge whether or not the TPL parameters are invariant. For further information on the randomization test, readers are referred to Collingridge (2013) .",
+            "cite_spans": [
+                {
+                    "start": 56,
+                    "end": 66,
+                    "text": "(Clark and",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 67,
+                    "end": 97,
+                    "text": "Perry 1995, Warton et al 2007)",
+                    "ref_id": null
+                },
+                {
+                    "start": 274,
+                    "end": 295,
+                    "text": "Clark and Perry 1995)",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 596,
+                    "end": 626,
+                    "text": "(Taylor et al. 1988, Clark and",
+                    "ref_id": null
+                },
+                {
+                    "start": 627,
+                    "end": 638,
+                    "text": "Perry 1995)",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1245,
+                    "end": 1264,
+                    "text": "Collingridge (2013)",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "To further harness the TPL parameters, Ma (1991 Ma ( , 2012a Ma ( , 2015 derived a third parameter (M 0 ) for TPL or its extensions at the community scale, population aggregation critical density at the population scale or community critical heterogeneity at the community scale, which is in the form of:",
+            "cite_spans": [
+                {
+                    "start": 39,
+                    "end": 47,
+                    "text": "Ma (1991",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 48,
+                    "end": 60,
+                    "text": "Ma ( , 2012a",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 61,
+                    "end": 72,
+                    "text": "Ma ( , 2015",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 99,
+                    "end": 105,
+                    "text": "(M 0 )",
+                    "ref_id": null
+                }
+            ],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "where a & b are TPL parameter. M 0 is the level of mean population abundance, the COVID-19",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "or SARS infection level in the case of this study, at which the fluctuation (dynamics) of virus infection is random (following Poisson statistical distribution generally). When m>M 0 , the population (infection) fluctuation (dynamics) is more irregular than random (often following highly skewed distributions such as the negative binomial distribution or power-law statistical distribution). In this case, population is highly unstable and the infection may expand continuously. When m<M 0 , the infection fluctuation is regular and may follow the uniform statistical distribution. In this case, the inflection level should be stabilized or might even die off.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "When m=M 0 , the infection is random and should follow Poisson distribution statistically. In the context of this study, we term PACD or M 0 as mean infection critical threshold or mean infection threshold, which is similar to classic Allee effects (Allee 1927 ",
+            "cite_spans": [
+                {
+                    "start": 249,
+                    "end": 260,
+                    "text": "(Allee 1927",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "where \u20ac \u03b2 = (\u03b2 1 ,...,\u03b2 S ) is the relative frequency of each species in the metacommunity.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "At the metacommunity level, a Dirichlet process is also applicable and the metacommunity distribution can be modeled with a stick breaking process, i.e., \u20ac \u03b2~Stick(\u03b8 )",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "Given that both local community and metacommunity follow Dirichlet processes, the problem can be formulated as a hierarchical Dirichlet process (HDP) in the domain of machine learning (Teh et al. 2006 , Harris et al. 2015 .",
+            "cite_spans": [
+                {
+                    "start": 184,
+                    "end": 200,
+                    "text": "(Teh et al. 2006",
+                    "ref_id": null
+                },
+                {
+                    "start": 201,
+                    "end": 221,
+                    "text": ", Harris et al. 2015",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "Furthermore, Dirichlet process (DP) can be formulated as the so-called Chinese restaurant process, from which Antoniak equation (Antoniak 1974 ) can be derived. The Antoniak equation",
+            "cite_spans": [
+                {
+                    "start": 128,
+                    "end": 142,
+                    "text": "(Antoniak 1974",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "represents for the number of types (or species) (S) observed following N draws from a Dirichlet process with concentration parameter \u03b8, and is with the following form:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "where s(N, S) is the unsigned Stirling number of the first kind and \u0393(.) is the gamma function. By treating the coronavirus infections at different sites (e.g., provinces of China, or different countries/regions of the world, in this study) as a \"metacommunity\" consisting of N local communities (e.g., each local community corresponding to a province), the above-described metacommunity model can be built with the dataset of daily incremental infections, nationally or internationally. Different from traditional metacommunity concept, here the \"metacommunity\"",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "is actually a metapopulation consisting of N local populations. However, if we treat the local infections at a particular time point (e.g., day) as a local sub-population, then the virus subpopulations at different time points can be considered as a total population (or \"species\" in the terminology of community ecology). With this conceptual transformation, the concept and models for metacommunity and Hubbell's UNTB can be readily applied to the metapopulation of coronavirus infections without a need to revise the models. With this adaptive scheme, the fundamental biodiversity number (speciation rate: \u03b8) from the previously introduced HDP-MSN model can be used to approximate the average local (contagion) infection rate. Similarly, the fundamental dispersal number (M) can be used to approximate the average infection rate through migration. The migration probability (m), which is a function of M, has a similar interpretation as M, but simply in the form of probability.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "As a side note, we expect that the coronavirus infections should follow Hubbell's (2001) UNTB theory, which is not surprising to us, due to our treatment of metapopulation as metacommunity.",
+            "cite_spans": [
+                {
+                    "start": 72,
+                    "end": 88,
+                    "text": "Hubbell's (2001)",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "This is because the \"species\" in our \"metacommunity\" are, in fact, populations of a single virus species, and they should be \"equivalent\" in terms of the neutral theory. Therefore, whether or not ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "TPL (Taylor's power law) fluctuation scaling law for the infections of coronaviruses"
+        },
+        {
+            "text": "From Tables 1-2, which were summarized from Tables S1-S8 in the OSI (online supplementary information), we obtain the following findings, which are also illustrated with Figs 1-7.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "(i) The spatiotemporal fluctuation scaling (changes) of COVID-19 infections follow TPL (Taylor's power law) at all scales (schemes) tested, including world-wide, country-wide, cumulative and daily incremental infections, as well as gradually shrunken partial datasets to test TPL robustness, as evidenced by the p-value<0.001 from the TPL fittings. The brief results were summarized in Table 1 and the detailed results were displayed in Tables S1-S2 and S4-S7. It was discovered that the infections of COVID-19, like populations of other organisms, follow seeming universal power law. This implies that the infection of the novel coronavirus is highly contagious and its outbreak (spread) is chaotically unstable in general, as indicated by the b-values exceeding 1 (for daily incremental infection) or exceeding 2 (for cumulative infections).",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 386,
+                    "end": 393,
+                    "text": "Table 1",
+                    "ref_id": "TABREF4"
+                }
+            ],
+            "section": "Results"
+        },
+        {
+            "text": "(ii) The TPL aggregation (stability) parameter (b) for COVID-19 seems rather stable or even invariant, as evidenced by the randomization tests (Tables S3 & S8 ). The randomization tests were performed by statistically comparing the model parameters fitted with the whole datasets and those fitted with the \"partial datasets.\" The schemes of partial datasets were devised by removing in China is about twice higher than that of the worldwide, but about \u00bd lower than that of worldwide SARS infections. In other words, the COVID-19 infections seem more \"dangerous\" than SARS from a public health perspective.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 143,
+                    "end": 158,
+                    "text": "(Tables S3 & S8",
+                    "ref_id": "TABREF13"
+                }
+            ],
+            "section": "Results"
+        },
+        {
+            "text": "Note that M 0 is the mean infection level; therefore, it can be more meaningful to convert it into absolute value from a biomedical perspective. For example, M 0 =5.758 for COVID-19 in China, when converted to total national infection level, would be 5.758x34 (provinces)=196. This threshold number may suggest that when the number of total infections nationally is at this level, the infections are random. When infections exceed this threshold level, the infections can be nonrandom and highly unstable. When infections are below this threshold level, the infection should be rather stable (following a Uniform distribution statistically) or may even die off if the threshold level coincides with the level of Allee effects. Since the level of Allee effects is still unknown, whether or not the infections under M 0 will die off is still an open question.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "(iv) As expected, all datasets passed the neutrality tests of HDP-MSN model as indicated by the p-value>0.05 (Table 2) . We use the ratio of Q=M/\u03b8 as a measure of the relative importance of \"infection spread via migration\" vs. \"infections spread via local contagion\" in spreading the infections, with larger Q indicating higher migration role and smaller Q indicating higher local contagion. The ratio of Q=133.581/6.325\u224821 (Table 2) indicating that spread via migration is approximately 21 times more significant than spread via local contagion on average nationally in China. However, the worldwide Q ratio is approximately Q=1 (8.037/10.801). Therefore, the ratio Q is dependent on time (disease stages), space (regions), and disease-kinds (COVID-19 or SARS), and perhaps most importantly, public-health interventions such as quarantines and/or mobility control.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 109,
+                    "end": 118,
+                    "text": "(Table 2)",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 424,
+                    "end": 433,
+                    "text": "(Table 2)",
+                    "ref_id": "TABREF5"
+                }
+            ],
+            "section": "Results"
+        },
+        {
+            "text": "Compared with COVID-19, SARS appeared to exhibit a different pattern of the relative importance of migration vs. local contagion in spreading the infections. We postulate that this difference might signal the higher risk of pandemics of COVID-19 compared with SARS.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "Nevertheless, we cannot exclude the possibility that the range of SARS datasets were complete, while COVID-19 infections are not over yet.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "The third parameter (m) or immigration probability suggests the level of infection via migration.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "The m=0.052 in China vs. m=0.003 worldwide for COVID-19 suggested that the risk of infection via migration within China is approximately 10 times higher than that of worldwide migration.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "This is most likely due to the disruption of international travels. Comparing the m for COVID-19 and SARS for worldwide data (0.003 for COVID-19 vs. 0.040 for SARS) may simply be due to stronger travel restrictions imposed for controlling COVID-19 outbreaks. Similar to the above comparison, this difference may be due to the difference in the data range.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "(v) Comparing the PACD (M 0 ) ( Table 1 ) and \u03b8 in (Table 2) (Table 1) and \u03b8=6.325 of COVID-19 in China (Table 2) is only approximately 0.6. We postulate that, when the \"local speciation (contagion)\" (\u03b8) approximates the population aggregation critical density or infection critical threshold (M 0 ), the infections could become random (suggesting a potentially stabilized infection level). That is, without inputs from external migration, local infections via local contagion (measured by \u03b8) could become random (as indicated by M 0 ). If this postulation is true, then it may suggest that the mobility control (such as travel restrictions or quarantines) can be critically effective in stabilizing outbreaks. This finding indicates the complementary nature of the two approaches we adopted in this study. Nevertheless, it is important to reiterate that this closeness between M 0 and \u03b8 (M 0 \u2248\u03b8) is likely to be an exception, rather than the \"norm\", for the reasons explained below.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 32,
+                    "end": 39,
+                    "text": "Table 1",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 51,
+                    "end": 60,
+                    "text": "(Table 2)",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 61,
+                    "end": 70,
+                    "text": "(Table 1)",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 104,
+                    "end": 113,
+                    "text": "(Table 2)",
+                    "ref_id": "TABREF5"
+                }
+            ],
+            "section": "Results"
+        },
+        {
+            "text": "As to the lack of closeness between M 0 and \u03b8 of COVID-19 at worldwide scale (M 0 =2.701 vs.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "\u03b8=10.801), this may indicate that control mobility is not sufficient to stabilize infections world widely anymore at the current stage. In the case of SARS, the worldwide M 0 =9.475 vs.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "\u03b8=27.169, indicated that local contagion (\u03b8) alone already exceed the infection critical threshold (M 0 ). Therefore, \u03b8 >> M 0 (PACD) may be the \"norm.\"",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results"
+        },
+        {
+            "text": "We aimed to discover critical insights on the endemic/epidemic/pandemic characteristics of the While TPL-b appears rather stable or even invariant with time and/or space, the population aggregation critical density (PACD) (i.e., M 0 or infection critical threshold), which is the level at which infections are random and below which infections may be stabilized, can depend on disease kinds (COVID-19 or SARS), time (disease or outbreak stages), and space (regions). We postulate that M 0 should also be influenced by public-health interventions such as quarantines and travel restrictions. Therefore, M 0 can be an important epidemiological parameter for evaluating the characteristics of disease outbreaks. For example, COVID-19 exhibited significantly lower threshold (M 0 ) than SARS, suggesting a potentially lower infection \"tolerance\" threshold of COVID-19. Nevertheless, it should be cautioned that the \"tolerance\" threshold only means the level of random infections, which may signal the level of stabilized infections. However, whether or not the \"tolerance\" threshold is biometrically tolerable or safe depends on other biomedical characteristics, among which Allee effects can be a critical factor to determine whether or not the infections will die off or persist. We postulate that if M 0 coincide or is below the level Allee effects in action, the infections may die off.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions and Discussion"
+        },
+        {
+            "text": "Second, all datasets we tested easily passed the neutrality test with HDP-MSN and indicated that The ratio of Q=M/\u03b8 may be used as a measure of the relative importance of \"infection spread via migration\" vs. \"infections spread via local contagion\" in spreading the infections, with larger Q indicating higher migration role and smaller Q indicating higher local contagion.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions and Discussion"
+        },
+        {
+            "text": "Third, both the TPL scaling law and metapopulation modeling may complement each other. The difference (closeness) between M 0 (the infection critical threshold from TPL) and \u03b8 (local contagion or \"speciation\" rate from metapopulation modeling) may signal the effectiveness of completely blocking the migration (dispersal) in spreading infections. For example, in the case of COVID-19 infections in China, both parameters (M 0 and \u03b8) are rather close to each other and their difference is only approximately 0.6, suggesting that, without external inputs, the infections from local contagion is only approximately 0.6 higher than the infection critical threshold (M 0 ).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions and Discussion"
+        },
+        {
+            "text": "This makes the mission of controlling local contagion for stabilizing infections much less challenging than the mission when \u03b8 >> M 0.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions and Discussion"
+        },
+        {
+            "text": "Finally, we suggest that the approaches demonstrated previously should be of general applicability for epidemiological research. In particular, we consider TPL-b can be a pathogen specific parameter, primarily shaped by evolutionary forces. Another TPL parameter, Ma (1991 Ma ( , 2015 ",
+            "cite_spans": [
+                {
+                    "start": 264,
+                    "end": 272,
+                    "text": "Ma (1991",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 273,
+                    "end": 284,
+                    "text": "Ma ( , 2015",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "Conclusions and Discussion"
+        },
+        {
+            "text": "The COVID-19 (confirmed) infection datasets during January 19 and February 29 were collected from (https://news.qq.com/zt2020/page/feiyan.htm#/) and (https://news.ifeng.com/c/special/7tPlDSzDgVk). The worldwide SARS infections were from the WHO (https://www.who.int/csr/sars/country/en/). Tables 1-8   Table S1A . Fitting the TPL to the daily cumulative COVID-19 infections in the whole China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 289,
+                    "end": 311,
+                    "text": "Tables 1-8   Table S1A",
+                    "ref_id": "TABREF4"
+                }
+            ],
+            "section": "Data Availability"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Animal aggregations",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Allee",
+                    "suffix": ""
+                }
+            ],
+            "year": 1927,
+            "venue": "The Quarterly Review of Biology",
+            "volume": "2",
+            "issn": "",
+            "pages": "367--398",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Mixtures of Dirichlet Processes with Applications to Bayesian Nonparametric Problems",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Antoniak",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Ann. Statist",
+            "volume": "2",
+            "issn": "",
+            "pages": "1152--1174",
+            "other_ids": {}
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Taylor's power law in human mortality",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bohk",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rau",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Cohen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Demographic Research",
+            "volume": "33",
+            "issn": "21",
+            "pages": "589--610",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Small sample estimation for Taylor's power law",
+            "authors": [
+                {
+                    "first": "Sj &amp;",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "N"
+                    ],
+                    "last": "Perry",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Environmental and Ecological Statistics",
+            "volume": "1",
+            "issn": "",
+            "pages": "287--304",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Allometric scaling of population variance with mean body size is predicted from Taylor's law and density-mass allometry",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Wsf",
+                    "middle": [],
+                    "last": "Schuster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proceedings of the National Academy of Sciences of the USA",
+            "volume": "109",
+            "issn": "39",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "Taylor's law applies to spatial variation in a human population",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Brunborg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Genus",
+            "volume": "LXIX",
+            "issn": "1",
+            "pages": "25--60",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Random sampling of skewed distributions implies Taylor's power law of fluctuation scaling",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Proceedings of the National Academy of Sciences of USA",
+            "volume": "112",
+            "issn": "25",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Primer on Quantitized Data Analysis and Permutation Testing",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Collingridge",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Journal of Mixed Methods Research",
+            "volume": "7",
+            "issn": "",
+            "pages": "79--88",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Fluctuation scaling in complex systems: Taylor's law and beyond",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Eisler",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Bartos",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kert\u00e9sz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Adv Phys",
+            "volume": "57",
+            "issn": "",
+            "pages": "89--142",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Sample and population exponents of generalized Taylor's law",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Giometto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Formentin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Rinaldo",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Maritan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Proceedings of the National Academy of Sciences of the USA",
+            "volume": "112",
+            "issn": "25",
+            "pages": "7755--7760",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Linking Statistical and Ecological Theory: Hubbell's Unified Neutral Theory of Biodiversity as a Hierarchical Dirichlet Process",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Parsons",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [
+                        "Z"
+                    ],
+                    "last": "Ijaz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Proceedings of the IEEE",
+            "volume": "105",
+            "issn": "3",
+            "pages": "516--529",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Signatures of self-organized criticality in an ultracold atomic gas",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Helmrich",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Arias",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Lochead",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Nature",
+            "volume": "577",
+            "issn": "7791",
+            "pages": "481--486",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "The unified neutral theory of biodiversity and biogeography",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Hubbell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "Self-organized criticality and pattern emergence through the lens of tropical geometry",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kalinin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Guzm\u00e1n-S\u00e1enz",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Prieto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shkolnikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kalinina",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lupercio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Proceedings of the National Academy of Sciences of the USA",
+            "volume": "115",
+            "issn": "35",
+            "pages": "8135--8142",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Early dynamics of transmission and control of 2019-nCoV: a mathematical modelling study. medRxi",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Kucharski",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Diamond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.01.31.20019901"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus-Infected Pneumonia",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "New England Journal of Medicine",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa2001316"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "Comparative Power Law Analysis for the Spatial Heterogeneity Scaling of the Hot-Spring Microbiomes",
+            "authors": [
+                {
+                    "first": "Lw &amp;",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Molecular Ecology",
+            "volume": "28",
+            "issn": "11",
+            "pages": "2932--2943",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "Further interpreted Taylor's Power Law and population aggregation critical density",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Transactions of the Ecological Society of China",
+            "volume": "1",
+            "issn": "",
+            "pages": "284--288",
+            "other_ids": {}
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "A Note on extending Taylor's power law for characterizing human microbial communities: inspiration from comparative studies on the distribution patterns of insects and galaxies",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "Chaotic populations in Genetic Algorithms",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Applied Soft Computing",
+            "volume": "12",
+            "issn": "8",
+            "pages": "2409--2424",
+            "other_ids": {}
+        },
+        "BIBREF20": {
+            "ref_id": "b20",
+            "title": "Stochastic populations, power law and fitness aggregation in Genetic Algorithms",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Fundamenta Informaticae",
+            "volume": "122",
+            "issn": "3",
+            "pages": "173--206",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "'s power law (TPL) in literature, and it has been validated by hundreds, if not thousands of field observations worldwide (Taylor 2019). With a simple log-transformation, TPL can be converted into the following log-linear model: \u20ac ln(V ) = ln(a) + bln(m).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "By combining previous equations (4-6) and the previously mentioned multi-nominal (MN) distribution of the community samples, Harris et al. (2015) obtained their full HDP-MSN model (hierarchical Dirichlet process-multisite neutral). They further developed an efficient Gibbs sampler for the UNTB-HDP approximation, which is a type of Bayesian Markov Chain Monte Carlo (MCMC) algorithm.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "the coronavirus infections satisfy the neutral theory model, specifically Harris et al. (2015) HDP-MSN model, is not our focus. Instead, we focus on the estimated parameters from HDP-MSN modeling and their interpretations to explore their implications to the outbreak of virus infections. Of course, if the neutral theory model fails to fit the virus infections data statistically, we stop pursuing the interpretations of their parameters.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "exhibited a very interesting phenomenon. For the cumulative infections in China, both parameters (M 0 and \u03b8) are rather close to each other. For example, the difference between M 0 =5.758 of COVID-19 in China",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "coronavirus outbreaks. Methodically, we first apply the TPL (Taylor 1961, 2019) scaling law for measuring spatial (temporal) heterogeneity (stability) to shed important lights on the stability of coronavirus infection outbreak. We then apply Hubbell's (2001) UNTB (specifically Harris et al. 2015 HDP-MSN model) to approximate the metapopulation of coronavirus outbreak and to estimate the critical metapopulation parameters that may offer insights on the relative importance of migration vs. local contagion in driving or suppressing virus outbreaks. Furthermore, both TPL and metapopulation modeling complemented each other and revealed the five findings explained in the previous sections, from which we further summarize the following insights and discuss their implications below. First, the coronavirus infections, including both COVID-19 and SARS appear to possess characteristic stability parameter (b) values, slightly exceeding 2 in terms of the daily cumulative infections and exceeding 1 in terms of the daily incremental infections. As suggested by the literature of TPL, when the TPL parameter (b) exceeds 2, the population dynamics can be rather chaotic, indicating potentially chaotic behavior of coronavirus outbreaks. The TPL-b values for both the coronaviruses are at the high end of the b-value range in population ecology, compared with the b-values of most microbial and macrobial species in existing literature, which are usually b<2.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "the approximation of the metapopulation with metacommunity in the case of coronavirus infections is feasible. Two parameters from the HDP-MSN, i.e., fundamental biodiversity number (\u03b8) and fundamental dispersal number (M) measure the average infections from local \"speciation\" (i.e., local contagion) and average infections from \"dispersal\" (migration) from other local populations. In other words, \u03b8 measures the spread level from local contagion and M measures spread level from external migration. A third parameter migration probability (m) is a function of fundamental dispersal number (M), measures the probability of infections from migration. All three parameters can depend on disease kinds (COVID-19 or SARS), time (disease stage), space (regions), as well as public-health interventions (such as quarantines, mobility control and/or isolation for treatments).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Reuman DC, Zhao L, Sheppard LW, et al. 2017. Synchrony affects Taylor's law in theory and data. Proceedings of the National Academy of Sciences of the USA, 114(26):6788. Rhodes CJ, Anderson RM. (1996) Power laws governing epidemics in isolated populations. Nature, 381(6583):600-2. Rivers C, Chretien JP, Riley S, et al. (2019) Using \"outbreak science\" to strengthen the use of models during epidemics. Nature communications, 10(1):3102. Rosindell J, Hubbell SP, Etienne RS. (2011) The Unified Neutral Theory of Biodiversity and Biogeography at Age Ten. Trends Ecol Evol, 26:340-348. Rosindell J, Hubbell SP, He F, Harmon LJ, Etienne RS. (2012) The case for ecological neutral theory. Trends Ecol Evol, 27(4):203-8. Sloan WT, Lunn M, Woodcock S, Head IM, Nee S, Curtis TP. (2006) Quantifying the roles of immigration and chance in shaping prokaryote community structure. Environ Microbiol, 8:732-740. Sloan WT, Woodcock S, Lunn M, Head IM, Curtis TP. (2007) Modeling taxa-abundance distributions in microbial communities using environmental sequence data. Microb Ecol, 53:443-455. Stumpf MP, Porter MA. (2012) Critical truths about power laws. Science, 335(6069):665-6. Taylor LR. (1961) Aggregation, variance and the mean. Nature, 189, 732-735. Taylor LR & Taylor RAJ. (1977) Aggregation, migration and population mechanics. Nature, 265(5593):415-21. Taylor LR, Taylor RAJ, Woiwod IP, et al. (1983) Behavioral dynamics. Nature, 303, 801-804. Taylor LR, Perry JN, Woiwod IP, et al. (1988) Specificity of the spatial power-law exponent in ecology and agriculture. Nature, 332, 721-722. Taylor RAJ. (2019) Taylor's Power Law: Order and Pattern in Nature. Academic Press, London. 657pp. Teh YW, Jordan MI, Beal MJ, Blei DM. (2006) Hierarchical Dirichlet Processes, Journal of the American Statistical Association, 101(476), 1566-1581. Thompson R. (2020) Pandemic potential of 2019-nCoV. Lancet, DOI: https://doi.org/10.1016/S1473-3099(20)30068-2 Tippett MK, Cohen JE. (2016) Tornado outbreak variability follows Taylor's power law of fluctuation scaling and increases dramatically with severity. Nature Communications, 7:10668. Vellend M. (2010) Conceptual synthesis in community ecology. Q. Rev. Biol., 85, 183-206. Vellend M. (2016) The Theory of Ecological Communities. Princeton University Press. Wang L, Wu JT. (2018) Characterizing the dynamics underlying global spread of epidemics. Nature Communications, 9(1):218. Warton DI, Wright IJ, Falster DS, Westoby M. (2006) Bivariate line-fitting methods for allometry. Biol Rev Camb Philos Soc, 81(2):259-91. Zhang C, Wang M. (2020) Origin time and epidemic dynamics of the 2019 novel coronavirus. bioRxiv. doi: https://doi.org/10.1101/2020.01.25.919688Acknowledgements and DisclaimsI acknowledge the data collection and computational support from Lianwei Li and Wendy Li from the Computational Biology and Medical Ecology Lab, the Chinese Academy of Sciences. I am responsible for all the interpretations of the results, including possible errors. However, I am not responsible for any direct or indirect inferences from this article, including those from partial quotes of the text, figures and/or tables.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Local contagion rate; M: Mean migration rate; m: immigration probability; N=2500 is the number of Gibb samples selected from 25000 simulated communities performed to test the fitting of Harris et al. (2015) HDP-MSN model; N M & N L are the number of simulations that passed the neutrality test (by comparing with actual daily incremental infection numbers), respectively. P M and P L are the pseudo-P values from performing the neutrality test at metapopulation and local population levels, respectively. When pseudo-P value>0.05, it indicates that the dataset satisfied the neutral model, and the parameters (\u03b8, M, and m) can be harnessed to assess and interpret the relative importance of local contagion vs. migration in driving outbreaks of coronaviruses infections.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "TPL (Taylor's power law) model fitted to the cumulative infections of COVID-19 in China (Infection Critical Threshold M 0 =5.758; Spatiotemporal Scaling Parameter b=2.153; P-value<0.001) Fig 2. TPL (Taylor's power law) model fitted to the cumulative infections of COVID-19 worldwide (Infection Critical Threshold M 0 =2.701; Spatiotemporal Scaling Parameter b=2.076; P-value<0.001) Fig 3. TPL (Taylor's power law) model fitted to the cumulative infections of COVID-19 worldwide except for China (Infection Critical Threshold M 0 =2.683; Spatiotemporal Scaling Parameter b=2.069; P-value<0.001) V) = \u2212 2.293 + 2.02 ln(m) , R = 0.965 , p < TPL (Taylor's power law) model fitted to the cumulative infections of 2003-SARS worldwide (Infection Critical Threshold M 0 =9.475; Spatiotemporal Scaling Parameter b=2.020; P-value<0.001) Approximating the metapopulation of daily incremental COVID-19 infections in China with Hubbell's (2001) UNTB, specifically Harris et al. (2015) HDP-MSN model.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "Approximating the metapopulation of daily incremental COVID-19 infections worldwide except for China with Hubbell's (2001) UNTB, specifically Harris et al. (2015) HDP-MSN model.",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": "stability) (Type I & II), as well as mixed-species level spatial (temporal) heterogeneity (stability) (Type III & IV)(Ma 2015, Li & Ma 2019, Ma & Taylor 2020. Note that the term aggregation at the population level can be considered as the counterpart of heterogeneity at the community level.In general, there are two important aspects related to the applications of TPL. First, test the fitting of the TPL model to the datasets under evaluations (such as SARS or COVID-19 infections). The testing determines the applicability of TPL based on well-established statistics such as p-value or R (linear correlation coefficient). Second, interpret the TPL parameters based",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "). Although the both are similar conceptually, it should be emphasized that they have different ecological interpretations. In particular, when m=M 0 , it means that the population spatial distribution or temporal stability (variability) is random; when m<M 0 , the distribution or stability is regular or uniform. Whether or not the population may die off is uncertain. If m happens to coincide with the threshold of Allee effects, population (infections) may indeed die off.interpreted as the rate at which new individuals are added to the metacommunity due to speciation. The UNTB assumes that the SAD (species abundance distribution) of each community sample can be described by the multinomial (MN) distribution, which is parameterized by the previously mentioned two parameters. Testing the UNTB model is then computationally equivalent to testing the goodness-of-fitting to the MN distribution. However, a fully general case of fitting multiple sites UNTB with different immigration rates is computationally extremely challenging (actually intractable) even for small number of sites. In other words, to test the UNTB in truly multi-site (multiple local communities), approximate algorithms must be used(Harris et al. 2015). It wasHarris et al. (2015) that developed an efficient Bayesian fitting framework for testing the UNTB by approximating the neutral models with the hierarchical Dirichlet process (HDP). For this reason, we refer to the computational framework developed byHarris et al. (2015) as HDP-MSN (hierarchical Dirichlet process-",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "1, 2, \u2026 ... 15 days data from either head or tail of the dataset to test the robustness of TPL model and to test the invariance of the model parameters. It was found that, while TPL-b",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": ") PACD (population aggregation critical density) or infection critical threshold (M 0 ), as renamed in this study in the context of coronavirus infections, may be particular useful for assessing critical threshold for stabilizing infections (outbreaks). A lower M 0 may signal a lower threshold for the occurrence of outbreak, which may imply higher outbreak risk from a public health perspective. Previously, we have shown that COVID-19 appears to have a higher outbreak risk compared with SARS. Given that both of the coronaviruses appear to have virtually equal bvalues, then one wonders if they have any essential differences, revealed in this study, from the epidemiological or public-health perspectives. M 0 (infection critical threshold) seems to be such an effective indicator (property) for assessing outbreak threshold (risk). Our study suggested that COVID-19 possesses a lower infection critical threshold (M 0 ) than SARS does may be explained by its lower fatality rate compared with SARS. Obviously lower lethality to hosts should actually be favorable for the survival and spread of virus.Ma ZS & Taylor RAJ. (2020)  Human reproductive system microbiomes exhibited significantly different heterogeneity scaling with gut microbiome, but the intra-system scaling is invariant. Oikos, vol. 129: https://onlinelibrary.wiley.com/doi/full/10.1111/oik.07116",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "The",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "The meta-population model parameters fitted to the daily increments of COVID-19 and SARS infections, respectively, by adapting Hubbell's UNTB (unified neutral theory of biodiversity) model*",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Fitting the TPL to the daily cumulative COVID-19 infections in the whole China except for Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Fitting the TPL to the daily cumulative COVID-19 infections in the Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Fitting the TPL to the daily incremental COVID-19 infections in the whole China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S2B. Fitting the TPL to the daily incremental COVID-19 infections in the whole China except for Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S2C. Fitting the TPL to the daily incremental COVID-19 infections in Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S3. The randomization (permutation) test results of the TPL stability model parameters",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF7": {
+            "text": "The results of fitting TPL to the cumulative infections of COVID-19 worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S4B. The results of fitting TPL to the cumulative infections of COVID-19 worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets The results of fitting TPL to the daily incremental infections of COVID-19 worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S5B. The results of fitting TPL to the daily incremental infections of COVID-19 worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasetsTable S6A. Fitting the TPL to the cumulative SARS infection worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Table S6B. Fitting the TPL to the cumulative SARS infection worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Table S7A. Fitting the TPL to the daily incremental SARS infection worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Table S7B. Fitting the TPL to the daily incremental SARS infection worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets Table S8. The randomization (permutation) test for the TPL stability model parametersTable S1A. Fitting the TPL to the daily cumulative COVID-19 infections in the whole China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF8": {
+            "text": "Fitting the TPL to the daily cumulative COVID-19 infections in the whole China except for Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF9": {
+            "text": "Fitting the TPL to the daily cumulative COVID-19 infections in the Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF10": {
+            "text": "Fitting the TPL to the daily incremental COVID-19 infections in the whole China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF11": {
+            "text": "",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF12": {
+            "text": "Fitting the TPL to the daily incremental COVID-19 infections in Hubei province with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF13": {
+            "text": "",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF14": {
+            "text": "The results of fitting TPL to the cumulative infections of COVID-19 worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF15": {
+            "text": "The",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF16": {
+            "text": "The results of fitting TPL to the daily incremental infections of COVID-19 worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF17": {
+            "text": "The results of fitting TPL to the daily incremental infections of COVID-19 worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF18": {
+            "text": "Fitting the TPL to the cumulative SARS infection worldwide with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF19": {
+            "text": "Fitting the TPL to the cumulative SARS infection worldwide except for China with two schemes: fitting with the full datasets or fitting with the gradually shrinking datasets",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF20": {
+            "text": "The randomization (permutation) test for the TPL stability model parameters between COVID-19 and SARS parameters",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": []
+}
