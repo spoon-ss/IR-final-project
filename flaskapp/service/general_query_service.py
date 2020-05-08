@@ -64,6 +64,28 @@ def _do_author_query(s, author_query):
         s = s.query('match', author=author_query)
     return s
 
+def _extract_abstract_query_text(s: str) -> dict:
+    """ Extract information from free query text, return a dict contains the information extracted.
+    Take a string "<chem>alcohol</chem> <chem>isopropyl</chem> covid <phrase>test result</phrase>"
+    Return a dict : {"chem": ["alcohol", "isopropyl"], "phrase": ["test result"], "normal": ["covid"]}
+    """
+    if type(s) is not str:
+        raise TypeError("query text must be str")
+    result_dict = {"chem": [], "phrase": [], "normal": []}
+
+
+
+
+
+
+def _do_chemical_query(s, query, option):
+    pass
+
+def _do_phase_query(s, query, option):
+    pass
+
+def _do_abstract_query(s, query, option):
+    pass
 
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')

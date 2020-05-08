@@ -7,7 +7,7 @@ from elasticsearch_dsl.analysis import tokenizer, analyzer
 from elasticsearch_dsl.query import MultiMatch, Match
 from elasticsearch_dsl import token_filter
 # Connect to local host server
-from flaskapp.index.index_utils import process_json
+from .index_utils import process_json
 
 
 INDEX_NAME = "sample_covid_19_index"
@@ -67,7 +67,7 @@ class Article(Document):
 
 
 # Populate the index
-def buildIndex(size=None):
+def buildIndex(file_path, size=None):
     """
     buildIndex creates a new film index, deleting any existing index of
     the same name.
@@ -82,7 +82,7 @@ def buildIndex(size=None):
     covid_index.create()
 
     # Open the json film corpus
-    data_dict = process_json("covid_comm.json", size)
+    data_dict = process_json(file_path, size)
 
     # Action series for bulk loading with helpers.bulk function.
     # Implemented as a generator, to return one movie with each call.
@@ -115,14 +115,3 @@ def buildIndex(size=None):
 
     helpers.bulk(es, actions())
 
-
-
-# command line invocation builds index and prints the running time.
-def main():
-    start_time = time.time()
-    buildIndex(100)
-    print("=== Built index in %s seconds ===" % (time.time() - start_time))
-
-
-if __name__ == '__main__':
-    main()
