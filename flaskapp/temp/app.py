@@ -6,6 +6,7 @@ You will need to rewrite and expand sections to support the types of queries ove
 from flask import *
 from flaskapp.service import GeneralQueryService, TranslateService
 from datetime import date
+from index import INDEX_NAME
 
 app = Flask(__name__)
 
@@ -45,32 +46,33 @@ def results():
     translated_query_str = translate_service.translate(query_str, TranslateService.CHINESE_OPTION,
                                                        TranslateService.ENGLISH_OPTION)
 
-    query_service = GeneralQueryService("sample_covid_19_index")
+    query_service = GeneralQueryService(INDEX_NAME)
     result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
 
     result_dict = result['result_dict']
     stops_words_included = result['stop_words_included']
+    synonyms = result['synonyms']
     total_hits = result['total_hits']
 
     queries = request.args.to_dict()
     queries.pop('page')
     return render_template('result.html', stop_len=len(stops_words_included), stops=stops_words_included,
                            results=result_dict, res_num=total_hits,
-                           page_num=page_num, queries=queries)
+                           page_num=page_num, queries=queries, synonyms=synonyms)
 
 
 # display suggestion for autocompletion
 @app.route("/autocomplete", methods=['GET'])
 def autocomplete():
     text = request.args.getlist('search[term]')
-    general_query_service = GeneralQueryService("sample_covid_19_index").autocomplete(text)
+    general_query_service = GeneralQueryService(INDEX_NAME).autocomplete(text)
     return jsonify(general_query_service)
 
 
 # display a particular document given a result number
 @app.route("/documents/<res>", methods=['GET'])
 def documents(res):
-    article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(res)
+    article_dic, more_like_this_dic = GeneralQueryService(INDEX_NAME).doc_result(res)
     return render_template('article.html', article=article_dic, more_like_this=more_like_this_dic)
 
 

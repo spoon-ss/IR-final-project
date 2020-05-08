@@ -6,3 +6,5 @@ flask-login
 Pillow
 elasticsearch
 elasticsearch_dsl
+nltk
+chemdataextractor

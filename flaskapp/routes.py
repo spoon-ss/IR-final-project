@@ -1,13 +1,15 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request, abort
+from flask import *
 from flaskapp import app, db, bcrypt
 from flaskapp.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from flaskapp.models import User, Doc
 from flask_login import login_user, current_user, logout_user, login_required
 from flaskapp.service import GeneralQueryService, TranslateService
 from datetime import date
+from flaskapp.index import INDEX_NAME
+
 
 
 @app.route("/home")
@@ -50,18 +52,20 @@ def results():
     translated_query_str = translate_service.translate(query_str, TranslateService.CHINESE_OPTION,
                                                        TranslateService.ENGLISH_OPTION)
 
-    query_service = GeneralQueryService("sample_covid_19_index")
+    query_service = GeneralQueryService(INDEX_NAME)
     result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
 
     result_dict = result['result_dict']
     stops_words_included = result['stop_words_included']
+    synonyms = result['synonyms']
     total_hits = result['total_hits']
 
     queries = request.args.to_dict()
     queries.pop('page')
     return render_template('result.html', stop_len=len(stops_words_included), stops=stops_words_included,
                            results=result_dict, res_num=total_hits,
-                           page_num=page_num, queries=queries)
+                           page_num=page_num, queries=queries, synonyms=synonyms)
+
 
 
 # display suggestion for autocompletion

@@ -1,0 +1,1320 @@
+{
+    "paper_id": "0ceca229cb2332c12a13e3b81f0369935a30bdb3",
+    "metadata": {
+        "title": "Short-term forecasts of COVID-19 spread across Indian states until 1 May 2020",
+        "authors": [
+            {
+                "first": "Neeraj",
+                "middle": [],
+                "last": "Poonia",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Indian Institute of Technology Mandi",
+                    "location": {
+                        "postCode": "175075",
+                        "country": "India"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Sarita",
+                "middle": [],
+                "last": "Azad",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Indian Institute of Technology Mandi",
+                    "location": {
+                        "postCode": "175075",
+                        "country": "India"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "The very first case of corona-virus illness was recorded on 30 January 2020, in India and the number of infected cases, including the death toll, continues to rise. In this paper, we present short-term forecasts of COVID-19 for 28 Indian states and five union territories using realtime data from 30 January to 21 April 2020. Applying Holt's second-order exponential smoothing method and autoregressive integrated moving average (ARIMA) model, we generate 10-day ahead forecasts of the likely number of infected cases and deaths in India for 22 April to 1 May 2020. Our results show that the number of cumulative cases in India will rise to 36335.63 [PI 95% (30884.56, 42918.87)], concurrently the number of deaths may increase to 1099.38 [PI 95% (959.77, 1553.76)] by 1 May 2020. Further, we have divided the country into severity zones based on the cumulative cases. According to this analysis, Maharashtra is likely to be the most affected states with around 9787.24 [PI 95% (6949.81, 13757.06)] cumulative cases by 1 May 2020. However, Kerala and Karnataka are likely to shift from the red zone (i.e. highly affected) to the lesser affected region. On the other hand, Gujarat and Madhya Pradesh will move to the red zone. These results mark the states where lockdown by 3 May 2020, can be loosened.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "COVID-19 illness, an on-going epidemic, started in Wuhan city, China, in December 2019 continues to cause infections in many countries around the world [1] . Considering the scale and speed of transmission of COVID-19, on 11 March 2020, the World Health Organization (WHO) declared it as a pandemic [2] . Thereafter, COVID-19 has become a threat to human life on the planet. It has shown rapid infections in almost all countries, and there is no cure available for this deadly virus. Presently governments have issued precautionary measures such as social distancing, sanitization of streets and markets, quarantine of suspected and infected cases, and lockdown of the communities at different scales (colonies, towns, states, and countries, etc.). In India, exponential growth has not been observed as compared to the USA and other European countries. It is due to the measures taken by the Indian government. It indicates that there is a strong influence of these measures, such as lockdown on the transmission behavior of COVID-19. On the other side, these measures create substantial economic losses to the communities, and hence actions mentioned above cannot be imposed for longer periods. Mainly, developing countries (such as India) cannot afford such payoff after some finite time. The Indian government has continuously reviewed every hour situation in every state. The government has become more focused on localizing the lockdown in particularly alarming states and few towns which are hotspots for COVID- 19 . For all these, it is important to have short-term forecasts which can be steering point for decision-makers and administrations. In this connection, data-based statistical models such as Autoregressive integrated moving average (ARIMA) and Holts method have shown effectiveness in predicting short-term forecast including the dengue fever [3, 4] , the hemorrhagic fever with renal syndrome [5] , Tuberculosis [6] and COVID-19 [7] . ARIMA has more ability compared to other prediction models like the support vector machine and wavelet neural network for drought forecasting [8] . Also, exponential smoothing methods have been widely used for forecasting of the population in West Java [9] , an inflation rate of Zambia [10] including a prediction for epidemic mumps [11] and COVID-19 [12] [13] [14] [15] [16] [17] . However, mainly, for India, the short-term forecast is not done thoroughly. As India has diversity across the states, it will be essential to study the spreading behavior of COVID-19 in different Indian states. This article presents a short-term forecast for various Indian states which are severely infected.",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 155,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 299,
+                    "end": 302,
+                    "text": "[2]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1518,
+                    "end": 1520,
+                    "text": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1862,
+                    "end": 1865,
+                    "text": "[3,",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1866,
+                    "end": 1868,
+                    "text": "4]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1913,
+                    "end": 1916,
+                    "text": "[5]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1932,
+                    "end": 1935,
+                    "text": "[6]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1949,
+                    "end": 1952,
+                    "text": "[7]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 2097,
+                    "end": 2100,
+                    "text": "[8]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 2208,
+                    "end": 2211,
+                    "text": "[9]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 2242,
+                    "end": 2246,
+                    "text": "[10]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 2289,
+                    "end": 2293,
+                    "text": "[11]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 2307,
+                    "end": 2311,
+                    "text": "[12]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 2312,
+                    "end": 2316,
+                    "text": "[13]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 2317,
+                    "end": 2321,
+                    "text": "[14]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 2322,
+                    "end": 2326,
+                    "text": "[15]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 2327,
+                    "end": 2331,
+                    "text": "[16]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 2332,
+                    "end": 2336,
+                    "text": "[17]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Introduction"
+        },
+        {
+            "text": "The main objective of the present paper is to present 10-day ahead forecasts from 22April to 1 May 2020 of the cumulative number of infected cases and deaths due to COVID-19. This work also presents the analysis of Indian states at the regional level to understand the spread of infection. The current situation of India is shown in Figure 1 , with the cumulative number of infected cases and deaths from 30 January to 21April 2020. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 333,
+                    "end": 341,
+                    "text": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "Introduction"
+        },
+        {
+            "text": "The process whose statistical properties do not change with time, i.e. process with constant mean and constant variance, known as a stationary process, is a crucial collection of stochastic processes. Mathematically, the joint distribution of",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "of a stationary process. Simply put, shifting the origin of time by a quantity \uf074 does not change the statistical properties of the process. Usually, dealing with real-time data, most time series does not exhibit stationarity in nature as they have no fixed mean. The properties of the crucial collection of models for which the th d difference of the time series is a stationary mixed autoregressive moving average process (ARMA). These models are known as ARlMA models. The ARMA model, introduced by Box and Jenkins, is the collection of popular methods that are directly applicable to modeling and analyzing the time series [18] . The ARMA model is formed by the merger of two models, the autoregressive AR(p) model and the moving average MA(q) model. These models are directly applicable to time series with stationary behavior. In case the series is non-stationary, it must be dealt via differencing to make it stationary. Generally, the ARMA model after differencing is known as ARIMA (p, d,q). Addressing",
+            "cite_spans": [
+                {
+                    "start": 626,
+                    "end": 630,
+                    "text": "[18]",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "The general ARIMA model is given by",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "The expressions in the Eq. 4 are defined as:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "\uf0d1 is an operator, known as difference operator, and used to make the difference of time series stationary; and d is the difference value. In real-time data, taking the first difference (d=1) is usually found to be sufficient and occasionally second difference (d=2) would be enough to achieve stationarity. Akaike Information Criterion (AIC) is one of the essential criteria to select betweencompeting models. Mathematically,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "The model which has the least AIC is selected as the best model. Autocorrelation functions (ACF) and partial autocorrelation functions (PACF) are used to select order of moving average process MA(q) and autoregressive process AR(p) respectively. In the process to investigate the stationarity of time series Kwiatkowski-Phillips-Schmidt-Shin (KPSS) [19] and Augmented Dickey-Fuller (ADF) [20] tests are used. To reject the null hypothesis, the p-value must be smaller than the significance level.",
+            "cite_spans": [
+                {
+                    "start": 349,
+                    "end": 353,
+                    "text": "[19]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 388,
+                    "end": 392,
+                    "text": "[20]",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "ref_spans": [],
+            "section": "2.1ARIMAModel"
+        },
+        {
+            "text": "The numbers of confirmed cases and deaths in India are increasing day by day, as shown in Figure 1 thereupon the time series exhibit trend. Simple exponential smoothing methods should not apply in this case. When data shows the pattern, and there is no seasonality, Holt's method is a primary tool to handle it. Holt's method is a double exponential smoothing method (not based on ARIMA approach) which has two parameters. This method divides the time series into two sections: the level and the trend denoted by t B and t M respectively. These two parts are as follows: ) )( 1 (",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 90,
+                    "end": 98,
+                    "text": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "Holt'sMethod"
+        },
+        {
+            "text": "The in-future forecasts values h t X \uf02b of the time series can be calculated by:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Holt'sMethod"
+        },
+        {
+            "text": "where h is the number of periods in the future. Diverse statistical meaning-making models in the Rlanguage platform were used to evaluate the time series of infected cases and deaths for prediction purposes.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Holt'sMethod"
+        },
+        {
+            "text": "We present results for 10-day ahead forecasts (22 April to 1 May2020) generated for the cumulative number of infected cases and deaths in India as well as in the ten most affected states: Kerala, Maharashtra, Delhi, Gujarat, Tamil Nadu, Telangana, Uttar Pradesh, Madhya Pradesh, Karnataka, Rajasthan. In this work, we used two models Holt's method and ARIMA model to forecast the cumulative infected cases and deaths of COVID-19. For the ARIMA model, we forecast per day new infected case(s) and new death(s), whereas for Holt's method cumulative numbers are generated. ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Results and Discussion"
+        },
+        {
+            "text": "During the analysis and forecasting of a time series, it is good to plot the time series data and pay attention to the unique features exhibited by the time series. It gives direction to the researcher for choosing an appropriate modeling approach that directly captures identified features. Before starting the procedure, there is a need to make the time series stationary. To stabilize the variance, we used square root transformation on the infected number of cases per day time series. For investigating the stationarity of time series, we take the support of the KPSS and ADF test, and results are shown in Table 1 . The first difference of series, i.e. d=1, is optimum to make series reasonably stationary. Based on a 5% significance level both the tests, ADF and KPSS, reject the hypothesis of stationarity of time series without making any difference. Afterwards taking the first difference, both the criteria agree on the stationarity of time series. Further, to estimate another two parameters of the candidate model, the ACF and PACF of series, first difference, and square root transformation are used. From Figure 2 (a) and 2(b), the ACF display one spike, and the PACF also displays one spike. Initially, on the bases of the number of spikes, we selected ARIMA(1, 1, 1). Alternate models are also used to compete with the ARIMA(1,1,1) model. All alternative models and their AIC values with the Ljung-Box test p-values are shown in Table 2 . A model with a minimal amount of AIC is to have well-behaved residuals. Finally, we select ARIMA(1,1,2) for forecasting. In terms of the residuals, the ARIMA(1,1,2) model passed the Ljung-Box test with p-values larger than 0.05 level of significance. Since ARIMA(1,1,2) has the lowest AIC value, which means the residuals of ARIMA(1,1,2) are much well behaved compared to other considered models. We examine that all the residuals are scattered around zero mean with constant variance. Using this, ARIMA(1,1,2) model observe 36335.53 [95% PI(30884.56 -42918.87)] cumulative infected cases between by 1 May2020, results are shown in Table 3 . Since only one difference makes the time series stationary, we conclude to take d=1. Results of ADF and KPSS tests are presented in Table 4 . From Figure 2 (c) and 2(d), ACF demonstrates two significant spikes, and PACF demonstrates zero significant spike. Based on the number of spikes, we selected ARIMA (0, 1, 2) . Alternate models were also used to compete with the ARIMA (0,1,2) model. Details of other potential models along with AIC values and Ljung-Box test p-values given in Table 5 . Furthermore, to forecast the number of deaths per day in India, we found ARIMA (0,1,3) a reasonable model among other competitor models it has minimum AIC value. Furthermore, we found residuals are randomly scattered around zero mean with non-changing variance with time. Also, ARIMA(0,1,3) does not show a lack of fit with the Ljung-box test p-value larger than 0.05. Graphical results of forecasting from infected cases and deaths are shown in Figure 3 . Table 3 . To eliminate the effect of square root transformation in per day infected cases we take a square of forecasted observations. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 612,
+                    "end": 619,
+                    "text": "Table 1",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1120,
+                    "end": 1128,
+                    "text": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1446,
+                    "end": 1453,
+                    "text": "Table 2",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 2088,
+                    "end": 2095,
+                    "text": "Table 3",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 2230,
+                    "end": 2237,
+                    "text": "Table 4",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 2245,
+                    "end": 2253,
+                    "text": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 2404,
+                    "end": 2413,
+                    "text": "(0, 1, 2)",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 2582,
+                    "end": 2589,
+                    "text": "Table 5",
+                    "ref_id": "TABREF6"
+                },
+                {
+                    "start": 3038,
+                    "end": 3046,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 3049,
+                    "end": 3056,
+                    "text": "Table 3",
+                    "ref_id": "TABREF3"
+                }
+            ],
+            "section": "India forecasting: 3.2.1 ARIMA model:"
+        },
+        {
+            "text": "The time series plot of the cumulative number of confirmed cases and deaths for India is presented in Figure 1 exhibiting the trend in time series, but it does not have a pattern of seasonality. As a result of the features shown by time series in Figure 1 , Holt's method was selected in this study to accomplish a 10-day ahead forecast (22 April to 1 May 2020). Generally, a Holt method has two smoothing constants, \u03b1, and \u03b2 (their values lie in range 0 and 1). The square root transformation is used to stabilize the variance in the time series of infected cases. In the process to attain the optimal parameters we applied by trial and error technique. Results are shown in Table 6 ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 102,
+                    "end": 110,
+                    "text": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 247,
+                    "end": 255,
+                    "text": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 676,
+                    "end": 683,
+                    "text": "Table 6",
+                    "ref_id": "TABREF8"
+                }
+            ],
+            "section": "Holt's Method:"
+        },
+        {
+            "text": "COVID-19 is spreading very fast in India. Locating the regions of most spread within India will give insight for the lifting the lockdown which commenced on 25 March 2020. On the regional level, this study shows the analysis for the cumulative number of cases but not deaths due to the unavailability of data. A glimpse of the current situation of the increasing number of cases in 10 states is given in Figure 4 , certainly detectable that Maharashtra, Gujarat, and Delhi are the most affected states in India till 21April2020. And Kerala is least affected in our list of states. Time series starts from the date when the first case was reported in the respective state. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 404,
+                    "end": 412,
+                    "text": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ],
+            "section": "Indian states forecasting:"
+        },
+        {
+            "text": "For forecasting purposes, using the ARIMA model, the number of newly infected cases per day are analyzed instead of cumulative infected cases. To select the optimum ARIMA model for each state, firstly each state's time series is made stationary by taking differences. Next, we used ADF and KPSS tests to check stationarity. To stabilize the variance of Delhi, Telangana, Uttar Pradesh, and Gujarat time series, cube root transformations are used; later, one difference is enough to remove the trend. While to stabilize the variance of Maharashtra, Karnataka and Rajasthan time series, square root and square transformations are used, respectively.The same procedure is adopted for all the tentime series of infected cases per day. AIC values are used to select the best models, and the model is chosen on the base of the smallest AIC value. Results of analysis for ARIMA models are shown in Table 9 . Analysis by ARIMA models shows that Maharashtra and Gujarat will be the most affected states by 1 May2020, with around 9787.24 and 4216cumulative cases, respectively. As we observe that Kerala's growth is declining and it will be less affected states with 449 [PI 95%(408-574.99)] cumulative cases. All the models passed the Ljung-Box test as well as does not show any lack of fit. It is found that Kerala and Karnataka were in the red zone, and Gujarat and Madhya Pradesh were in the blue area until 1 April 2020 ( Figure 12 ). But they are likely to change their positioning by 1 May. Accordingly, Kerala and Karnataka will shift to the blue zone as cases are declining in both states. Conversely, Gujarat and Madhya Pradesh will move to the red area. The government should impose extra precautions in these states, as the cases will significantly rise in both in the coming days. While lockdown should remain in the red zone, conversely, the blue area is not remarkably affected by COVID-19, so lockdown should be lifted with some restrictions.It is advisable to lift the lockdown in states within green and light green zones for the proper functioning of the economy.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 891,
+                    "end": 898,
+                    "text": "Table 9",
+                    "ref_id": "TABREF11"
+                },
+                {
+                    "start": 1417,
+                    "end": 1426,
+                    "text": "Figure 12",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "ARIMA model:"
+        },
+        {
+            "text": "Further, analysis of red and blue zones at the regional level is of importance to decide about raising the district wise lockdown.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "ARIMA model:"
+        },
+        {
+            "text": "The spread of the COVID-19 epidemic has been slow in India as compared to other countries like Italy and the USA. It reflects the influence of the broad spectrum of social distancing measures put in use by the government of India, which has played the role of a barrier to growing infected cases and deaths, apparently helped to slow down the epidemic growth. Our short-term forecast reveals that at the regional level, Delhi, Rajasthan, Gujarat, Maharashtra, Uttar Pradesh, Madhya Pradesh, Telangana, and Tamil Nadu will be the most affected states in the coming days. Considering the situation, lockdown should not be lifted in these states. The number of cases in Kerala and Karnataka is found to be reducing. Moreover, these states are shifted from the red zone to blue. Since very little growth in the future is predicted, lockdown may be lifted in these states with some restrictions for the proper functioning of economic activities. While states in green and light green zones, namely, Himachal Pradesh, Goa, Uttrakhand, Bihar, Jharkhand, Chhattisgarh, Odisha, Sikkim, Assam, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya show very less growth in the infected cases till 1 May, therefore, lockdown may be uplifted there. On India level, there will be around 36335.63 [95% PI(30884.56, 42918.87)] cases and 1099.38 [95% PI(959.77, 1553.76)] deaths up to 1 May 2020. The forecasts presented here are based on the assumption that current mitigation efforts will continue. ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Conclusions"
+        },
+        {
+            "text": "We obtained daily updates of the cumulative number of infected cases and deaths of the corona-virus illness for India from Worldometer website (online available: https://www.worldometers.info/corona-virus/country/india/). To obtain the state-wise cumulative number of infected cases and deaths for the corona-virus illness we used the government of India website (online available: https://www.mygov.in/corona-data/covid19-statewise-status). We gathered data of infected case(s) every day at 12 midnight (GMT-5) from 30 January to 21 April 2020. And forecasted the cumulative number of infected cases and deaths of the epidemic over the India and the cumulative number of infected cases in ten Indian states: Kerala, Maharashtra, Delhi, Gujarat, Tamil Nadu, Telangana, Uttar Pradesh, Madhya Pradesh, Karnataka, and Rajasthan, which show a high burden of COVID-19 cases.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Data Availability"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Short-term Forecasts of the COVID-19 Epidemic in Guangdong and Zhejiang",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Roosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kirpich",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rothenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Hyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Journal of Clinical Medicine",
+            "volume": "9",
+            "issn": "2",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "2020. Day Level Forecasting for corona-virus Disease (COVID-19) Spread: Analysis, Modeling and Recommendations",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Elmousalami",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Hassanien",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2003.07778"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Time series analysis of dengue incidence in Rio de Januaryeiro, Brazil. The American journal of tropical medicine and hygiene",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Luz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Mendes",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Code\u00e7o",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Struchiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Galvani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "",
+            "volume": "79",
+            "issn": "",
+            "pages": "933--939",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Development of temporal modeling for prediction of dengue infection in Northeastern Thailand",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wongkoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jaroensutasinee",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jaroensutasinee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Asian Pacific journal of tropical medicine",
+            "volume": "5",
+            "issn": "3",
+            "pages": "249--252",
+            "other_ids": {}
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Forecasting incidence of hemorrhagic fever with renal syndrome in China using ARIMA model",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC infectious diseases",
+            "volume": "11",
+            "issn": "1",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "A statistical analysis of the seasonality in pulmonary tuberculosis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rios",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Garcia",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Sanchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Perez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "European journal of epidemiology",
+            "volume": "16",
+            "issn": "5",
+            "pages": "483--488",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Application of the ARIMA model on the COVID-2019 epidemic dataset. Data in brief",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Abenvenuto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Giovanetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Vassallo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Angeletti",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ciccozzi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Comparison of the Ability of ARIMA, WNN and SVM Models for Drought Forecasting in the Sanjiang Plain",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "China. Natural Resources Research",
+            "volume": "",
+            "issn": "",
+            "pages": "1--18",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Application of Holt exponential smoothing and ARIMA method for data population in West Java",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Supriatna",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Susanti",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hertini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "IOP Conference Series: Materials Science and Engineering",
+            "volume": "166",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Forecasting inflation rate of Zambia using Holt's exponential smoothing",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jere",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Siyanga",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Open journal of Statistics",
+            "volume": "6",
+            "issn": "2",
+            "pages": "363--372",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Application of exponential smoothing method in prediction and warning of epidemic mumps",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "Q"
+                    ],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Zhongguoyimiao he mianyi",
+            "volume": "16",
+            "issn": "3",
+            "pages": "233--237",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Trend Analysis and Forecasting of COVID-19 outbreak in India. medRxiv",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Pal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Real-time forecasts of the COVID-19 epidemic in China from",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Roosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kirpich",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rothenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Hyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Infectious Disease Modelling",
+            "volume": "5",
+            "issn": "",
+            "pages": "256--263",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "Age-structured impact of social distancing on the COVID-19 epidemic in India",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Adhikari",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2003.12055"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Predicting the cumulative number of cases for the COVID-19 epidemic in China from early data",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Magal",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Seydi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2002.12298"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "Predicting the cumulative number of cases for the COVID-19 epidemic in China from early data",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Magal",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Seydi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "arXiv": [
+                    "arXiv:2002.12298"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "Real-time monitoring the transmission potential of COVID-19 in Singapore",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tariq",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Roosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Blumberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "Time series analysis: forecasting and control",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Box",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Jenkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Reinsel",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Ljung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "Testing the null hypothesis of stationarity against the alternative of a unit root",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kwiatkowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Phillips",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Journal of econometrics",
+            "volume": "54",
+            "issn": "1-3",
+            "pages": "159--178",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "Testing for unit roots in autoregressive-moving average models of unknown order",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "E"
+                    ],
+                    "last": "Said",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Dickey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Biometrika",
+            "volume": "71",
+            "issn": "3",
+            "pages": "599--607",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "(a) Number of infected cases from 30 Januaryto 21 April 2020; (b) Number of deaths from 30 January to 21 April 2020.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "(a) ACF for the infected number of cases per day after square root transformation; (b) PACF for the infected number of cases per day after square root transformation; (c) ACF for the number of deaths per day; (d) PACF for the number of deaths per day.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "(a)10-days ahead forecast (22 April to 1 May 2020) for the number of infected cases per day using ARIMA(1,1,2) model; (b) 10-days ahead forecast (22 April to 1 May 2020) for the number of deaths per day using ARIMA(0,1,3) model; (c) 10-days ahead forecast (22 April to 1 May 2020) using Holt's method for the cumulative number of infected cases; (d) 10-days ahead forecast (22 April to 1 May 2020) for the cumulative number of days using Holt's method.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Number of infections in the ten most affected Indian states by corona-virus as of 30 January to 21April2020.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Kerala; (b) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Rajasthan; (c) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Delhi; (d) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Madhya Pradesh.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Tamil Nadu;(b) 10-days ahead forecast (22 April to 1May 2020) using Holt's Method for Karnataka.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "(a)10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Uttar Pradesh; (b) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Telangana.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(2,1,0) model for Kerala; (b) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(0,1,1) model for Rajasthan; (c) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(1,1,2) model for Delhi; (d) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(0,1,1) model for Madhya Pradesh.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(2,1,1) model for Uttar Pradesh; (b) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(2,1,0) model for Telangana; (c) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(1,1,1) model for Tamil Nadu; (d) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(3,1,0) model for Karnataka.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(0,1,0) model for Gujarat; (b) 10-days ahead forecast (22 April to 1 May 2020) using ARIMA(0,1,2) model for Maharashtra.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF10": {
+            "text": "(a) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Gujarat; (b) 10-days ahead forecast (22 April to 1 May 2020) using Holt's Method for Maharashtra.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF11": {
+            "text": "Spatial distribution of the coronavirus outbreak in the period of 30 Jan to 1 April 2020.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF12": {
+            "text": "Spatial distribution of the coronavirus outbreak in the period of 30 Jan to 1 May 2020.",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": ": As of12 April 2020, there were 9205 cumulative numbers of infected cases and 331 cumulative numbers of deaths in India. For validation purposes, we forecasted the cumulative number of infected cases and deaths from 7-12 April 2020, using ARIMA and Holt's method.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table of p-values from ADF and KPSS tests after taking the differences of square root transformed data for infected cases per day in India.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Potential models for infected cases per day with AIC value and Ljung-Box test pvalue.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Results of 10-days ahead forecasts (22 April to 1 May 2020) using ARIMA model for the cumulative number of infected cases and deaths.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table of p-values from ADF and KPSS tests for deaths per day in India.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Potential models for deaths per day data with AIC values and Ljung-Box test pvalues.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF7": {
+            "text": "different values of \u03b1 and \u03b2 are tried to retrieve the optimum forecast for cumulative deaths. The square root transformation is used to stabilize the variance in the time series of deaths. The results of the trials are listed inTable 7with AIC and RMSE values. Smallest values of AIC=151.78 and RMSE=0.26 at \u03b1=0.8 and \u03b2=0.2 are achieved. Subsequently, checking the Ljung-Box test p-value=0.109 we identify that model does not lack of fit. Graphical results of forecasting from infected cases and deaths are presented in Figure 3. From Table 8, 36624.43 [95% PI(30716.59-43051.56)] cumulative infected cases and 1140.70 [ PI % (945.32-1354.42)] cumulative deaths are in India up-to 1 May2020.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF8": {
+            "text": "Selection process for parameters in Holt's method to forecast the cumulative number of infected cases in India.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF9": {
+            "text": "Selection process for parameters in Holt's method to forecast the cumulative number of deaths.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF10": {
+            "text": "Results of 10-days ahead forecasts (22 April to 1 May 2020) using Holt's method for the cumulative number of infected cases and deaths.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF11": {
+            "text": "Region",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF12": {
+            "text": "Region-wise 10-days ahead forecasts (22 April to 1 May 2020) details of Holt's method, along with Ljung-Box test p-values. Point forecast and 95% prediction intervals are given in the last two columns.",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": [
+        {
+            "text": "The authors declare no conflicts of interest.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "acknowledgement"
+        },
+        {
+            "text": "Research Support is provided by the Indian Institute of Technology Mandi.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "FundingStatement"
+        }
+    ]
+}

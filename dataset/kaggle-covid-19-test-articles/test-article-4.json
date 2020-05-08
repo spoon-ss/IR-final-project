@@ -1,0 +1,1401 @@
+{
+    "paper_id": "00c386ee8b9fac7eeb2291a72d52966d83eec814",
+    "metadata": {
+        "title": "Isothermal evaporation rate of deposited liquid aerosols and the SARS-CoV-2 coronavirus survival",
+        "authors": [
+            {
+                "first": "P",
+                "middle": [
+                    "S"
+                ],
+                "last": "Grinchuk",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "National Academy of Sciences of Belarus",
+                    "location": {
+                        "addrLine": "15 P. Brovka Str",
+                        "postCode": "220072",
+                        "settlement": "Minsk",
+                        "country": "Belarus"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "E",
+                "middle": [
+                    "I"
+                ],
+                "last": "Fisenko",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "National Academy of Sciences of Belarus",
+                    "location": {
+                        "addrLine": "15 P. Brovka Str",
+                        "postCode": "220072",
+                        "settlement": "Minsk",
+                        "country": "Belarus"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "S",
+                "middle": [
+                    "P"
+                ],
+                "last": "Fisenko",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "National Academy of Sciences of Belarus",
+                    "location": {
+                        "addrLine": "15 P. Brovka Str",
+                        "postCode": "220072",
+                        "settlement": "Minsk",
+                        "country": "Belarus"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "S",
+                "middle": [
+                    "M"
+                ],
+                "last": "Danilova-Tretiak",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "National Academy of Sciences of Belarus",
+                    "location": {
+                        "addrLine": "15 P. Brovka Str",
+                        "postCode": "220072",
+                        "settlement": "Minsk",
+                        "country": "Belarus"
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "A",
+                "middle": [
+                    "V"
+                ],
+                "last": "",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "National Academy of Sciences of Belarus",
+                    "location": {
+                        "addrLine": "15 P. Brovka Str",
+                        "postCode": "220072",
+                        "settlement": "Minsk",
+                        "country": "Belarus"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "It is shown that the evaporation rate of a liquid sample containing the culture of coronavirus affects its survival on a substrate. Possible mechanisms of such influence can be due to the appearance of large, about 140 bar, non comprehensive capillary pressures and the associated dynamic forces during the movement of the evaporation front in a sample with the virus. A simulation of isothermal evaporation of a thin liquid sample based on the Stefan problem was performed. The comparison of simulation data and recent experiments on the coronavirus survival on various surfaces showed that the rate of isothermal evaporation of aqueous samples, which is higher for heat-conducting materials, correlates well with the lifetime of the coronavirus on these surfaces.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "It is shown that the evaporation rate of a liquid sample containing the culture of coronavirus affects its survival on a substrate. Possible mechanisms of such influence can be due to the appearance of large, about 140 bar, non comprehensive capillary pressures and the associated dynamic forces during the movement of the evaporation front in a sample with the virus. A simulation of isothermal evaporation of a thin liquid sample based on the Stefan problem was performed. The comparison of simulation data and recent experiments on the coronavirus survival on various surfaces showed that the rate of isothermal evaporation of aqueous samples, which is higher for heat-conducting materials, correlates well with the lifetime of the coronavirus on these surfaces. In a recent work [1] , experimental medical data on the survival of coronavirus on various surfaces have been presented. Deposition of liquid samples consisting of water with the coronavirus culture on a surface of various materials is common in everyday life and medicine (plastic, cardboard, stainless steel). Surprisingly the lifetime of the virus depends significantly on the substrate material and can differ by almost an order of magnitude. For brevity, below we will call these samples aqueous ones, although the composition of the liquid fraction is more complex. The mechanisms of influence of a substrate material are not known now. Therefore, in our opinion, it is impossible to explain such behavior only by the specific biological interaction of viruses and materials. All experiments [1] were carried out in laboratory conditions at a constant temperature and, apparently, constant illumination. We suppose that the evaporation of aqueous samples plays an important role in the survival of the coronavirus under given conditions.",
+            "cite_spans": [
+                {
+                    "start": 783,
+                    "end": 786,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1564,
+                    "end": 1567,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The influence of such factors as temperature and humidity on the distribution of coronavirus is undeniable. The highest number of incidents of SARS-CoV-2 coronavirus is observed in countries located from 30 to 50 degrees north latitude [2] . Obviously, these countries are primarily linked by the climatic factor in the sense of moderate temperatures and high humidity in winter and spring. Therefore the evaporation rate of water samples with virus is quite low at such conditions. The resistance of viruses to adverse environmental factors is determined by their structure. In biology, it is customary to distinguish between simple and complex viruses. Simple, or non-enveloped, viruses consist of nucleic acid and protein coat (capsid). Complex or enveloped viruses outside the capsid are also surrounded by a lipoprotein envelope (supercapsid) outside the cap- * P.S. Grinchuk gps@hmti.ac.by; www.itmo.by sid, which makes them more vulnerable to adverse environmental factors [3] . The coronavirus SARS-CoV-2 is complexly organized, has a lipoprotein membrane, and its size reaches 80 -160 nm [3, 4] . The characteristic size of the coronavirus protein whiskers is only 10-20 nm [5] . Note that it has already been established that the coronavirus protective membrane is well wetted by water [5] .",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 239,
+                    "text": "[2]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 980,
+                    "end": 983,
+                    "text": "[3]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1097,
+                    "end": 1100,
+                    "text": "[3,",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1101,
+                    "end": 1103,
+                    "text": "4]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1183,
+                    "end": 1186,
+                    "text": "[5]",
+                    "ref_id": null
+                },
+                {
+                    "start": 1296,
+                    "end": 1299,
+                    "text": "[5]",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "It is known that both absolute (AH) and relative humidity (RH) affect various types of viruses [6, 7] . Currently a number of biological and chemical mechanisms of the influence of composition of aqueous samples on viruses are considered: water activity, surface inactivation, salt toxicity etc. [6] . We would like to discuss a purely physical mechanism of influence here. We propose a new hypothesis about the influence of evaporation of aqueous samples with coronaviruses on the survival of coronaviruses. We suppose that the movement of the evaporation front through the liquid layer with the virus leads to the cessation of its activity. The resulting local nanoscale curvatures of the liquid surface lead to the appearance of huge local gradients in hydrostatic pressure, which cause damage to the virus. The high resistance of viruses to external comprehensive mechanical loads is well known [8, 9] . We assumed that the lifetime of the virus during the movement of the evaporation front is significantly reduced due to additional mechanical stresses on some whiskers in a nanolayer of liquid above the virus. Indeed, when the evaporation front moves under the action of capillary forces (Laplace pressure), a pressure drop of about 10 bar at a diameter of 80 nm acts on the coronavirus. At the same time, a pressure of out 140 bar is already acting on his \"whiskers\", which have characteristic dimensions of 10-20 nm. Inhomogeneous dynamic capillary pressure forces can cause mechanical damage to the virus. Observed effect of the decrease in the concentration of viable viruses in aqueous sample during evaporation from a solid substrate in experiments confirms our assumption about existence of the physical mechanism [1] .",
+            "cite_spans": [
+                {
+                    "start": 95,
+                    "end": 98,
+                    "text": "[6,",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 99,
+                    "end": 101,
+                    "text": "7]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 296,
+                    "end": 299,
+                    "text": "[6]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 899,
+                    "end": 902,
+                    "text": "[8,",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 903,
+                    "end": 905,
+                    "text": "9]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1728,
+                    "end": 1731,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "There is at least a qualitative analogy, confirmed by different experimental data. Significant deformations of a graphene oxide sheet were experimentally discovered in an evaporating micron droplet of water [10] . Graphene is a very strong material, the elastic modulus of which reaches 1 TPa [11] .",
+            "cite_spans": [
+                {
+                    "start": 207,
+                    "end": 211,
+                    "text": "[10]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 293,
+                    "end": 297,
+                    "text": "[11]",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "In any case, the presence of a virus near the evaporation front violates the symmetry of the evaporation front, which should lead to nanoscale deformations. At a higher evaporation rate, for example, for a copper substrate, deformations near the evaporation front should increase in amplitude and, as experimental data show [1] , individual mechanical properties of each virus type begin to reveal. At relatively slow evaporation rates, the difference between kinds of viruses disappears (experiments with aerosols on plastic and stainless-steel substrates with SARS-CoV-2 and SARS-CoV-1).",
+            "cite_spans": [
+                {
+                    "start": 324,
+                    "end": 327,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The purpose of this work is to show, at least semiqualitatively, the impact of the thermal conductivity of a substrate material on the evaporation of a liquid sample with virus culture.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Thus, we connect the problem of the virus survival with the problem of evaporation of a liquid sample as we consider the conditions of experiments [1] . The experiments were carried out at room temperature 21-23 \u2022 C. The relative humidity during the preparation of the liquid substance with the virus culture was 40%. The survival rate of the coronavirus culture was evaluated for polypropylene, stainless steel from AISI 304 alloy, copper and cardboard. Thus various domestic and hospital situations were experimentally modeled. Note that the pieces of materials were of arbitrary sizes and thicknesses. The initial concentration of the virus in the biomaterial was 10 3.4 \u2212 10 3.7 or 2500-5000 ml \u22121 . This corresponded to the typical concentrations observed in the upper and lower respiratory tract of a human. Next, a liquid biomaterial with a viral culture in a volume of V d = 50 \u00b5l was applied to the surfaces described above. At certain time intervals, smears were taken from the surfaces and the virus concentration was analyzed. The virus was considered deactivated at that moment in time when its concentration decreased to a value of units per milliliter. Thus, it was experimentally measured that the lifetime of the virus was approximately 50 hours on a plastic substrate, was 24 hours on a cardboard substrate, was 30 hours on a) stainless steel substrate, and was 5 hours on a copper substrate [1] . These results are of great practical importance for epidemiologists in order to reach the effective prevention of the spread of coronavirus [12] .",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 150,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1410,
+                    "end": 1413,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1556,
+                    "end": 1560,
+                    "text": "[12]",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Our experience in solving evaporation problems indicates that the evaporation rate of thin films and ensembles of aerosol particles depends on the thermal conductivity of the substrate [13] . The evaporation proceeds faster from more heat-conducting materials and from thinner substrates. However, before quantifying and analyzing the experimental data, two points must be made. For the objectivity of the results we want to exclude copper and cardboard. It is known that copper and its com-pounds possess both antibacterial and antiviral activity [14, 15] . At the same time, such activity is absent in stainless steel [15] . The highest death rate of the virus was observed on a copper substrate, which leads to an assumption, that it can be the result of the occurrence of a cumulative effect, in which the antiviral properties of the material work in conjunction with the effect of liquid evaporation discussed in this paper. It is important to note that the evaporation of a liquid sample occurs most quickly on copper.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 189,
+                    "text": "[13]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 548,
+                    "end": 552,
+                    "text": "[14,",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 553,
+                    "end": 556,
+                    "text": "15]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 620,
+                    "end": 624,
+                    "text": "[15]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Regarding a cardboard, it should be noted that this is a porous material on which, in addition to evaporation, moisture is absorbed and diffused into the material. Therefore, the lifetime of a liquid sample with viruses on cardboard is reduced, as well as on any other porous material that absorbs moisture. This qualitative explanation correlates with the well-known fact that respiratory viruses live less on porous surfaces [16] . Therefore, only simulation results for stainless steel substrate and plastic one can be correctly compared.",
+            "cite_spans": [
+                {
+                    "start": 427,
+                    "end": 431,
+                    "text": "[16]",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "We calculate the time of evaporation of the deposited liquid layer of thickness h on a substrate of thickness H, taking into account the thermophysical properties of all the materials involved in the process (Fig.1) . This problem is governed by the one-dimensional non-stationary moving boundary problem known as the Stefan problem. Brownian diffusion of coronaviruses maintains their approximately uniform distribution in the sample volume, so the use of a one-dimensional approach seems reasonable. The temperature T is governed by the heat conduction equation for substrate",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 208,
+                    "end": 215,
+                    "text": "(Fig.1)",
+                    "ref_id": "FIGREF1"
+                }
+            ],
+            "section": ""
+        },
+        {
+            "text": "and for liquid layer",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "subject to the isothermal initial conditions T s (z)| t=0 = T 0 , T w (z)| t=0 = T 0 , and the second kind boundary condition at the boundary of the substrate and the liquid",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The location of the moving evaporating surface of the liquid is governed by the heat balance equation known as Stefan condition",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Here \u03bb s , \u03bb w are the thermal conductivity coefficients of the substrate material and the evaporated liquid; U w is the specific heat of vaporization of the liquid; \u03c1 s , \u03c1 w are the mass density of the substrate and liquid; A w and A a are the energy flows carried by molecules of an evaporating liquid and a ballast gas, respectively. We suppose that evaporation is isothermal, which is typical for the experiments described in [1] .",
+            "cite_spans": [
+                {
+                    "start": 431,
+                    "end": 434,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Using the approach described in [13] , from the solution of the Stefan problem the following expression can be obtained for the time \u03c4 ev of the complete evaporation of the liquid sample",
+            "cite_spans": [
+                {
+                    "start": 32,
+                    "end": 36,
+                    "text": "[13]",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Here T lim is the temperature of the wet thermometer, which depends only on the temperature and humidity near the substrate. For experimental conditions in [1] the relative humidity is about of 40% and the difference T \u2212 T lim is equal to 14 \u2022 C. It is this temperature difference that provides thermodynamic force for the liquid evaporation. It is worthy to emphasize that the temperature of the evaporation surface for quasi steady regime is approximately equal to T lim . For further calculations, we need to determine the thickness of the substrate and the evaporating film one. In [1] , unfortunately, the thicknesses of the materials on which the viral substance was applied were not indicated. Therefore, from general considerations about the thicknesses of materials used in everyday life, we will take the thickness of the substrate equal to H = 1 mm. The characteristic thickness of the liquid layer can be estimated only on the basis of the For further calculations, we need to determine the thickness of the substrate and the evaporating film one. In [1] , unfortunately, the thicknesses of the materials on which the viral substance was applied were not indicated. Therefore, from general considerations about the thicknesses of materials used in everyday life, we will take the thickness of the substrate equal to H = 1mm. This is, for example, the thickness of a credit card. The characteristic thickness of the liquid layer can be estimated only on the basis of the volume indicated in the article as h \u2248 V 1/3 d = 3.7 mm. We assume that the evaporating liquid is close to some properties of water, for which l w = 0.60 W/(m K), U w = 2.26 MJ/kg. Then for stainless steel substrate (\u03bb s = 16.2 W/(m K)) and polypropylene one (\u03bb s = 0.22 W/(m K)), the evaporation time of a liquid layer with a thickness of 3.7 mm on plastic is equal to 3190 seconds, and on stainless steel is about 1850 seconds. In experiments, the lifetime of the virus on a plastic surface exceeds the lifetime on stainless steel substrate by approximately 1.7 times. Calculated the ratio of evaporation times on different substrates is also 1.7 times. This proportion depends only on the physical properties of materials and their thicknesses. The absolute value of the evaporation time in this case also depends on RH. Evaporation time increases significantly with increasing RH of the surrounding space, see Exp. (5) . No doubts that experiments with dangerous viral substances were carried out in closed volumes during several hours. Thus, liquid evaporation increases humidity in the experimental box. In our case an increase in evaporation time by an order of magnitude can occur if the relative humidity rises from 40 to 85%.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 159,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 586,
+                    "end": 589,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1063,
+                    "end": 1066,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 2401,
+                    "end": 2404,
+                    "text": "(5)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The primary experimental data from [1] gives the dynamics of the change in the concentration of the virus over time. If our assumption is correct, then the death rate of viruses should strongly correlate with the evaporation rate of the liquid sample. Below we present the results of quantitative estimates that follow from this assumption. Then we compare them with experimental data [1] .",
+            "cite_spans": [
+                {
+                    "start": 35,
+                    "end": 38,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 385,
+                    "end": 388,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "From the solution of the Stefan problem, we can obtain the functional dependence of the height of the evaporating layer versus time for a substrate with poor thermal conductivity",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "and for a substrate with high thermal conductivity",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Here h 0 is the initial layer height on the substrate. For estimation of the dynamics in the concentration of viruses that are outside a living organism, we use the simplest Malthus model [17] . According to this model, the evolution of the concentration C of viruses is described by the equation",
+            "cite_spans": [
+                {
+                    "start": 188,
+                    "end": 192,
+                    "text": "[17]",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Here k is a parameter characterizing the dynamics of a population change. In the framework of the proposed approach, we believe that the parameter k for the virus population will be proportional to the rate of evaporation k = k \u2032 V ev = k \u2032 dh dt . Then, for the two limiting cases of evaporation of a viral liquid sample, we have the following equations for the dynamics of the virus population. The equation for low heat conductive substrate (\u03bb s < \u03bb w )",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "with solution",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "and equation for high heat conductive substrate (\u03bb s \u226b \u03bb w )",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "with solution",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "In the limit of short times, it follows from (13) that",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Here \u03c4 lc and \u03c4 hc are the characteristic lifetimes of viruses on a low heat-conducting and high heatconducting substrate respectively.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Additional treatment of experimental data [1] shows an exponential decay of virus concentration over time (Fig. 2) . Moreover, for a stainless steel substrate, this characteristic time is \u03c4 hc \u2248 7.4 h, for a plastic substrate \u03c4 lc \u2248 11.0 h.",
+            "cite_spans": [
+                {
+                    "start": 42,
+                    "end": 45,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 106,
+                    "end": 114,
+                    "text": "(Fig. 2)",
+                    "ref_id": "FIGREF2"
+                }
+            ],
+            "section": ""
+        },
+        {
+            "text": "For a low heat-conducting substrate, the proposed model also predicts a simple exponential decay of the virus concentration over time. On a high conductive substrate, the concentration behavior is a more complex one. Asymptotically at initial times, virus concentration also has an exponential decay. But from (11) it follows that in this problem there is one more characteristic time",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "This time is equal to twice the time of liquid film evaporation in the considered approximation. According to our model after time \u03c4 lim the concentration of the virus become constant. To note that similar picture is observed in the experimental data. The obtained expressions allow us to draw several interesting conclusions. The large viral lifetimes observed in the discussed experiments are consistent with formulas (11) and (15) under the condition of high humidity in the local environment of the substrate. An increase in humidity will lead to an increase in the lifetime of the viral population in both cases. It follows from the expression (15) that the discussed lifetime for case of a high conductive substrate does not depend on the thickness of the substrate, but depends on the initial thickness of the liquid film. For a low heat-conducting substrate, it follows from the Exp. (11) that the lifetime of viruses in liquid sample increase with a decrease in the thermal conductivity of the substrate and an increase in the total thickness of the substrate.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "These conclusions require additional verification. Nevertheless they can play a important role for medical practitioners and researches.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Finally let us estimate the rate of evaporation of aerosol, which can be formed on various surfaces by sneezing or coughing.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "Consider a practical example when, in isothermal conditions, an aqueous aerosol with a coronovirus is deposited on a solid surface. Using again the approach related to the Stefan problem again [13] , we obtain the estimation for the aerosol evaporation time \u03c4 a \u03c4 a = \u03c1 w U w HR 2\u03bb s (T \u2212 T lim )",
+            "cite_spans": [
+                {
+                    "start": 193,
+                    "end": 197,
+                    "text": "[13]",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": ".",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "As it can be seen, the thermal conductivity of the substrate, the initial radius of the aerosol droplets R, and the thickness of the substrate determine the time of the aerosol evaporation. During aerosol evaporation deformations near the evaporation front destroy viruses. It is known that when coughing, the average droplet size of the aerosol is 5 \u00b5m [18] , while sneezing the aerosol has a generally bimodal distribution of drops with maxima in the size range of 100 and 600 \u00b5m [19] . In Figure 3 for two temperatures 22 \u2022 C and 37 \u2022 C the evaporation time of water aerosol particles with a diameter of 5 and 100 \u00b5m are shown. The plastic substrate in this estimations has 2 mm thickness. Interestingly that the human skin has a thermal properties very similar to the plastic material [20] . Therefore, these calculations will be relevant for estimation the aerosol evaporation time on the surface of human skin.",
+            "cite_spans": [
+                {
+                    "start": 354,
+                    "end": 358,
+                    "text": "[18]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 482,
+                    "end": 486,
+                    "text": "[19]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 789,
+                    "end": 793,
+                    "text": "[20]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 492,
+                    "end": 500,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF3"
+                }
+            ],
+            "section": ""
+        },
+        {
+            "text": "The evaporation time range varies widely and is sensitive to air humidity near the substrate. At 100% relative humidity, the aerosol does not evaporate at all.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "The presented theory cannot cover all physical aspects of the complex problem of the vital functions of viruses. But we believe that it revealed an important correlation between the rate of evaporation of liquid biological sample and the vitality of coronavirus. It was shown that the main experimental results on the dynamics of coronavirus survival on various surfaces, presented in [1] , correlate well with the rate of isothermal evaporation of liquid samples with viruses on substrates which do not absorb moisture. The evaporation rate depends on the thermal conductivity and thickness of the substrate, as well as the relative humidity of the surrounding air. Ceteris paribus, the viral culture should die faster on more thermally conductive and thinner substrates, as well as in lower relative humidity environment, which provide a higher evaporation rate.",
+            "cite_spans": [
+                {
+                    "start": 385,
+                    "end": 388,
+                    "text": "[1]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [],
+            "section": ""
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Aerosol and Surface Stability of SARS-CoV-2 as Compared with SARS-CoV-1",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Van Doremalen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "H"
+                    ],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "G"
+                    ],
+                    "last": "Holbrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gamble",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [
+                        "N"
+                    ],
+                    "last": "Williamson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tamin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Harcourt",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Thornburg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Gerber",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "O"
+                    ],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "De Wit",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Munster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "New Eng. J. Med",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Geographical tracking and mapping of coronavirus disease COVID-19/severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) epidemic and associated events around the world: how 21 st century GIS technologies are supporting the global fight against outbreaks and epidemics",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [
+                        "N K"
+                    ],
+                    "last": "Boulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Geraghty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Int. J. Health Geogr",
+            "volume": "19",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Origin and evolution of pathogenic coronaviruses",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Nat. Rev. Microbiol",
+            "volume": "17",
+            "issn": "3",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Molecular immune pathogenesis and diagnosis of COVID-19",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Geng",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Meng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "Analysis of therapeutic targets for SARS-CoV-2 and discovery of potential drugs by computational methods",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Mechanisms by which ambient humidity may affect viruses in aerosols",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Marr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Appl. Environ. Microbiol",
+            "volume": "78",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Absolute humidity modulates influenza survival, transmission, and seasonality",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Shaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kohn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PNAS",
+            "volume": "106",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Mechanical properties of viral capsids",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zandi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Reguera",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Phys. Rev. E",
+            "volume": "72",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Determination of prestress and elastic properties of virus capsids",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Phys. Rev. E",
+            "volume": "97",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Evaporation-Induced Crumpling of Graphene Oxide Nanosheets in Aerosolized Droplets: Confinement Force Relationship",
+            "authors": [
+                {
+                    "first": "W.-N",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Biswas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Phys. Chem. Lett",
+            "volume": "3",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Mechanical properties of suspended graphene sheets",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Frank",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Tanenbaum",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Van Der Zande",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Mceuen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Vac. Sci. Technol",
+            "volume": "25",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "Measurement of the elastic properties and intrinsic strength of monolayer graphene",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Kysar",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "321",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF13": {
+            "ref_id": "b13",
+            "title": "Dynamic vaccination in partially overlapped multiplex network",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [
+                        "G"
+                    ],
+                    "last": "Alvarez-Zuzek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Di Muro",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Braunstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Phys. Rev. E",
+            "volume": "99",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF14": {
+            "ref_id": "b14",
+            "title": "Features of evaporation of an ensemble of femto-picoliter droplets on a substrate. Experiment and simulation",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Khodyko",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Saverchenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Fisenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Interfac. Phen. Heat Transf",
+            "volume": "6",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF15": {
+            "ref_id": "b15",
+            "title": "Highly efficient antiviral and antibacterial activities of solid-state cuprous compounds",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sunada",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Minoshima",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hashimoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Hazard. Mater",
+            "volume": "235",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF16": {
+            "ref_id": "b16",
+            "title": "Inactivation of influenza A virus on copper versus stainless steel surfaces",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "O"
+                    ],
+                    "last": "Noyce",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Michels",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Keevil",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Appl. Environ. Microbiol",
+            "volume": "73",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF17": {
+            "ref_id": "b17",
+            "title": "Survival of two avian respiratory viruses on porous and nonporous surfaces",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tiwari",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Patnayak",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chander",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Parsad",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Goyal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "50",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF18": {
+            "ref_id": "b18",
+            "title": "An Essay on the Principle of Population",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Malthus",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Winch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "Malthus",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF19": {
+            "ref_id": "b19",
+            "title": "The size and concentration of droplets generated by coughing in human subjects",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Aerosol Med",
+            "volume": "20",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF20": {
+            "ref_id": "b20",
+            "title": "Characterizations of particle size distribution of the droplets exhaled by sneeze",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [
+                        "G"
+                    ],
+                    "last": "Weng",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J. R. Soc. Interface",
+            "volume": "10",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF21": {
+            "ref_id": "b21",
+            "title": "Temperature distributions in the human leg for VLF-VHF exposures at the ANSIrecommended safety levels",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hoque",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Gandhi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "IEEE Trans. Biomed. Eng",
+            "volume": "35",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "PACS numbers: 42.62.Be, 68.03.Fg, 44.10.+i",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "The sketch for evaporation of a liquid sample with a viral culture from the solid surface.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Processing of experimental data[1] to determine the decay law in the concentration of SARS-CoV-2 virus. \u25b3: stainless steel substrate; \u2022: plastic substrate.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Aerosol evaporation time on a 2 mm thick plastic substrate, depending on air humidity. Blue color is for 5 \u00b5m aerosol droplets, red color is for 100 \u00b5m droplets. Solid lines are for substrate and air temperature 22 \u2022 C; dotted lines are for substrate temperature 37 \u2022 C, air temperature 22 \u2022 C.",
+            "latex": null,
+            "type": "figure"
+        }
+    },
+    "back_matter": [
+        {
+            "text": "The authors are grateful to Professor Oleg Penyazkov for support of this work.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "ACKNOWLEDGMENTS"
+        }
+    ]
+}

@@ -1,0 +1,975 @@
+{
+    "paper_id": "0ab9404566ff5d8d81aebd0e9d9128b9589d9015",
+    "metadata": {
+        "title": "A CASE STUDY OF BRAZIL",
+        "authors": [
+            {
+                "first": "Pedro",
+                "middle": [
+                    "V"
+                ],
+                "last": "Savi",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidade Federal do Rio de Janeiro",
+                    "location": {
+                        "addrLine": "21.941.972 -Rio de Janeiro -RJ",
+                        "postBox": "P.O. Box 68.503",
+                        "country": "Brazil"
+                    }
+                },
+                "email": "pedrov.savi@gmail.com"
+            },
+            {
+                "first": "Marcelo",
+                "middle": [
+                    "A"
+                ],
+                "last": "Savi",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidade Federal do Rio de Janeiro",
+                    "location": {
+                        "addrLine": "21.941.972 -Rio de Janeiro -RJ",
+                        "postBox": "P.O. Box 68.503",
+                        "country": "Brazil"
+                    }
+                },
+                "email": "savi@mecanica.coppe.ufrj.br"
+            },
+            {
+                "first": "Beatriz",
+                "middle": [],
+                "last": "Borges",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Universidade Federal do Rio de Janeiro",
+                    "location": {
+                        "addrLine": "21.941.972 -Rio de Janeiro -RJ",
+                        "postBox": "P.O. Box 68.503",
+                        "country": "Brazil"
+                    }
+                },
+                "email": "beatrizrbborges@gmail.com"
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "This paper deals with the mathematical modeling and numerical simulations related to the coronavirus dynamics. A description is developed based on the framework of susceptibleexposed-infectious-removed model. Initially, a model verification is carried out calibrating system parameters with data from China, Italy, Iran and Brazil. Afterward, numerical simulations are performed to analyze different scenarios of COVID-19 in Brazil. Results show the importance of governmental and individual actions to control the number and the period of the critical situations related to the pandemic. detected in Wuhan City, Hubei Province of China. Afterward, the situation evolves to a huge global crisis with severe effects in Italy, Iran, Spain, South Korea and all over the world. In 11",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "March 2020, WHO declared that COVID-19 can be characterized as pandemic.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "This dramatic situation points that all tools can be useful to define the best strategies for the public health system. In this regard, mathematical modeling is an interesting approach that can allow the evaluation of different scenarios, furnishing information for a proper support for health system decisions. In general, nonlinear dynamics of biological and biomedical systems is the objective of several researches that can be based on mathematical modeling or time series analysis (Savi, 2005) . In particular, coronavirus propagation can be described by a mathematical model that allows the nonlinear dynamics analysis, representing different populations related to the phenomenon. Literature presents some examples related to the dynamics of infectious diseases. Different kinds of models can be employed, essentially considering nonlinear governing equations. Rihan et al. (2018) described the dynamics of coronavirus infection in human, establishing interaction among human cells and the virus. Chen et al. (2020) developed a mathematical model for calculating the transmissibility of the virus considering a simplified version of the bats-hosts-reservoir-people transmission model, defined as a reservoir-people model. Results follow the general trend of the initial propagation. Li et al. (2020) estimated characteristics of the epidemiologic time distribution, exploiting some pattern trends of transmission propagation. Riou & Althaus (2020) exploited the pattern of human-to-human transmission of novel coronavirus in Wuhan, China. Two key parameters are considered: basic reproduction number that defines the infectious propagation; and the individual variation in the number of secondary cases. Uncertainty quantification tools were employed to define the transmission patterns. Susceptible-exposed-infectious-recovered (SEIR) models are an interesting approach to deal with the mathematical modeling of coronavirus transmission. Wu et al. (2020) investigated Wuhan -China case, evaluating nowcasting and forecasting domestic and international spread outbreak. Lin et al. (2020) proposed a model considering individual reaction, governmental action and emigration. The model is based on the original work of He et al. (2013) that proposed a model to describe the 1918 influenza.",
+            "cite_spans": [
+                {
+                    "start": 486,
+                    "end": 498,
+                    "text": "(Savi, 2005)",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "The mathematical model proposed by Lin et al. (2020) seems to be capable to capture the general propagation of the novel coronavirus, being employed in this work to evaluate different scenarios of the propagation of coronavirus in Brazil. Initially, a model verification is carried out considering infected population evolution of China, Italy, Iran and Brazil. Afterward, Brazilian COVID-19 evolution is investigated, simulating different scenarios defined based on governmental and individual reactions.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "Coronaviruses is related to illness that vary from a common cold to more severe diseases related to respiratory syndromes. Coronavirus disease 2019 (COVID-19) was discovered in",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "INTRODUCTION"
+        },
+        {
+            "text": "A frame-by-frame description of the reality can be represented by a set of differential equations. By assuming only time evolution of state variables, \u2208 \u211c , spatial aspects are not of concern, allowing to establish a governing equation of the form: \u0307= ( ), \u2208 \u211c . The description of coronavirus disease 2019 dynamics defines its propagation considering animals and humans transmission. Different kinds of populations need to be defined in order to have a proper scenario of the disease propagation. Lin et al. (2020) proposes a susceptible-exposed-infectious-removed (SEIR) framework model to describe the coronavirus disease 2019 . This model was inspired on the original model of He et al. (2013) for influenza. Essentially, the description considers a total population of size N that contains two classes: D is a public perception of risk regarding severe cases and deaths; and C represents the cumulative infected cases. In addition,",
+            "cite_spans": [
+                {
+                    "start": 498,
+                    "end": 515,
+                    "text": "Lin et al. (2020)",
+                    "ref_id": null
+                },
+                {
+                    "start": 681,
+                    "end": 697,
+                    "text": "He et al. (2013)",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "S is the susceptible population, E is the exposed population, I is the infectious population and R is the removed population that includes both recovered and deaths. A simplified version of the model considers only person-to-person transmission, and therefore, zoonotic effect is neglected. This scenario assumes the second stage of the Wuhan -China case, after the close of the Huanan Seafood Wholesale Market. Emigration effect is also neglected in order to simplify the original model. Therefore, the simplified version of the governing equations considers the interaction among all these populations, being expressed by the following set of differential equations",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "where the following parameters are defined: is the mean infectious period; is the adjusted removed period, defining the relation between removed population and the infected one; is the mean latent period; is the proportion of severe cases; is the mean duration of public reaction. It should be pointed out that the parameter \u2212 defines the evolution of the nonreported removed population, which means that, if = , populations are restricted to the classical SEIR case.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "The function = ( ) represents the transmission rate that considers governmental action, represented by (1 \u2212 ); and the individual action, represented by the function",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "(1 \u2212 ) . Therefore, the transmission rate is modeled as follows,",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "where \u03020 = 0 ( ) ( \u2212 Step function employed to consider parameter variations through time.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "Note that, it is assumed that if 0 ( ) does not exist, the term 0 ( +1) does not exist as well, considering that index m is bigger than 1. Based on that, this general function can represent constant values, or different step functions.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "Using the same strategy, it is defined the governmental action as follows:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "where different steps are considered defined by time instants ( ) .",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "In addition, individual action is represented by",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "which the intensity of responses is defined by parameter . These parameters need to be adjusted for each place, being essential for the COVID-19 description.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "In general, the parameter definitions depend on several issues, being a difficult task. In this regard, it should be pointed out that real data has spatial aspects that are not treated by this set of governing equations. Hence, this analysis is a kind of average behavior that needs a proper adjustment to match real data. Besides, R Li et al. (2020) evaluated Wuhan situation concluding that undocumented novel coronavirus infections are critical for understanding the overall prevalence and pandemic potential of this disease. The authors estimated that 86% of all infections were undocumented and that the transmission rate per person of undocumented infections was 55% of documented infections. This aspect makes the description even more complex.",
+            "cite_spans": [
+                {
+                    "start": 332,
+                    "end": 350,
+                    "text": "R Li et al. (2020)",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "The use of step functions to define some parameters allows a proper representation of different scenarios, especially the transmission rate. It is also important to observe that either governmental or individual actions have a delayed effect on system dynamics. Virus mutations are another relevant aspect related to the description of coronavirus dynamics that can dramatically alter the system response, but are not treated here.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "Numerical simulations are performed considering the fourth-order Runge-Kutta method. The next sections treat the COVID-19 dynamics considering two different objectives.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "Initially, the next section performed a model verification using information from China, Italy, Iran and Brazil. Afterward, the subsequent section evaluates different scenarios for the Brazilian case, using the parameters adjusted for the verification cases.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MATHEMATICAL MODEL"
+        },
+        {
+            "text": "As an initial step of the developed analysis, a model verification is carried out using information available on Worldometer (https://www.worldometers.info/coronavirus/), considering different countries (Last updates: China -March 26, Italy -Mar 21; Iran -Mar 26; Brazil -Mar 24). The fundamental hypothesis of the analysis is that average populations of the country is of concern. Therefore, it is assumed that each country has a homogeneous distribution, without spatial patterns.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MODEL VERIFICATION"
+        },
+        {
+            "text": "Basically, information from China, Italy, Iran and Brazil are employed. This information is useful to calibrate the model parameters, evaluating its correspondence with real data. Table   1 presents parameters employed for all simulations. They are based on the information of the Lin et al. (2020) that, in turn, is based on other references as He et al. (2010) and Breto et al. (2009) . For more details, see other citations referenced therein. Mean duration of public reaction 11.2 days",
+            "cite_spans": [
+                {
+                    "start": 281,
+                    "end": 298,
+                    "text": "Lin et al. (2020)",
+                    "ref_id": null
+                },
+                {
+                    "start": 346,
+                    "end": 362,
+                    "text": "He et al. (2010)",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 367,
+                    "end": 386,
+                    "text": "Breto et al. (2009)",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 180,
+                    "end": 189,
+                    "text": "Table   1",
+                    "ref_id": "TABREF0"
+                }
+            ],
+            "section": "MODEL VERIFICATION"
+        },
+        {
+            "text": "In addition, susceptible population initial condition is assumed to be 0 = 0.9 \u2212 0 \u2212 0 \u2212 0 . In addition, it is assumed that there is no recovered population initially, i.e., 0 = 0. Another information needed for the model is the number exposed persons for each infected person. It is adopted that each infected person has the potential to expose 20 persons, 0 = 20 0 .",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "MODEL VERIFICATION"
+        },
+        {
+            "text": "Transmission rate considers specific parameters for each case. Nevertheless, the reference values are presented in Table 2 . Other parameters are adjusted depending on the case. In the sequence, the dynamics of four different countries is analyzed in order to promote a model verification.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 115,
+                    "end": 122,
+                    "text": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ],
+            "section": "MODEL VERIFICATION"
+        },
+        {
+            "text": "The first scenario for the model verification is based on China results. It should be pointed out that this analysis considers all cases in China, not restricted to Wuhan. Parameters presented in Table 3 are employed for simulations with a population of N = 1.43\uf0b4109 and an initial state with 554 infected persons ( 0 = 554). It should be highlighted again that these parameters are average ones since they are valid for the whole country. Of course, reaction time is different from the distinct parts of the country, which makes necessary to estimate this parameter based on the real data in an average way. Figure 2 presents infected population evolution showing a good agreement between simulation and real data. Due to chronological issues, Chinese case is the one with a large number of real data, which makes it useful to establish a comparison of the model prediction error. Figure 3 presents daily errors from china, highlighting the average and maximum errors. Note that the maximum error is less than 28%, with an average error of 13.58%. For the following three cases, Italy, Iran and Brazil, it is assumed that the second stage of governmental action has not been reached yet. Therefore, it is represented by a step function = [0, 0.4239], which means that (2) is neglected and 3 does not exist.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 196,
+                    "end": 203,
+                    "text": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 609,
+                    "end": 617,
+                    "text": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 882,
+                    "end": 890,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ],
+            "section": "Verification Simulations"
+        },
+        {
+            "text": "Italian case is now in focus considering parameters presented in Table 4 with a population of N = 60.48\uf0b4106 and an initial state with 20 infected persons ( 0 = 20). A step function is considered to define the nominal transmission rate, 0 , due to extreme governmental actions that have not been effective until present days. Figure 4 presents the infected population simulation compared with real data, showing a good agreement. Figure 5 presents daily errors from Italy, highlighting the average and maximum errors. For this case, the maximum error is less than 19%, with an average error of 10.60%. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 65,
+                    "end": 72,
+                    "text": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 325,
+                    "end": 333,
+                    "text": "Figure 4",
+                    "ref_id": null
+                },
+                {
+                    "start": 429,
+                    "end": 437,
+                    "text": "Figure 5",
+                    "ref_id": "FIGREF3"
+                }
+            ],
+            "section": "Verification Simulations"
+        },
+        {
+            "text": "(1) Figure 4 : Italy -infected population through time. Iran case is now treated considering the parameters presented in Table 5 with a population of N = 81.16\uf0b4106 and an initial state with 20 infected persons ( 0 = 20). Results are presented in Figure 6 showing a good agreement with real data. Figure 7 presents daily errors, highlighting the average and maximum errors. Although the average error is 15.46%, the maximum error is around 42%, which is a large value. Nevertheless, it should be observed that the big values are related to the beginning of the predictions, probably due to problems with the original data. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 4,
+                    "end": 12,
+                    "text": "Figure 4",
+                    "ref_id": null
+                },
+                {
+                    "start": 121,
+                    "end": 128,
+                    "text": "Table 5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 246,
+                    "end": 254,
+                    "text": "Figure 6",
+                    "ref_id": null
+                },
+                {
+                    "start": 296,
+                    "end": 304,
+                    "text": "Figure 7",
+                    "ref_id": "FIGREF4"
+                }
+            ],
+            "section": "days"
+        },
+        {
+            "text": "(1) 24 days Figure 6 : Iran -infected population through time. Brazilian case is now of concern considering parameters presented in Table 6 with a population of N = 209.3\uf0b4106 and an initial state with 10 infected person ( 0 = 10). Figure 8 presents the infected population evolution showing that the same trend of the other cases is followed, being enough to have a general scenario. It should be highlighted that Brazilian outbreak is in the beginning, with information that is not enough for a better calibration. ",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 20,
+                    "text": "Figure 6",
+                    "ref_id": null
+                },
+                {
+                    "start": 132,
+                    "end": 139,
+                    "text": "Table 6",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 231,
+                    "end": 239,
+                    "text": "Figure 8",
+                    "ref_id": null
+                }
+            ],
+            "section": "0.594"
+        },
+        {
+            "text": "(1) 17 days Figure 8 : Brazil -infected population through time.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 20,
+                    "text": "Figure 8",
+                    "ref_id": null
+                }
+            ],
+            "section": "0.675"
+        },
+        {
+            "text": "This section has the objective to investigate different scenarios related to COVID-19 dynamics in Brazil. Parameters adjusted on the previous section are employed to evaluate different scenarios varying governmental and individual reactions. It should be pointed out that this adjustment does not have enough information, but it is possible to perform, at least a qualitative analysis of the COVID-19 dynamics in Brazil.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "BRAZILIAN SCENARIOS"
+        },
+        {
+            "text": "Initially, two different transmission rates are defined: naive scenario, without intervention ( = = 0); and with governmental and individual actions ( \u2260 0; \u2260 0). Figure 9 presents numerical simulations together with the real data that is presented just for the first days. The same parameters presented in Table 6 are employed assuming",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 162,
+                    "end": 170,
+                    "text": "Figure 9",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 306,
+                    "end": 313,
+                    "text": "Table 6",
+                    "ref_id": "TABREF5"
+                }
+            ],
+            "section": "BRAZILIAN SCENARIOS"
+        },
+        {
+            "text": "(2) = 37 days. A logarithm scale is adopted since the naive scenario has a dramatic increase of the infected cases. Besides the big difference between both cases, it is clear the huge impact of variations on the transmission rate function that represents governmental and individual actions. It is noticeable that the effective actions tend to reduce the infected population, reducing the final crisis period as well. Nowadays, one of the most relevant issue to be discussed in terms of propagation is the governmental and individual actions. A parametric analysis is of concern considering distinct scenarios related to intervention. Scenarios defined by the variation of the intervention moments is initially treated. The moment of the governmental action start, represented by parameter (1) (day), is analyzed in Figure 11 , considering the following values: 17, 22, 27 and 32 and (2) is assumed to be 20 days after (1) . Note that the delay to the start of the governmental action dramatically alters the response, increasing the number infected population and its duration. The same conclusion can be established considering the second governmental action, represented by (2) (day), presented in Figure 12 that shows the same trend considering a different set of start instants: 37, 42, 47 and 52. ",
+            "cite_spans": [
+                {
+                    "start": 919,
+                    "end": 922,
+                    "text": "(1)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 816,
+                    "end": 825,
+                    "text": "Figure 11",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1201,
+                    "end": 1210,
+                    "text": "Figure 12",
+                    "ref_id": "FIGREF0"
+                }
+            ],
+            "section": "BRAZILIAN SCENARIOS"
+        },
+        {
+            "text": "A mathematical model based on the susceptible-exposed-infectious-recovered framework is employed to describe the COVID-19 evolution. A verification procedure is performed based on the available data from China, Italy, Iran and Brazil. Afterward, different scenarios from Brazil is analyzed. Results clearly show that governmental and individual actions are essential to reduce the infected populations and also the total period of the crisis.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "CONCLUSIONS"
+        },
+        {
+            "text": "The mathematical model can be improved in order to include more phenomenological information that can increase its capability to describe different scenarios. Nevertheless, it should be pointed out that the mathematical model and its numerical simulations are important tools that can be useful for public health planning.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "CONCLUSIONS"
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "Time series analysis via mechanistic models",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Breto",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "El &amp;",
+                    "middle": [],
+                    "last": "Ionides",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "The Annals of Applied Statistics",
+            "volume": "",
+            "issn": "1",
+            "pages": "319--348",
+            "other_ids": {
+                "DOI": [
+                    "10.1214/08-AOAS201"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "A mathematical model for simulating the phase-based transmissibility of a novel coronavirus",
+            "authors": [
+                {
+                    "first": "\u2022",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T-M",
+                    "middle": [],
+                    "last": "Rui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W-P",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z-Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "-A &amp; Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Infectious Diseases of Poverty",
+            "volume": "",
+            "issn": "9",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s40249-020-00640-3"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Inferring the causes of the three waves of the 1918 influenza pandemic in England and Wales",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dushoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Djd",
+                    "middle": [],
+                    "last": "Earn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Proc R Soc B",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2013.1345"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "Plug-and-play inference for disease dynamics: measles in large and small populations as a case study",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "El &amp;",
+                    "middle": [],
+                    "last": "Ionides",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. R. Soc. Interface",
+            "volume": "",
+            "issn": "7",
+            "pages": "271--283",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2009.0151"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "ref_id": "b4",
+            "title": "Early transmission dynamics in Wuhan, China, of novel coronavirus-infected pneumonia",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Med",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "The New England Journal of Medicine",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa2001316"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "China with individual reaction and governmental action",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Wuhan",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "International Journal of Infectious Diseases",
+            "volume": "",
+            "issn": "93",
+            "pages": "211--216",
+            "other_ids": {}
+        },
+        "BIBREF7": {
+            "ref_id": "b7",
+            "title": "Substantial undocumented infection facilitates the rapid dissemination of novel coronavirus (SARS-CoV2)",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Pei",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Shaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Science",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.abb3221"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Dynamics of coronavirus infection in human",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "\u2022 Rihan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Al-Salti Ns &amp;",
+                    "middle": [],
+                    "last": "Anwar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M-Ny",
+                    "middle": [],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "AIP Conference Proceedings, v.1982, Article 020009",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.1063/1.5045415"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Pattern of early human-to-human transmission of Wuhan",
+            "authors": [
+                {
+                    "first": "\u2022",
+                    "middle": [],
+                    "last": "Riou",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Althaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Euro Surveill",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "10.2807/1560-7917.ES.2020.25.4.2000058"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Chaos and order in biomedical rhythms",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Savi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of the Brazilian Society of Mechanical Sciences and Engineering",
+            "volume": "",
+            "issn": "2",
+            "pages": "157--169",
+            "other_ids": {}
+        },
+        "BIBREF11": {
+            "ref_id": "b11",
+            "title": "Nowcasting and forecasting the potential domestic and international spread of the 2019-nCoV outbreak originating in Wuhan, China: a modelling study",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Lancet",
+            "volume": "395",
+            "issn": "20",
+            "pages": "30260--30269",
+            "other_ids": {}
+        }
+    },
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "with the form illustrated inFigure 1. Its use is convenient in order to contemplate variations of the transmission rate through time, being defined as follows.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "China -infected population through time.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Chinaprediction errors between the simulated and real data of the infected population.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Italyprediction errors between the simulated and real data of the infected population.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Iranprediction errors between the simulated and real data of the infected population.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Transmission evolution considering two different scenarios for different transmission rates: naive scenario, without intervention ( = = 0); and with governmental intervention and individual action with the values adjusted in the previous section. A more detailed analysis of the COVID-19 dynamics is treated considering the other populations for the case with intervention treated in Figure 9 (parameters of Table 6 with (2) = 37 days). Figure 10 presents all system state variables, showing the susceptible, S, exposed, E, infected, I, removed, R, public perception, D, and cumulative cases, C. The interaction among all the populations defines a kind of equilibrium established by the governing equations.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Population interactions considering a scenario with intervention: susceptible, S, exposed, E, infected, I, removed, R, public perception, D, and cumulative cases, C.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Infected population evolution considering different first governmental action start, represented by parameter (1) (day): 17, 22, 27 and 32.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Infected population evolution considering different second governmental action start, represented by parameter (2) (day): 37, 42, 47 and 52. A scenario with a governmental action that starts, finishes and then restarts again is now evaluated, considering the following parameters: ( ) = [17, 37, 52] and = [0, 0.4239, 0 , 0.8478]. This scenario is compared with the usual one where the intervention starts in a level and then evolve to a more severe situation, considering: ( ) = [17, 52] and function and the evolution of infected populations. It is clear that the interruption of the governmental action causes a dramatic worst scenario. Infected population evolution considering different scenarios related to the governmental action, \u0302.",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": "Model parameters.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Reference parameters for transmission rate.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Model parameters for the transmission rate of China.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Model parameters for the transmission rate of Italy.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Model parameters for the transmission rate of Iran.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Model parameters for the transmission rate of Brazil.",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": [
+        {
+            "text": "The authors would like to acknowledge the support of the Brazilian Research Agencies CNPq, CAPES and FAPERJ. Since this work was developed during a quarantine period, the authors would like to express their gratitude to familiar support that, besides the patience, helps to collect available information. Therefore, it is important to acknowledge: Raquel Savi, Rodrigo Savi, Antonio Savi and Bianca Zattar.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "ACKNOWLEDGEMENTS"
+        }
+    ]
+}

@@ -1,0 +1,1024 @@
+{
+    "paper_id": "00a407540a8bdd6d7425bd8a561eb21d69682511",
+    "metadata": {
+        "title": "Title: Rapid AI Development Cycle for the Coronavirus (COVID-19) Pandemic: Initial Results for Automated Detection & Patient Monitoring using Deep Learning CT Image Analysis",
+        "authors": [
+            {
+                "first": "Ophir",
+                "middle": [],
+                "last": "Gozes",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Ma",
+                "middle": [
+                    "&apos;"
+                ],
+                "last": "Ayan Frid-Adar",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Hayit",
+                "middle": [],
+                "last": "Greenspan",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Tel-Aviv University",
+                    "location": {}
+                },
+                "email": ""
+            },
+            {
+                "first": "Patrick",
+                "middle": [
+                    "D"
+                ],
+                "last": "Browning",
+                "suffix": "",
+                "affiliation": {},
+                "email": ""
+            },
+            {
+                "first": "Huangqi",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Affiliated Taizhou Hospital of Wenzhou Medical University",
+                    "location": {
+                        "addrLine": "150 Ximen Street, Zhejiang Province",
+                        "postCode": "317000",
+                        "settlement": "Linhai",
+                        "country": "China ("
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Wenbin",
+                "middle": [],
+                "last": "Ji",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Affiliated Taizhou Hospital of Wenzhou Medical University",
+                    "location": {
+                        "addrLine": "150 Ximen Street, Zhejiang Province",
+                        "postCode": "317000",
+                        "settlement": "Linhai",
+                        "country": "China ("
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Adam",
+                "middle": [],
+                "last": "Bernheim",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "Mount Sinai Hospital",
+                    "location": {
+                        "settlement": "New York",
+                        "region": "NY ("
+                    }
+                },
+                "email": ""
+            },
+            {
+                "first": "Eliot",
+                "middle": [],
+                "last": "Siegel",
+                "suffix": "",
+                "affiliation": {
+                    "laboratory": "",
+                    "institution": "University of Maryland School of Medicine",
+                    "location": {
+                        "settlement": "Baltimore",
+                        "region": "MD"
+                    }
+                },
+                "email": ""
+            }
+        ]
+    },
+    "abstract": [
+        {
+            "text": "Rapidly developed AI-based automated CT image analysis tools can achieve high accuracy in detection of Coronavirus positive patients as well as quantification of disease burden.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "\u2022 Utilizing the deep-learning image analysis system developed, we achieved classification results for Coronavirus vs Non-coronavirus cases per thoracic CT studies of 0.996 AUC (95%CI: 0.989-1.00) on Chinese control and infected patients. Possible working point: 98.2% sensitivity, 92.2% specificity.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "\u2022 Conclusion:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        },
+        {
+            "text": "This initial study, which is currently being expanded to a larger population, demonstrated that rapidly developed AI-based image analysis can achieve high accuracy in detection of Coronavirus as well as quantification and tracking of disease burden.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "Abstract"
+        }
+    ],
+    "body_text": [
+        {
+            "text": "\u2022 For Coronavirus patients the system outputs quantitative opacity measurements and a visualization of the larger opacities in a slice-based \"heat map\" or a 3D volume display. A suggested \"Corona score\" measures the progression of patients over time.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": ""
+        },
+        {
+            "text": "o The coronavirus infection surprised the world with its rapid spread and has had a major impact on the lives of billions of people. Non-contrast thoracic CT has been shown to be an effective tool in detection, quantification and follow-up of disease. Deep learning algorithms can be developed to assist in analyzing potentially large numbers of thoracic CT exams.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "\u2022 Purpose:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "To develop AI-based automated CT image analysis tools for detection, quantification, and tracking of Coronavirus and demonstrate that they can differentiate coronavirus patients from those who do not have the disease.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "\u2022 Materials and Methods:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "Multiple international datasets, including from Chinese disease-infected areas were included. We present a system that utilizes robust 2D and 3D deep learning models, modifying and adapting existing AI models and combining them with clinical understanding. We conducted multiple retrospective experiments to analyze the performance of the system in the detection of suspected COVID-19 thoracic CT features and to evaluate evolution of the disease in each patient over time using a 3D volume review, generating a \"Corona score\". The study includes a testing set of 157 international patients (China and U.S).",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "\u2022 Results:",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "Classification results for Coronavirus vs Non-coronavirus cases per thoracic CT studies were 0.996 AUC (95%CI: 0.989-1.00) ; on datasets of Chinese control and infected patients. Possible working point: 98.2% sensitivity, 92.2% specificity. For time analysis of Coronavirus patients, the system output enables quantitative measurements for smaller opacities (volume, diameter) and visualization of the larger opacities in a slice-based \"heat map\" or a 3D volume display. Our suggested \"Corona score\" measures the progression of disease over time.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "List of abbreviations:"
+        },
+        {
+            "text": "The coronavirus infection, COVID-19 has surprised the world with its rapid spread, potential virulence, with potential profound overall impact on the lives of billions of people from both a safety and an economic Once a decision has been made to use thoracic CT as these recent studies suggest for patient diagnosis or screening, a need immediately rises to rapidly evaluate potentially very large numbers of imaging studies.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "AI technology, in particular deep learning image analysis tools, can potentially be developed to support radiologists in the triage, quantification, trend analysis of the data. AI solutions have the potential to analyze multiple cases in parallel to detect whether chest CT reveals any abnormalities in the lung. If the software suggests a significantly increased likelihood of disease, the case can be flagged for further review by a radiologist or clinician for possible treatment/quarantine. Such systems, or variations thereof, once verified and testedcan become key contributors in the detection and control of patients with the virus.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "In a manner analogous to the way in which COVID-19 represents a new strain of coronavirus not previously found in humans and presumably representing a mutation of other coronaviruses, an AI algorithm can be rapidly created from one or more algorithms that perform a similar task. This is in contrast to the standard way of developing a DL algorithm, entailing several phases: I. Data-collection phase in which a large amount of data samples need to be collected from predefined categories; expert annotations are needed for ground-truthing the data; II. Training phase in which the collected data is used to train network models.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "Each category needs to be represented well enough so that the training can generalize to new cases that will be seen by the network in the testing phase. In this learning phase, the large number of network parameters (typically on the order of millions) are automatically generated; III. Testing phase in which an additional set of cases not used in training is presented to the network and the output of the network is tested statistically to determine its success of categorization.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "In the case of a new disease, such as the coronavirus, datasets are just now being identified and annotated.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "There are very limited data sources as well as limited expertise in labeling the data specific to this new strain of the virus in humans. Accordingly, it is not clear that there are enough examples to achieve clinically meaningful learning at this early stage of data collection despite the increasingly critical importance of this software, especially given fears of a pandemic. It is our hypothesis that AI-based tools can be rapidly developed leveraging the ability to modify and adapt existing AI models and combine them with initial clinical understanding to address the new challenges and new category of COVID-19. Our goal is to develop deep-learning based automated CT image analysis tools and demonstrate that they can enable differentiation of coronavirus patients from those who do not have the disease to provide support in the detection, measurements, and tracking of disease progression.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "I. Introduction"
+        },
+        {
+            "text": "The system we propose receives thoracic CT images and flags cases suspected with COVID-19 features.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "In addition, for cases classified as positive, the system outputs a lung abnormality localization map and measurements. Figure 1 shows a block diagram of the developed system. The system is comprised of several components and analyzes the CT case at two distinct levels: Subsystem A: 3D analysis of the case volume for nodules and focal opacities using existing, previously developed algorithms and Subsystem B:",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 120,
+                    "end": 128,
+                    "text": "Figure 1",
+                    "ref_id": null
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "newly developed 2D analysis of each slice of the case to detect and localize larger-sized diffuse opacities including ground glass infiltrates which have been clinically described as representative of the coronavirus.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "For Subsystem A we use commercial off-the-shelf software that detects nodules and small opacities within a 3D lung volume (RADLogics Inc., Boston [5] ). This software was developed as a solution for lung Since current lung pathology detection solutions were built with a specific focus on the nodule detection task, they cannot be relied upon for detecting more diffuse global GG opacities. To address the additional disease-driven opacities, we proposed a data-driven solution on a per-slice basis, as shown in Figure 1 , Subsystem B. Working in the 2D (slice) space has several advantages for Deep-Learning based algorithms, in limited data scenarios. These include an increase in training samples (with many slices per single case), using pre-trained networks that are common in the 2D space, and easier annotation for segmentation purposes.",
+            "cite_spans": [
+                {
+                    "start": 146,
+                    "end": 149,
+                    "text": "[5]",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 512,
+                    "end": 520,
+                    "text": "Figure 1",
+                    "ref_id": null
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "In our solution (B), the first step is the Lung Crop stage: we extract the lung region of interest (ROI) using a lung segmentation module. The U-net architecture for image segmentation [6, 7] was trained using 6,150",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 188,
+                    "text": "[6,",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 189,
+                    "end": 191,
+                    "text": "7]",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "CT slices of cases with lung abnormalities and their corresponding lung masks which were taken from a U.S based hospital (Table I : Dataset-6). The segmentation step enables the removal of image portions that are not relevant for the detection of within-lung disease making the learning process of the next step easier.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 121,
+                    "end": 129,
+                    "text": "(Table I",
+                    "ref_id": "TABREF1"
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "In the following step, we focus on Detecting Coronavirus related abnormalities: We use a Resnet-50 -2D",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "deep convolutional neural network architecture [8] ; The network is 50 layers deep and can classify images into 1000 categories. The network was pre-trained on more than a million images from the ImageNet database [9] . As commonly done in the medical imaging field, we further train the network parameters (fine-tune) to solve the problem at hand: suspected COVID-19 cases from several Chinese hospitals are used (Table I : Dataset-1). The cases were annotated per slice as normal (n=1036) vs abnormal (n=829). To overcome the limited amount of cases, we employ data augmentation techniques (image rotations, horizontal flips and cropping). In a follow-up abnormality localization step, given a new slice classified as positive, we extract \"network-activation maps\" which correspond to the areas most contributing to the network's decision. This is performed using the Grad-cam technique for producing visual explanations for network decisions [10] .",
+            "cite_spans": [
+                {
+                    "start": 47,
+                    "end": 50,
+                    "text": "[8]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 214,
+                    "end": 217,
+                    "text": "[9]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 945,
+                    "end": 949,
+                    "text": "[10]",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "ref_spans": [
+                {
+                    "start": 414,
+                    "end": 422,
+                    "text": "(Table I",
+                    "ref_id": "TABREF1"
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "Example results of four COVID-19 slices that we classified as abnormal by the network can be seen in Figure 2 (B). On top, the CT image is shown. In the bottom row, corresponding colored maps are provided.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 101,
+                    "end": 109,
+                    "text": "Figure 2",
+                    "ref_id": null
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "In red we see the strongest network output while blue is the weakest. We note the maps align well with the diffused opacities, providing a strong indication that the network managed to learn important characteristics associated with COVID-19 manifestations.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "To mark a case as COVID-19 positive, we calculate the ratio of positive detected slices out of the total slices of the lung (positive ratio). A positive case-decision is made if the positive ratio exceeds a pre-defined threshold.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "To provide a complete review of the case, we combine the output of Subsystem A -3D analysis and Subsystem B -2D slice-level. In Figure 3 we see a case of Coronavirus and the combined output findings map from the proposed system. We can see the nodular and focal diffuse opacity detections in green and the larger opacity detection in red. The two subsystems complement and, in some locations reinforce each other.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 128,
+                    "end": 136,
+                    "text": "Figure 3",
+                    "ref_id": "FIGREF7"
+                }
+            ],
+            "section": "II. Methods"
+        },
+        {
+            "text": "In addition to the visualization, the system automatically extracts several outputs of interest, including per slice localization of opacities (2D), and a 3D volumetric presentation of the opacities throughout the lungs.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "We also propose a Corona score which is a volumetric measurement of the opacities burden. The corona score is computed by a volumetric summation of the network-activation maps. The score is robust to slice thickness and pixel spacing as it includes pixel volume. For patient-specific monitoring of disease progression, we suggest the Relative Corona score in which we normalize the corona score by the score computed at the first time point.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Methods"
+        },
+        {
+            "text": "A set of experiments is conducted next to demonstrate the performance of the automated analysis.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "III. Results"
+        },
+        {
+            "text": "We start with an evaluation of the ability to detect slice-level Coronavirus. The performance of this step is crucial for obtaining overall case wise detection. For the validation step, we used 10% of the slices from the development dataset comprised of cases from the Chinese population ( Both ROC curves are displayed in Figure 4A . In the ROC calculation, for Coronavirus patients that include multiple time points, the analysis was performed using the first time point in the series.",
+            "cite_spans": [],
+            "ref_spans": [
+                {
+                    "start": 323,
+                    "end": 332,
+                    "text": "Figure 4A",
+                    "ref_id": "FIGREF4"
+                }
+            ],
+            "section": "I. Classification:"
+        },
+        {
+            "text": "In our final experiment, we evaluate patients that were imaged in time points for whom the first CT scan was obtained 1-4 days following the first signs of the virus (fever, cough). In the first example patient, we review a case with a single focal opacity and present volumetric measurements over time. The second case involves patient with multiple opacities and shows an overview of the patient recovery process with its corresponding Corona score over time. ",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "II. Evaluation over time:"
+        },
+        {
+            "text": "In this initial exploratory work, we show the capabilities of AI to assist in the efforts to accurately detect and track the progression or resolution of the Coronavirus. This is the first report to our knowledge in the literature of software specifically developed to detect, characterize and track the progression of COVID-",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "IV. Discussion"
+        },
+        {
+            "text": "Rapidly developed AI-based automated CT image analysis tools can achieve high accuracy in the detection A consistent and reproducible method for rapid evaluation of high volumes of screening or diagnostic thoracic CT studies using AI can assist in this crisis in several ways: Highly accurate systems can reliably exclude CTs which are negative for findings associated with the corona virus. This decreases the volume of cases passing through to the radiologist without overlooking positive cases. Progression and regression of findings could be monitored more quantitatively and consistently. This would allow a greater volume of patients being screened for Coronavirus, with earlier and more rapid detection of positive cases, which could lead to more effective identification and containment of early cases.",
+            "cite_spans": [],
+            "ref_spans": [],
+            "section": "19."
+        },
+        {
+            "text": "As illustrated above, using standard machine learning techniques and innovative AI applications, in combination with an established pulmonary CT detection platform, an effective tool can be utilized for the screening and early detection of patients who may have contracted the COVID-19 pathogen. In individual patients who have contracted the virus and have the pulmonary abnormalities associated with it, the same methodologies can be used to accurately and more rapidly assess disease progression and guide therapy and patient management. [11] 50 abnormal thoracic CT scans (slice thickness, {5,7,8,9,10}mm) from China of patients that were diagnosed by a radiologist as suspicious for COVID-19 (from Jan-Feb 2020). The cases were extracted by querying a cloud PACS system for cases that were referred for laboratory testing following the scan. Cases were annotated for each slice as normal ",
+            "cite_spans": [
+                {
+                    "start": 541,
+                    "end": 545,
+                    "text": "[11]",
+                    "ref_id": null
+                },
+                {
+                    "start": 594,
+                    "end": 609,
+                    "text": "{5,7,8,9,10}mm)",
+                    "ref_id": null
+                }
+            ],
+            "ref_spans": [],
+            "section": "19."
+        }
+    ],
+    "bib_entries": {
+        "BIBREF0": {
+            "ref_id": "b0",
+            "title": "The Global Initiative on Sharing All Influenza Data (GISAID). Coronavirus COVID-19 Global Cases by Johns Hopkins CSSE",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF1": {
+            "ref_id": "b1",
+            "title": "Sensitivity of Chest CT for COVID-19: Comparison to RT-PCR",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ying",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ji",
+                    "middle": [
+                        "W"
+                    ],
+                    "last": "",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Radiology",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "https:/pubs.rsna.org/doi/full/10.1148/radiol.2020200432"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "ref_id": "b2",
+            "title": "Chest CT for typical 2019-nCoV pneumonia: relationship to negative RT-PCR testing",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Radiology",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "https:/pubs.rsna.org/doi/10.1148/radiol.2020200343"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "ref_id": "b3",
+            "title": "COVID-19): Relationship to Duration of Infection",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bernheim",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Mei",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Chest CT Findings in Coronavirus Disease",
+            "volume": "19",
+            "issn": "",
+            "pages": "",
+            "other_ids": {
+                "DOI": [
+                    "https:/pubs.rsna.org/doi/10.1148/radiol.2020200463"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "ref_id": "b5",
+            "title": "U-net: Convolutional networks for biomedical image segmentation",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ronneberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Brox",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+            "volume": "",
+            "issn": "",
+            "pages": "159--168",
+            "other_ids": {
+                "DOI": [
+                    "https:/link.springer.com/chapter/10.1007/978-3-319-24574-4_28"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "ref_id": "b6",
+            "title": "Improving the segmentation of anatomical structures in chest radiographs using u-net with an imagenet pretrained encoder",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Frid-Adar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ben-Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Amer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Greenspan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+            "volume": "",
+            "issn": "",
+            "pages": "159--168",
+            "other_ids": {
+                "DOI": [
+                    "https:/link.springer.com/chapter/10.1007/978-3-030-00946-5_17"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "ref_id": "b8",
+            "title": "Deep residual learning for image recognition",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Computer Vision and Pattern Recognition (CVPR)",
+            "volume": "",
+            "issn": "",
+            "pages": "",
+            "other_ids": {}
+        },
+        "BIBREF9": {
+            "ref_id": "b9",
+            "title": "Imagenet: A large-scale hierarchical image database",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Socher",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Fei-Fei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Computer Vision and Pattern Recognition (CVPR)",
+            "volume": "",
+            "issn": "",
+            "pages": "248--255",
+            "other_ids": {}
+        },
+        "BIBREF10": {
+            "ref_id": "b10",
+            "title": "Grad-cam: Visual explanations from deep networks via gradient-based localization",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Selvaraju",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cogswell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Vedantam",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Parikh",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Batra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "International Conference on Computer Vision (ICCV)",
+            "volume": "",
+            "issn": "",
+            "pages": "618--626",
+            "other_ids": {}
+        },
+        "BIBREF12": {
+            "ref_id": "b12",
+            "title": "The lung image database consortium (LIDC) and image database resource initiative (IDRI): a completed reference database of lung nodules on CT scans",
+            "authors": [
+                {
+                    "first": "Iii",
+                    "middle": [],
+                    "last": "Armato",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Sg",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Mclennan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bidaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Mcnitt-Gray",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Reeves",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Aberle",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "I"
+                    ],
+                    "last": "Henschke",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Hoffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Kazerooni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Medical physics",
+            "volume": "38",
+            "issn": "2",
+            "pages": "915--946",
+            "other_ids": {
+                "DOI": [
+                    "10.1118/1.3528204"
+                ]
+            }
+        }
+    },
+    "ref_entries": {
+        "FIGREF1": {
+            "text": "pathology detection and provides quantitative measurements (including volumetric measurements, axial measurements (RECIST), HU values, calcification detection and texture characterization for solid vs subsolid vs GG). Because ground-glass opacities (GGO) have emerged in recent studies as one of the key features for COVID-19, we hypothesized that the existing software can detect smaller-sized focal GG opacities within a case. An example of this can be seen inFigure 2(A): two Coronavirus cases are shown in which the opacities are relatively subtle. In addition to the detection of abnormalities, measurements and localization are provided. In each case, the software detected a single focal opacity (outlined by a red bounding-box). An image of the detected opacity is shown, along with its segmentation. Finally, a list of lesion features is automatically generated and provided.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "shows tracking over time of a specific opacity in a Coronavirus patient (red box). The four CT scans shown across different time points show a reduction in the lesion size. For each time point, the volume measurement and average axial diameter measurement are displayed at the bottom. The first scan (Jan 26) was taken 1-4 days following symptoms of COVID-19, with a measured volume of 9.9 cm3. The second scan (Jan 30) was taken 5-8 days after the first symptoms and shows a higher volume measurement of 19.9 cm3. The third and fourth scans (Feb 4 and Feb 11) taken 10-13 days and 17-20 days, after first symptoms, respectively, show a decrease in the lesion volume suggesting resolution of disease.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "presents an entire case review of a second Coronavirus patient who underwent three CT scans throughout the disease. The 3D lung volume is displayed in blue with the proposed system opacity detection and localization output displayed in red and green. In addition to the representation of the case, the Corona score is calculated for each time point to give a quantitative representation of the disease: The patient's first thoracic CT was obtained Jan 27 (1-4 days after symptoms of COVID-19 were present). Opacities, when present in this patient, appear to more frequently in the mid-and upper-lungs, and less frequently in the lower lobes. The Corona score at this time point is 191.5 cm3. The second CT scan was taken 4 days later, on Jan 31. We can visually detect a reduction in the opacities within the lung volume with Corona score of 97.1 cm3. In comparison to the first scan, we can see and quantitate a reduction of 49% in overall opacity-burden. The final CT scan was taken 15 days after the second scan; here no opacities are present (with Corona score: 0); indicating full thoracic CT finding based resolution of disease.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "B displays quantitative assessment scores for 18 COVID-19 patients that were monitored for 30Days. On the left, we see a plot of the corona score. In this plot, we can assess the relative severity of coronavirus among the patients. A plot of the Relative Corona Score is shown on the right. Here, different courses of the disease can be identified.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "System Subsystem A: Focal opacities detection and measurements.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Subsystem B: Slices classified as positive for Coronavirus abnormalities and their corresponding \"heatmap\".",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Patient case visualization. Left: Coronal view; Right: Automatically generated 3D volume map of focal opacities (green) and larger diffuse opacities (red).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "ROC curves for the task of COVID-19 detection using positive ratio feature.Left:Chinese Population Right: Coronavirus patients from China; Non-Coronavirus patients from US Tracking of patient's disease progression over time using Corona Score (Left) and Relative Corona Score (Right). Day 0 corresponds to 1-4 days following first signs of the virus.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "Multi time point tracking of patient disease progression",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF10": {
+            "text": "Corona score for patient disease progression monitoring",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF11": {
+            "text": "slices of cases with lung abnormalities and their corresponding lung masks",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF12": {
+            "text": "System Subsystem A: Focal opacities detection and measurements.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF13": {
+            "text": "Subsystem B: Slices classified as positive for Coronavirus abnormalities and their corresponding \"heatmap\".",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF14": {
+            "text": "Patient case visualization. Left: Coronal view; Right: Automatically generated 3D volume map of focal opacities (green) and larger diffuse opacities (red).",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF15": {
+            "text": "ROC curves for the task of COVID-19 detection using positive ratio feature. Left: Chinese Population Right: Coronavirus patients from China; Non-Coronavirus patients from US Tracking of patient's disease progression over time using Corona Score (Left) and Relative Corona Score (Right). Day 0 corresponds to 1-4 days following first signs of the virus.",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF16": {
+            "text": "Multi time point tracking of patient disease progression",
+            "latex": null,
+            "type": "figure"
+        },
+        "FIGREF17": {
+            "text": "Corona score for patient disease progression monitoring",
+            "latex": null,
+            "type": "figure"
+        },
+        "TABREF0": {
+            "text": "The sensitivity of the current diagnostic gold standard at the initial presentation of the disease has been called into question. Fang et al[2] compared the sensitivity of non-contrast chest CT with reverse transcription-polymerase chain reaction (RT-PCR) which detects viral nucleic acid and is the current reference standard in the detection of COVID-19. Their study looked at 51 patients who had a history of travel or residence in endemic areas and fever or acute respiratory symptoms of unknown cause. The patients underwent initial and repeat RT-PCR testing. Their gold standard was an eventual confirmed diagnosis of COVID-19 infection by serial RT-PCR testing. The authors suggested a sensitivity of noncontrast chest CT for detection of COVID-19 infection of 98% compared to initial RT-PCR sensitivity (results of the first RT_RPR test) of 71%. Cases highlighted in their paper demonstrated either diffuse or focal ground-glass opacities. This lack of sensitivity on initial RT-PCR testing was also described in another study by Xie et al[3] who reported that 3% of 167 patients had negative RT-PCR for the virus despite chest CT findings typical of viral pneumonia suggesting the use of chest CT to decrease false negative lab studies. Bernheim et al[4] examined 121 chest CT studies from four centers in China that were obtained in the early, intermediate and late stages of infection. They also described ground glass",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Dataset-1). The split was patient wise and there is no overlap with the slices used for training. A total of 270 slices were analyzed: The power of using AI for screening comes from the ability to tune the operating point to support various clinical scenarios. Basing the case level decision on the positive ratio: A threshold of 1.1% (percent of positive detected slice to lung slices) yields a case level sensitivity of 98.2% with 92.2% specificity. A threshold of 1.9% yields a sensitivity of 96.4% and specificity of 98%.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "outputs quantitative opacity measurements and a visualization of the larger opacities in a slice-based \"heat map\" or a 3D volume display. A suggested \"Corona score\" measures the progression of patients over time.",
+            "latex": null,
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "DatasetsDataset 1: Development DatasetSource: Chainz",
+            "latex": null,
+            "type": "table"
+        }
+    },
+    "back_matter": []
+}
