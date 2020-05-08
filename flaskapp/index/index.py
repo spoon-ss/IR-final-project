@@ -6,9 +6,8 @@ from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl.analysis import tokenizer, analyzer
 from elasticsearch_dsl.query import MultiMatch, Match
 from elasticsearch_dsl import token_filter
-
 # Connect to local host server
-from .index_utils import process_json
+from flaskapp.index.index_utils import process_json
 
 
 INDEX_NAME = "sample_covid_19_index"
@@ -83,7 +82,7 @@ def buildIndex(size=None):
     covid_index.create()
 
     # Open the json film corpus
-    data_dict = process_json("covid_full.json", size)
+    data_dict = process_json("covid_comm.json", size)
 
     # Action series for bulk loading with helpers.bulk function.
     # Implemented as a generator, to return one movie with each call.
@@ -108,7 +107,9 @@ def buildIndex(size=None):
                 "chemicals": data_dict[str(mid)]['chemicals'],
                 # movies[str(mid)]['runtime'] # You would like to convert runtime to integer (in minutes)
                 # --- Add more fields here ---
-                "url": data_dict[str(mid)]['url'],
+
+                # uncomment the next line after full text json is added.
+                # "url": data_dict[str(mid)]['url'],
                 "suggestion": data_dict[str(mid)]['title']
             }
 
