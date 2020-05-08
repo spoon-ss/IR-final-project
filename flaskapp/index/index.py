@@ -53,6 +53,7 @@ class Article(Document):
     title = Text(analyzer=text_analyzer)
     abstract = Text(analyzer=text_analyzer)
     authors = Text(analyzer='standard')
+    body = Text(analyzer=text_analyzer)
     publish_time = Date()
     url = Keyword()
     suggestion = Completion()
@@ -83,7 +84,7 @@ def buildIndex(size=None):
     covid_index.create()
 
     # Open the json film corpus
-    data_dict = process_json("covid_full.json", size)
+    data_dict = process_json("covid_comm_full_text", size)
 
     # Action series for bulk loading with helpers.bulk function.
     # Implemented as a generator, to return one movie with each call.
@@ -103,6 +104,7 @@ def buildIndex(size=None):
                 # "sha": data_dict[str(mid)]['sha'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
+                "body": data_dict[str(mid)]['body'],
                 "author": data_dict[str(mid)]['authors'],
                 "publish_time": data_dict[str(mid)]['publish_time'],
                 "chemicals": data_dict[str(mid)]['chemicals'],
