@@ -224,6 +224,8 @@ class GeneralQueryService:
         article_dic = dict()
         article_dic['Title'] = response.hits[0].title
         article_dic['Abstract'] = response.hits[0].abstract
+        article_dic['Body'] = response.hits[0].body
+        article_dic['Chemical'] = response.hits[0].chemicals
         article_dic['Author'] = response.hits[0].author
         article_dic['Publish Time'] = response.hits[0].publish_time
         text = article_dic['Title'] +article_dic['Abstract']
