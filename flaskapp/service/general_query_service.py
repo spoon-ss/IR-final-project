@@ -6,6 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 import re
 from elasticsearch_dsl import Q
 from nltk.corpus import wordnet
+from bs4 import BeautifulSoup
 import collections
 
 
@@ -27,35 +28,36 @@ def _do_abstraction_query(s, abstraction_query, query_option):
         '''
         phrases = process_abstraction_query(abstraction_query)
 
-        if query_option == "or": 
+        if query_option == "or":
             q0 = phrases.pop()
             if '"' in q0:
-                q = Q('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+                q = Q('multi_match', query=q0, type='phrase_prefix', fields=['title^2', 'abstract'])
             else:
                 if len(q0) >= 4:
-                    q = Q('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                    q = Q('multi_match', query=q0, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
                 else:
-                    q = Q('multi_match', query = q0, fields = ['title^2', 'abstract'])
+                    q = Q('multi_match', query=q0, fields=['title^2', 'abstract'])
             while len(phrases) > 0:
                 q0 = phrases.pop()
                 if '"' in q0:
-                    q |= Q('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+                    q |= Q('multi_match', query=q0, type='phrase_prefix', fields=['title^2', 'abstract'])
                 else:
                     if len(q0) >= 4:
-                        q |= Q('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                        q |= Q('multi_match', query=q0, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
                     else:
-                        q |= Q('multi_match', query = q0, fields = ['title^2', 'abstract'])
+                        q |= Q('multi_match', query=q0, fields=['title^2', 'abstract'])
             s = s.query(q)
         elif query_option == "and":
             while len(phrases) > 0:
                 q0 = phrases.pop()
                 if '"' in q0:
-                    s = s.query('multi_match', query = q0, type = 'phrase_prefix', fields = ['title^2', 'abstract'])
+                    s = s.query('multi_match', query=q0, type='phrase_prefix', fields=['title^2', 'abstract'])
                 else:
                     if len(q0) >= 4:
-                        s = s.query('multi_match', query = q0, fields = ['title^2', 'abstract'], fuzziness = 1, max_expansions = 2)
+                        s = s.query('multi_match', query=q0, fields=['title^2', 'abstract'], fuzziness=1,
+                                    max_expansions=2)
                     else:
-                        s = s.query('multi_match', query = q0, fields = ['title^2', 'abstract'])
+                        s = s.query('multi_match', query=q0, fields=['title^2', 'abstract'])
     return s
 
 
@@ -64,28 +66,63 @@ def _do_author_query(s, author_query):
         s = s.query('match', author=author_query)
     return s
 
-def _extract_abstract_query_text(s: str) -> dict:
+
+def _extract_free_text_query_text(s: str) -> dict:
     """ Extract information from free query text, return a dict contains the information extracted.
     Take a string "<chem>alcohol</chem> <chem>isopropyl</chem> covid <phrase>test result</phrase>"
     Return a dict : {"chem": ["alcohol", "isopropyl"], "phrase": ["test result"], "normal": ["covid"]}
     """
     if type(s) is not str:
         raise TypeError("query text must be str")
-    result_dict = {"chem": [], "phrase": [], "normal": []}
+
+    result_dict = {"chemical": [], "phrase": [], "normal": ""}
+    soup = BeautifulSoup(s, features="lxml")
+
+    for tag in soup.find_all('chem'):
+        result_dict['chemical'].append(tag.text)
+        tag.decompose()
+
+    for tag in soup.find_all('phrase'):
+        result_dict['phrase'].append(tag.text)
+        tag.decompose()
+
+    result_dict["normal"] = soup.get_text().strip()
+    return result_dict
 
 
+def _do_chemical_query(s, query_list: list, option):
+    q = Q()
+    for chem in query_list:
+        if option == GeneralQueryService.CONJUNCTIVE_OPTION:
+            q &= Q('match', chemicals=chem)
+        elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
+            q |= Q('match', chemicals=chem)
+        else:
+            raise RuntimeError("No such query options")
+    s = s.query(q)
+    return s
 
 
+def _do_phrase_query(s, query_list: list, option):
+    q = Q()
+    for phrase in query_list:
+        if option == GeneralQueryService.CONJUNCTIVE_OPTION:
+            q &= Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
+        elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
+            q |= Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
+        else:
+            raise RuntimeError("No such query options")
+    s = s.query(q)
+    return s
 
 
-def _do_chemical_query(s, query, option):
-    pass
+def _do_free_text_query(s, query_str: str, option):
+    extract_dict = _extract_free_text_query_text(query_str)
+    s = _do_abstraction_query(s, extract_dict['normal'], option)
+    s = _do_chemical_query(s, extract_dict['chemical'], option)
+    s = _do_phrase_query(s, extract_dict['phrase'], option)
+    return s
 
-def _do_phase_query(s, query, option):
-    pass
-
-def _do_abstract_query(s, query, option):
-    pass
 
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
@@ -123,18 +160,20 @@ def _extract_response(response):
         result_dict[hit.meta.id] = result
     return result_dict
 
+
 def process_abstraction_query(abstraction_query):
-        #find all phrases with " "
-        pattern = re.compile(r'(?:\B\")(.*?)(?:\b\")')
-        phrases = pattern.findall(abstraction_query)
-        abstraction_query = pattern.sub('', abstraction_query).strip()
-        phrases = phrases + abstraction_query.split()
-        #find all hyphen
-        text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
-        for i in range(len(phrases)):
-            if phrases[i] in text:
-                phrases[i] = "\"" + phrases[i] + "\""
-        return phrases
+    # find all phrases with " "
+    pattern = re.compile(r'(?:\B\")(.*?)(?:\b\")')
+    phrases = pattern.findall(abstraction_query)
+    abstraction_query = pattern.sub('', abstraction_query).strip()
+    phrases = phrases + abstraction_query.split()
+    # find all hyphen
+    text = re.findall(r'\w+(?:-\w+)+', abstraction_query)
+    for i in range(len(phrases)):
+        if phrases[i] in text:
+            phrases[i] = "\"" + phrases[i] + "\""
+    return phrases
+
 
 def get_stop_words():
     stop_words = ["a", "an", "and", "are", "as", "at", "be", "but", "by",
@@ -144,20 +183,21 @@ def get_stop_words():
                   "they", "this", "to", "was", "will", "with"]
     return stop_words
 
+
 def get_synonyms(abstraction_query):
     phrases = process_abstraction_query(abstraction_query)
     d = collections.defaultdict(list)
     for p in phrases:
         synonyms = []
-            
+
         for syn in wordnet.synsets(p):
             for l in syn.lemmas():
                 if '_' not in l.name():
                     synonyms.append(l.name())
-            
+
         d[p] = list(set(synonyms))
         if p.lower() in d[p]:
-            d[p].sort(key = p.lower().__eq__)
+            d[p].sort(key=p.lower().__eq__)
         elif len(d[p]) > 0:
             d[p].append(p)
     for key in d:
@@ -174,12 +214,13 @@ def extract_stop_words(query_text):
     stops = [term for term in query_text.lower().split() if term in stop_words]
     return stops
 
+
 def get_more_like_this(s, query_text):
-    
     s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract']))
     # get first top 10 similar articles
-    response = s[1:11].execute()   
+    response = s[1:11].execute()
     return _extract_response(response)
+
 
 class GeneralQueryService:
     CONJUNCTIVE_OPTION = "and"
@@ -195,17 +236,17 @@ class GeneralQueryService:
               query_option=DISJUNCTIVE_OPTION,
               page=1) -> dict:
 
-
         # search for runtime using a range query
         s = self.search.query('range', publish_time={'gte': min_time_query, 'lte': max_time_query})
-        s = _do_abstraction_query(s, query_text, query_option)
+        s = _do_free_text_query(s, query_text, query_option)
         s = _do_author_query(s, author_query)
         s = _do_highlight(s)
         s = _do_pagination(s, page)
 
         response = s.execute()
         result_dict = _extract_response(response)
-        return {"result_dict": result_dict, "total_hits": response.hits.total['value'], "stop_words_included": extract_stop_words(query_text), "synonyms": get_synonyms(query_text) }
+        return {"result_dict": result_dict, "total_hits": response.hits.total['value'],
+                "stop_words_included": extract_stop_words(query_text), "synonyms": get_synonyms(query_text)}
 
     def autocomplete(self, text):
         # do suggest on the query term
@@ -228,6 +269,6 @@ class GeneralQueryService:
         article_dic['Chemical'] = response.hits[0].chemicals
         article_dic['Author'] = response.hits[0].author
         article_dic['Publish Time'] = response.hits[0].publish_time
-        text = article_dic['Title'] +article_dic['Abstract']
+        text = article_dic['Title'] + article_dic['Abstract']
         more_like_this_dic = get_more_like_this(self.search, text)
         return article_dic, more_like_this_dic
