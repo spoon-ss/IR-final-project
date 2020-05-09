@@ -68,7 +68,7 @@ def _extract_chemical_from_text(line: str):
 
 
 if __name__ == '__main__':
-    ob = process_json("../dataset/kaggle-covid-19-metadata/covid_comm.json")
+    ob = process_json("../dataset/kaggle-covid-19-metadata/covid_comm_full_text.json")
     for key in ob:
         print(key + ": ")
         print(ob[key]['chemicals'])

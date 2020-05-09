@@ -51,6 +51,7 @@ class Article(Document):
     # sha = Text()
     title = Text(analyzer=text_analyzer)
     abstract = Text(analyzer=text_analyzer)
+    body = Text(analyzer=text_analyzer)
     authors = Text(analyzer='standard')
     publish_time = Date()
     url = Keyword()
@@ -102,6 +103,7 @@ def buildIndex(file_path, size=None):
                 # "sha": data_dict[str(mid)]['sha'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
+                "body": data_dict[str(mid)]['body'],
                 "author": data_dict[str(mid)]['authors'],
                 "publish_time": data_dict[str(mid)]['publish_time'],
                 "chemicals": data_dict[str(mid)]['chemicals'],
@@ -109,7 +111,6 @@ def buildIndex(file_path, size=None):
                 # --- Add more fields here ---
 
                 # uncomment the next line after full text json is added.
-                # "url": data_dict[str(mid)]['url'],
                 "suggestion": data_dict[str(mid)]['title']
             }
 
