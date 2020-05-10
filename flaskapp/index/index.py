@@ -35,10 +35,14 @@ text_analyzer = analyzer('my_tokenfilter',
                          filter=['lowercase', 'stop'])
 
 # n-gram tokenizer for chemical name;
-three_gram_filter = token_filter('3-gram-filter', type='ngram', min_gram=3, max_gram=3)
-chemical_analyzer = analyzer('chem_analyzer',
+three_gram_filter = token_filter('3-gram-filter', type='ngram', min_gram=5, max_gram=5)
+chemical_ngram_analyzer = analyzer('chem_ngram_analyzer',
                              tokenizer=tokenizer('chem_tokenizer', type='char_group', tokenize_on_chars=['$']),
-                             filter=[three_gram_filter]
+                             filter=["lowercase", "stop", three_gram_filter]
+                             )
+chemical_whole_analyzer = analyzer('chem_whole_analyzer',
+                             tokenizer=tokenizer('chem_tokenizer', type='char_group', tokenize_on_chars=['$']),
+                             filter=["lowercase", "stop", "trim"]
                              )
 # --- Add more analyzers here ---
 # use stopwords... or not?
@@ -56,7 +60,10 @@ class Article(Document):
     publish_time = Date()
     url = Keyword()
     suggestion = Completion()
-    chemicals = Text(analyzer=chemical_analyzer)
+    chemicals_title_abstract_whole = Text(analyzer=chemical_whole_analyzer)
+    chemicals_title_abstract_ngram = Text(analyzer=chemical_ngram_analyzer)
+    chemicals_body_whole = Text(analyzer=chemical_whole_analyzer)
+    chemicals_body_ngram = Text(analyzer=chemical_ngram_analyzer)
 
     # --- Add more fields here ---
     # What data type for your field? List?
@@ -106,7 +113,10 @@ def buildIndex(file_path, size=None):
                 "body": data_dict[str(mid)]['body'],
                 "author": data_dict[str(mid)]['authors'],
                 "publish_time": data_dict[str(mid)]['publish_time'],
-                "chemicals": data_dict[str(mid)]['chemicals'],
+                "chemicals_title_abstract_whole": data_dict[str(mid)]['chemicals_title_abstract'],
+                "chemicals_title_abstract_ngram": data_dict[str(mid)]['chemicals_title_abstract'],
+                "chemicals_body_whole": data_dict[str(mid)]['chemicals_body'],
+                "chemicals_body_ngram": data_dict[str(mid)]['chemicals_body'],
                 # movies[str(mid)]['runtime'] # You would like to convert runtime to integer (in minutes)
                 # --- Add more fields here ---
 

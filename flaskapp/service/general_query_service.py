@@ -90,51 +90,94 @@ def _extract_free_text_query_text(s: str) -> dict:
     return result_dict
 
 
-def _do_chemical_query(s, query_list: list, option):
-    q = Q()
+def _do_chemical_query(query_list: list, option):
+    q = None
     for chem in query_list:
+        new_q = Q('multi_match', query=chem, fields=['chemicals_title_abstract_whole^9',
+                                                     "chemicals_body_whole^8",
+                                                     "chemicals_title_abstract_ngram^3",
+                                                     "chemicals_body_ngram^1"])
         if option == GeneralQueryService.CONJUNCTIVE_OPTION:
-            q &= Q('match', chemicals=chem)
+            q = new_q & q if q is not None else new_q
         elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
-            q |= Q('match', chemicals=chem)
+            q = new_q | q if q is not None else new_q
         else:
             raise RuntimeError("No such query options")
-    s = s.query(q)
-    return s
+
+    return q
 
 
-def _do_phrase_query(s, query_list: list, option):
-    q = Q()
+def _do_phrase_query(query_list: list, option):
+    q = None
     for phrase in query_list:
+        new_q = Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
         if option == GeneralQueryService.CONJUNCTIVE_OPTION:
-            q &= Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
+            q = new_q & q if q is not None else new_q
         elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
-            q |= Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
+            q = new_q | q if q is not None else new_q
         else:
             raise RuntimeError("No such query options")
-    s = s.query(q)
-    return s
+    return q
+
+
+def _do_text_query(query_str: str):
+    new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+    return new_q
 
 
 def _do_free_text_query(s, query_str: str, option):
     extract_dict = _extract_free_text_query_text(query_str)
-    s = _do_abstraction_query(s, extract_dict['normal'], option)
-    s = _do_chemical_query(s, extract_dict['chemical'], option)
-    s = _do_phrase_query(s, extract_dict['phrase'], option)
+    # s = _do_abstraction_query(s, extract_dict['normal'], option)
+    q_list = []
+    q_list.append(_do_text_query(extract_dict['normal']))
+    q_list.append(_do_chemical_query(extract_dict['chemical'], option))
+    q_list.append(_do_phrase_query(extract_dict['phrase'], option))
+    q = None
+    for inner_q in q_list:
+        if q is None:
+            q = inner_q
+            continue
+        if inner_q is None:
+            continue
+        if option == GeneralQueryService.CONJUNCTIVE_OPTION:
+            q &= inner_q
+        elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
+            q |= inner_q
+        else:
+            raise RuntimeError("No such options")
+    if q is not None:
+        s = s.query(q)
     return s
 
 
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
-    s = s.highlight('abstract', fragment_size=999999999, number_of_fragments=1)
-    s = s.highlight('title', fragment_size=999999999, number_of_fragments=1)
-    s = s.highlight('author', fragment_size=999999999, number_of_fragments=1)
+    s = s.highlight('abstract', fragment_size=999999999, number_of_fragments=3)
+    s = s.highlight('title', fragment_size=999999999, number_of_fragments=3)
+    s = s.highlight('author', fragment_size=999999999, number_of_fragments=3)
+    s = s.highlight('chemicals_title_abstract_whole', fragment_size=999999999, number_of_fragments=5)
+    s = s.highlight('chemicals_title_abstract_ngram', fragment_size=999999999, number_of_fragments=5)
+    s = s.highlight('chemicals_body_whole', fragment_size=999999999, number_of_fragments=5)
+    s = s.highlight('chemicals_body_ngram', fragment_size=99999999, number_of_fragments=5)
     return s
 
 
 def _do_pagination(s, page):
     s = s[(page - 1) * 10: 10 + (page - 1) * 10]
     return s
+
+
+def _extract_highlight_str(s: str):
+    if type(s) is not str:
+        raise TypeError("query text must be str")
+
+    result = ""
+    soup = BeautifulSoup(s, features="lxml")
+
+    for tag in soup.find_all('mark'):
+        result = result + str(tag) + ", "
+
+    return result
 
 
 def _extract_response(response):
@@ -153,10 +196,22 @@ def _extract_response(response):
                 result['abstract'] = hit.meta.highlight.abstract[0]
             else:
                 result['abstract'] = hit.abstract
+
+            if 'chemicals_title_abstract_whole' in hit.meta.highlight:
+                result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_whole[0])
+            elif 'chemicals_title_abstract_ngram' in hit.meta.highlight:
+                result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_ngram[0])
+            elif 'chemicals_body_whole' in hit.meta.highlight:
+                result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_body_whole[0])
+            elif 'chemicals_body_ngram' in hit.meta.highlight:
+                result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_body_ngram[0])
+            else:
+                result['chemicals'] = ""
+
         else:
             result['title'] = hit.title
             result['abstract'] = hit.abstract
-
+            result['chemicals'] = ""
         result_dict[hit.meta.id] = result
     return result_dict
 
@@ -266,7 +321,6 @@ class GeneralQueryService:
         article_dic['Title'] = response.hits[0].title
         article_dic['Abstract'] = response.hits[0].abstract
         article_dic['Body'] = response.hits[0].body
-        article_dic['Chemical'] = response.hits[0].chemicals
         article_dic['Author'] = response.hits[0].author
         article_dic['Publish Time'] = response.hits[0].publish_time
         text = article_dic['Title'] + article_dic['Abstract']

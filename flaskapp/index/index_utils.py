@@ -8,16 +8,23 @@ def process_json(path, size=None):
     with open(path) as f:
         lines = f.readlines()
         size = len(lines) if size is None else size
-        for (i, line) in enumerate(lines):
-            if i >= size:
+        count = 1
+        for line in lines:
+            if count >= size:
                 break
-            print("Processing " + str(i + 1) + " record out of " + str(size))
+
+            print("Processing " + str(count) + " record out of " + str(size))
             ob = json.loads(line)
-            if type(ob["authors"]) != str:
+            if not isinstance(ob["title"], str) or ob["title"] == "":
+                continue
+            if not isinstance(ob["authors"], str):
                 ob["authors"] = ""
-            ob['chemicals'] = _extract_chemical_from_text(ob["title"] + " " + ob["abstract"])
+
+            ob['chemicals_title_abstract'] = _extract_chemical_from_text(ob["title"] + " " + ob["abstract"])
+            ob['chemicals_body'] = _extract_chemical_from_text(ob["body"])
             ob['publish_time'] = _convert_date(ob['publish_time'])
-            result_dict[str(i)] = ob
+            result_dict[str(count - 1)] = ob
+            count += 1
     return result_dict
 
 
