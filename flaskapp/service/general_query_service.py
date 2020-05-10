@@ -203,6 +203,11 @@ def _extract_response(response):
             else:
                 result['abstract'] = hit.abstract
 
+            if 'author' in hit.meta.highlight:
+                result['author'] = hit.meta.highlight.author[0]
+            else:
+                result['author'] = hit.abstract
+
             if 'chemicals_title_abstract_whole' in hit.meta.highlight:
                 result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_whole[0])
             elif 'chemicals_title_abstract_ngram' in hit.meta.highlight:
@@ -218,6 +223,7 @@ def _extract_response(response):
             result['title'] = hit.title
             result['abstract'] = hit.abstract
             result['chemicals'] = ""
+            result['author'] = hit.author
         result_dict[hit.meta.id] = result
     return result_dict
 
