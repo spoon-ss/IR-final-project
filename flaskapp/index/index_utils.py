@@ -62,7 +62,11 @@ def _convert_date(date_ob):
 
 
 def _extract_chemical_from_text(line: str):
-    doc = Document(line)
+    split_line = line[0:2000]
+    last_space = split_line.rfind(" ")
+    if last_space == -1:
+        last_space = len(split_line)
+    doc = Document(split_line[0: last_space])
 
     chem_set = set()
     for chem in doc.cems:
