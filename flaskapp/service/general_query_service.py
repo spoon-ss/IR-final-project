@@ -120,8 +120,14 @@ def _do_phrase_query(query_list: list, option):
     return q
 
 
-def _do_text_query(query_str: str):
-    new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+def _do_text_query(query_str: str, option):
+    if option == GeneralQueryService.CONJUNCTIVE_OPTION:
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'],
+                  fuzziness=1, max_expansions=2, operator='and')
+    elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+    else:
+        raise RuntimeError("No such option")
     return new_q
 
 
@@ -129,7 +135,7 @@ def _do_free_text_query(s, query_str: str, option):
     extract_dict = _extract_free_text_query_text(query_str)
     # s = _do_abstraction_query(s, extract_dict['normal'], option)
     q_list = []
-    q_list.append(_do_text_query(extract_dict['normal']))
+    q_list.append(_do_text_query(extract_dict['normal'], option))
     q_list.append(_do_chemical_query(extract_dict['chemical'], option))
     q_list.append(_do_phrase_query(extract_dict['phrase'], option))
     q = None
@@ -197,6 +203,11 @@ def _extract_response(response):
             else:
                 result['abstract'] = hit.abstract
 
+            if 'author' in hit.meta.highlight:
+                result['author'] = hit.meta.highlight.author[0]
+            else:
+                result['author'] = hit.abstract
+
             if 'chemicals_title_abstract_whole' in hit.meta.highlight:
                 result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_whole[0])
             elif 'chemicals_title_abstract_ngram' in hit.meta.highlight:
@@ -212,6 +223,7 @@ def _extract_response(response):
             result['title'] = hit.title
             result['abstract'] = hit.abstract
             result['chemicals'] = ""
+            result['author'] = hit.author
         result_dict[hit.meta.id] = result
     return result_dict
 
@@ -271,7 +283,7 @@ def extract_stop_words(query_text):
 
 
 def get_more_like_this(s, query_text):
-    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract']))
+    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract', 'body']))
     # get first top 10 similar articles
     response = s[1:11].execute()
     return _extract_response(response)

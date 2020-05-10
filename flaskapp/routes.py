@@ -196,3 +196,7 @@ def delete_post(doc_id):
     db.session.commit()
     flash('Your favorite has been deleted!', 'success')
     return redirect(url_for('home'))
+
+@app.route("/topic")
+def topic():
+    return render_template('topic.html', title='Topic')
