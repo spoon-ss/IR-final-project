@@ -178,6 +178,10 @@ def new_post(doc_id):
 @login_required
 def my_doc():
     docs = Doc.query.filter_by(user_id=current_user.get_id()).all()
+    article_dics = []
+    for doc in docs:
+        article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(doc)
+        article_dics.append(article_dic)
     return render_template('my_favorite.html', docs=docs)
 
 
