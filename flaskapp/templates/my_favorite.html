@@ -1,9 +1,43 @@
 {% extends "layout.html" %}
+<style>
+.sansserif {
+    font-family: "Times New Roman", Times, sans-serif;
+    font-weight: bold;
+}
+p.results {
+    color:grey;
+    line-height:20px;
+    height:60px;
+    overflow:hidden;
+    font-size:14px
+}
+p.cannotfind {
+    background-color:pink;
+    text-align:center;
+    border-left: 6px solid red;
+}
+.header {
+    background-color:black;
+    color:lightgrey;
+}
+.searchbox {
+    width:100%;
+    float:left;
+    border-bottom: 2px dotted black;
+}
+.contents{
+    margin-top:430px;
+    padding:0;
+    clear:left;
+}
+</style>
 {% block content %}
     {% if docs!=[] %}
-        {% for doc in docs %}
+        {% for doc, article in docs %}
         <ul>
-            <pre class="sansserif"><a href="/documents/{{doc.doc_id}}" target="_blank">  {{ doc.doc_id }} </a> </pre>
+            <pre class="sansserif"><a href="/documents/{{doc.doc_id}}" target="_blank">  {{ article['Title'] | safe}} </a> </pre>
+            <p class="author">{{ article['Author'] | safe}}</p>
+            <p class="results">{{article['Abstract'] | safe}}</p>
         </ul>
         {% endfor %}
     {% else %}

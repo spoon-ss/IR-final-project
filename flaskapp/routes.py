@@ -9,6 +9,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flaskapp.service import GeneralQueryService, TranslateService
 from datetime import date
 from flaskapp.index import INDEX_NAME
+import itertools
 
 
 
@@ -180,9 +181,10 @@ def my_doc():
     docs = Doc.query.filter_by(user_id=current_user.get_id()).all()
     article_dics = []
     for doc in docs:
-        article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(doc)
+        article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(str(doc.doc_id))
         article_dics.append(article_dic)
-    return render_template('my_favorite.html', docs=docs)
+        print(article_dic)
+    return render_template('my_favorite.html', docs=zip(docs, article_dics))
 
 
 
