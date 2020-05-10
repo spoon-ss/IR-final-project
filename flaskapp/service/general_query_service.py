@@ -120,8 +120,14 @@ def _do_phrase_query(query_list: list, option):
     return q
 
 
-def _do_text_query(query_str: str):
-    new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+def _do_text_query(query_str: str, option):
+    if option == GeneralQueryService.CONJUNCTIVE_OPTION:
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'],
+                  fuzziness=1, max_expansions=2, operator='and')
+    elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+    else:
+        raise RuntimeError("No such option")
     return new_q
 
 
@@ -129,7 +135,7 @@ def _do_free_text_query(s, query_str: str, option):
     extract_dict = _extract_free_text_query_text(query_str)
     # s = _do_abstraction_query(s, extract_dict['normal'], option)
     q_list = []
-    q_list.append(_do_text_query(extract_dict['normal']))
+    q_list.append(_do_text_query(extract_dict['normal'], option))
     q_list.append(_do_chemical_query(extract_dict['chemical'], option))
     q_list.append(_do_phrase_query(extract_dict['phrase'], option))
     q = None
