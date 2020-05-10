@@ -195,9 +195,15 @@ def _extract_response(response):
 
         if 'highlight' in hit.meta:
             if 'title' in hit.meta.highlight:
-                result['title'] = hit.meta.highlight.title[0]
+                if len(hit.meta.highlight.title[0]) > 60:
+                    result['title'] = hit.meta.highlight.title[0][:60] + '...'
+                else:
+                    result['title'] = hit.meta.highlight.title[0]
             else:
-                result['title'] = hit.title
+                if len(hit.title) > 60:
+                    result['title'] = hit.title[:60] + '...'
+                else:
+                    result['title'] = hit.title[:60]
 
             if 'abstract' in hit.meta.highlight:
                 result['abstract'] = hit.meta.highlight.abstract[0]
@@ -226,7 +232,10 @@ def _extract_response(response):
                 result['chemicals'] = ""
 
         else:
-            result['title'] = hit.title
+            if len(hit.title) > 60:
+                result['title'] = hit.title[:60] + '...'
+            else:
+                result['title'] = hit.title
             result['abstract'] = hit.abstract
             result['chemicals'] = ""
             result['author'] = hit.author

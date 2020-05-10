@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 <head>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
         $( function() {
           $('input[name="mintime"]').datepicker({
@@ -22,90 +23,131 @@
 <body bgcolor="white">
 <title>Search Results</title>
 <style>
-.sansserif {
-    font-family: "Times New Roman", Times, sans-serif;
-    font-weight: bold;
-}
-p.results {
-    color:grey;
-    line-height:20px;
-    height:60px;
-    overflow:hidden;
-    font-size:14px
-}
-p.cannotfind {
-    background-color:pink;
-    text-align:center;
-    border-left: 6px solid red;
-}
-.header {
-    background-color:black;
-    color:lightgrey;
-}
-.searchbox {
-    width:100%;
-    float:left;
-    border-bottom: 2px dotted black;
-}
-.contents{
-    margin-top:430px;
-    padding:0;
-    clear:left;
-}
+	.sansserif {
+		font-family: "Times New Roman", Times, sans-serif;
+		font-weight: bold;
+	}
+	p.results {
+		color:grey;
+		line-height:20px;
+		height:60px;
+		overflow:hidden;
+		font-size:14px
+	}
+	p.cannotfind {
+		background-color:pink;
+		text-align:center;
+		border-left: 6px solid red;
+	}
+	.header {
+		background-color:black;
+		color:lightgrey;
+	}
+	.searchbox {
+		width:100%;
+		float:left;
+		border-bottom: 2px dotted black;
+	}
+	.contents{
+		margin-top:230px;
+		padding:0;
+		clear:left;
+	}
+	#option {
+	  width: 100%;
+	  padding: 20px 0;
+	  text-align: center;
+	  margin-top: 10px;
+	  display: none;
+	}
+	#syns {
+	  width: 100%;
+	  padding: 10px 0;
+	  text-align: center;
+	  margin-top: 10px;
+	  display: none;
+	}
+	textarea {height: 40px;}
+	#short1 {width: 110px; display:inline;}
+	#short2 {width: 110px; display:inline;}
+	#short3 {display:inline;}
+	.center {text-align: center; padding-top:5%;}
+	#mainbox {width: 90%; float:left;}
+	#searchbtn {width: 10%; float:left;}
+	button#btn {width: 100%; height: 38px; background-color: #4CAF50}
+	button#btn:hover {background-color: #3e8e41; cursor:pointer;}
+	.fa-search {color:white;}
+	.dropbtn {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 6px;
+	  font-size: 16px;
+	  height: 35px;
+	  border: none;
+	}
+	table {margin:0 auto;}
 </style>
 
 
 {% extends "layout.html" %}
 {% block content %}
 <div class="searchbox" >
-<h3>  Covid_19 Database Search </h3>
+<h3>  Covid Dataset Free Search </h3>
 <form action="/results" name="search" method="get">
-<dl>
-    <dd><textarea rows="3" cols="100" id="autocomplete"  name="query">{{queries['query']}}</textarea>
-   <dd>Text search optins:
-    {% if queries['type'] == "conjunctive" %}
-        <input type="radio" id="conjunctive" name="type" value="conjunctive" checked = checked>
-    {% else %}
-        <input type="radio" id="conjunctive" name="type" value="conjunctive" >
-    {% endif %}
-        <label for="conjunctive">Conjunctive</label>
-    {% if queries['type'] == "disjunctive" %}
-        <input type="radio" id="disjunctive" name="type" value="disjunctive" checked = checked>
-    {% else %}
-        <input type="radio" id="disjunctive" name="type" value="disjunctive">
-    {% endif %}
-        <label for="disjunctive">Disjunctive</label><br>
-    <dd>Search in authors: <input type="text" style="width:300px" name="author" value="{{queries['author']}}">
-    <dd>Runtime: min <input type="text" class="form-control" name="mintime" value={{queries['mintime']}}> max <input type="text" class="form-control" name="maxtime" value={{queries['maxtime']}}>
-    <input type="text" hidden="hidden" name="page" value="1">
-    <dd><input type="submit" value="Search">
+<dl class="mainsearch">
+    <dd id="mainbox"><textarea rows="1" cols="60" id="autocomplete" class="form-control" name="query">{{queries['query']}}</textarea>
+	<dd id="searchbtn"><button type="submit" value="Search" id="btn"><i class="fa fa-search"></i></button>
 </dl>
+
+  <button class="dropbtn" type="button" onclick="showhide()">More Options</button>
+  <div id="option">
+	<dl>
+    <dd>Text search optins:
+		{% if queries['type'] == "conjunctive" %}
+		    <input type="radio" id="conjunctive" name="type" value="conjunctive" checked = checked>
+		{% else %}
+		    <input type="radio" id="conjunctive" name="type" value="conjunctive" >
+		{% endif %}
+		    <label for="conjunctive">Conjunctive</label>
+		{% if queries['type'] == "disjunctive" %}
+		    <input type="radio" id="disjunctive" name="type" value="disjunctive" checked = checked>
+		{% else %}
+		    <input type="radio" id="disjunctive" name="type" value="disjunctive">
+		{% endif %}
+		    <label for="disjunctive">Disjunctive</label><br>
+    <dd>Runtime: min <input type="text" class="form-control" name="mintime" id = "short1" value={{queries['mintime']}}> max <input type="text" class="form-control" id = "short2" name="maxtime" value={{queries['maxtime']}}>
+    <dd>Search in authors: <input type="text" id="short3" class="form-control" style="width:300px" name="author" value="{{queries['author']}}">
+    <input type="text" hidden="hidden" name="page" value="1">
+	</dl>
+	<button class="dropbtn" type="button" onclick="showhide2()">Synonyms Replace</button>
+    <div id="syns">
+		<table>
+			<thead>
+			{%for key in synonyms %}
+				{%if synonyms[key]|length > 1%}
+					<th>{{key}}</th>
+				{% endif %}
+			{% endfor %}
+			</thead>
+			<tbody>
+			{%for key in synonyms %}
+				{%if synonyms[key]|length > 1%}
+				<td>
+					<select name = sysnonyms onchange="myFunction()" id = {{key}} method="GET" action="/">
+						{% for synonym in synonyms[key][:-1] %}
+							<option value= "{{synonym}}" SELECTED>{{synonym}}</option>"
+						{% endfor %}
+					</select>
+				</td>
+				{% endif %}
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<dd><a href="{{ url_for('topic') }}" class="fa fa-book">View our data distribution</a><br>
+  </div>
 </form>
 <p style="font-size:14px">Found {{res_num}} results. Showing {{ 1+(page_num-1)*10 }} - {% if (10+(page_num-1)*10) > res_num %}{{res_num}}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
-
-<table>
-<caption>Synonyms Replace</caption>
-<thead>
-{%for key in synonyms %}
-	{%if synonyms[key]|length > 1%}
-		<th>{{key}}</th>
-	{% endif %}
-{% endfor %}
-</thead>
-<tbody>
-{%for key in synonyms %}
-	{%if synonyms[key]|length > 1%}
-	<td>
-		<select name = sysnonyms onchange="myFunction()" id = {{key}} method="GET" action="/">
-			{% for synonym in synonyms[key][:-1] %}
-				<option value= "{{synonym}}" SELECTED>{{synonym}}</option>"
-			{% endfor %}
-		</select>
-	</td>
-	{% endif %}
-{% endfor %}
-</tbody>
-</table>
 <br>
 {% if page_num > 1 %}
     <a href = {{ url_for('results', page=page_num - 1, **queries) }}>Previous</a>
@@ -166,6 +208,26 @@ function myFunction() {
 		}
 	}
 	document.getElementById("autocomplete").innerHTML = q.join(' ');
+}
+</script>
+<script>
+function showhide() {
+  var x = document.getElementById("option");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function showhide2() {
+  var x = document.getElementById("syns");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
 </script>
 </body>
