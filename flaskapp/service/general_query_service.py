@@ -122,10 +122,10 @@ def _do_phrase_query(query_list: list, option):
 
 def _do_text_query(query_str: str, option):
     if option == GeneralQueryService.CONJUNCTIVE_OPTION:
-        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'],
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract', 'body^0.5'],
                   fuzziness=1, max_expansions=2, operator='and')
     elif option == GeneralQueryService.DISJUNCTIVE_OPTION:
-        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract'], fuzziness=1, max_expansions=2)
+        new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract', 'body^0.5'], fuzziness=1, max_expansions=2)
     else:
         raise RuntimeError("No such option")
     return new_q
@@ -158,13 +158,14 @@ def _do_free_text_query(s, query_str: str, option):
 
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
-    s = s.highlight('abstract', fragment_size=999999999, number_of_fragments=3)
-    s = s.highlight('title', fragment_size=999999999, number_of_fragments=3)
-    s = s.highlight('author', fragment_size=999999999, number_of_fragments=3)
-    s = s.highlight('chemicals_title_abstract_whole', fragment_size=999999999, number_of_fragments=5)
-    s = s.highlight('chemicals_title_abstract_ngram', fragment_size=999999999, number_of_fragments=5)
-    s = s.highlight('chemicals_body_whole', fragment_size=999999999, number_of_fragments=5)
-    s = s.highlight('chemicals_body_ngram', fragment_size=99999999, number_of_fragments=5)
+    s = s.highlight('abstract', fragment_size=500, number_of_fragments=1)
+    s = s.highlight('title', number_of_fragments=0)
+    s = s.highlight('author',  number_of_fragments=0)
+    s = s.highlight('body', number_of_fragments=1, fragment_size=300)
+    s = s.highlight('chemicals_title_abstract_whole', fragment_size=100, number_of_fragments=1)
+    s = s.highlight('chemicals_title_abstract_ngram', fragment_size=100, number_of_fragments=1)
+    s = s.highlight('chemicals_body_whole', fragment_size=100, number_of_fragments=1)
+    s = s.highlight('chemicals_body_ngram', fragment_size=100, number_of_fragments=1)
     return s
 
 
@@ -203,10 +204,15 @@ def _extract_response(response):
             else:
                 result['abstract'] = hit.abstract
 
+            if 'body' in hit.meta.highlight:
+                result['body'] = hit.meta.highlight.body[0]
+            else:
+                result['body'] = ""
+
             if 'author' in hit.meta.highlight:
                 result['author'] = hit.meta.highlight.author[0]
             else:
-                result['author'] = hit.abstract
+                result['author'] = hit.author
 
             if 'chemicals_title_abstract_whole' in hit.meta.highlight:
                 result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_whole[0])
@@ -224,6 +230,7 @@ def _extract_response(response):
             result['abstract'] = hit.abstract
             result['chemicals'] = ""
             result['author'] = hit.author
+            result['body'] = ""
         result_dict[hit.meta.id] = result
     return result_dict
 
