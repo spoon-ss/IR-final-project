@@ -129,8 +129,9 @@ p.cannotfind {
         {% for res in results %}
         <ul>
             <pre class="sansserif"><a href="/documents/{{res}}" target="_blank">  {{ results[res]['title']|safe }} </a>    score: {{results[res]['score']}} </pre>
-            <p>{{ results[res]['author'] | safe}}</p>
+            <p class="author">{{ results[res]['author'] | safe}}</p>
             <p class="results">{{results[res]['abstract'] | safe}}</p>
+            <p class="body">{{ results[res]['body'] | safe }}</p>
             <p>{{ results[res]['chemicals'] | safe }}</p>
         </ul>
         {% endfor %}
