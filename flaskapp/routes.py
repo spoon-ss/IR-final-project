@@ -49,8 +49,6 @@ def results():
         min_date = date.fromisoformat(min_time_str)
 
     translate_service = TranslateService()
-    translated_query_str = translate_service.translate(query_str, TranslateService.CHINESE_OPTION,
-                                                       TranslateService.ENGLISH_OPTION)
 
     query_service = GeneralQueryService(INDEX_NAME)
     result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
