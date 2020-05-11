@@ -155,6 +155,11 @@
                     <button class="dropbtn" type="button" onclick="showhide()">More Options</button>
                     <div id="option">
                         <dl>
+                            <dd>Query Language:
+                                <select name="language">
+                                    <option value="en">English</option>
+                                    <option value="cn">Chinese中文</option>
+                                </select>
                             <dd>Text search optins:
                                 {% if queries['type'] == "conjunctive" %}
                                     <input type="radio" id="conjunctive" name="type" value="conjunctive"
@@ -215,6 +220,10 @@
             </div>
 
         </div>
+        
+        {% if trans_q != [] %}
+        <h6>Translated Query: {{trans_q}}</h6>
+        {% endif %}  
 
         <p style="font-size:14px">Found {{ res_num }} results. Showing {{ 1+(page_num-1)*10 }} -
             {% if (10+(page_num-1)*10) > res_num %}{{ res_num }}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
