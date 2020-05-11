@@ -3,11 +3,11 @@ import jieba
 
 
 class TranslateService:
-    CHINESE_OPTION = "chinese"
-    ENGLISH_OPTION = "english"
     
-    def __init__(self, ser_url='translate.google.com'):
+    def __init__(self, ser_url='translate.google.com', outpt='english', inpt='chinese'):
         self.translator = Translator(service_urls=[ser_url])
+        self.inlan = inpt
+        self.outlan = outpt
      
            
     def translate(self,txt):
@@ -17,7 +17,7 @@ class TranslateService:
     
     def tokenizer_chn(self,txt):
         "Tokenize Chinese querty to Chinese query"
-        result = list(jieba.cut_for_search(query))
+        result = list(jieba.cut_for_search(txt))
         return result
     
     def ctoks2Eng(self, chntoks):
@@ -34,6 +34,12 @@ class TranslateService:
         translated = self.ctoks2Eng(chntoks)
         return translated
     
+    
+t = TranslateService()
+print(t.translate('新冠 DNA病毒'))
+    
+    
+
   
   
     
