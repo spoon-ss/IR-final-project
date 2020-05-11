@@ -3,6 +3,16 @@
 .sansserif {
     font-family: "Times New Roman", Times, sans-serif;
     font-weight: bold;
+    top:0;
+    width:100%;
+    float:left;
+    font-size: 25px;
+}
+.title{
+    top:0;
+    width:100%;
+    float:left;
+    font-size: 21px;
 }
 p.results {
     color:grey;
@@ -16,26 +26,12 @@ p.cannotfind {
     text-align:center;
     border-left: 6px solid red;
 }
-.header {
-    background-color:black;
-    color:lightgrey;
-}
-.searchbox {
-    width:100%;
-    float:left;
-    border-bottom: 2px dotted black;
-}
-.contents{
-    margin-top:430px;
-    padding:0;
-    clear:left;
-}
 </style>
 {% block content %}
     {% if docs!=[] %}
         {% for doc, article in docs %}
         <ul>
-            <pre class="sansserif"><a href="/documents/{{doc.doc_id}}" target="_blank">  {{ article['Title'] | safe}} </a> </pre>
+            <p><a href="/documents/{{doc.doc_id}}" target="_blank">  {{ article['Title'] | safe}} </a> </p>
             <p class="author">{{ article['Author'] | safe}}</p>
             <p class="results">{{article['Abstract'] | safe}}</p>
         </ul>

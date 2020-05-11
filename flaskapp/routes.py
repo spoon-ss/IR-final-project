@@ -15,7 +15,7 @@ import itertools
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 # display query page
@@ -183,7 +183,6 @@ def my_doc():
     for doc in docs:
         article_dic, more_like_this_dic = GeneralQueryService("sample_covid_19_index").doc_result(str(doc.doc_id))
         article_dics.append(article_dic)
-        print(article_dic)
     return render_template('my_favorite.html', docs=zip(docs, article_dics))
 
 

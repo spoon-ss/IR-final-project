@@ -1,5 +1,11 @@
 <!doctype html>
 <style>
+.title{
+    top:0;
+    width:100%;
+    float:left;
+    font-size: 21px;
+}
 .article {
     top:0;
     width:100%;
@@ -17,18 +23,40 @@ p.results {
     padding: 10px;
     clear:left;
 }
+    button#btn {width: 100%; height: 38px; background-color: #5f788a}
+	button#btn:hover {background-color: #428bca; cursor:pointer;}
 </style>
 
 
 {% extends "layout.html" %}
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 {% block content %}
 <body>
+<script>
+    function toggle_display(){
+      el = document.querySelector('.content_section');
+
+      if(el.style.display == 'none'){
+          el.style.display = 'block'
+      }else{
+         el.style.display = 'none'
+      }
+    }
+</script>
 <h3>{{article[title]|safe}}</h3>
 <div class="article" style="word-wrap:break-word; padding:10px;">
-    {% for term in article %}
-        <pre style="white-space: pre-wrap;"><strong>{{term}}</strong>: {{article[term] | safe}}</pre>
-    {% endfor %}
-    <a href="/doc/new/{{ doc_id }}"><input type=”button” value="favorite"></a>
+    <p class="title"> <strong>{{article['Title'] | safe}}</strong></p>
+    <p class="author">{{ article['Author'] | safe}}</p>
+    <p class="author"><strong>{{'Abstract'}}</strong><br><br>{{article['Abstract'] | safe}}</p>
+    <button onclick="toggle_display()">Show Full Article</button>
+    <a href="/doc/new/{{ doc_id }}"><input type="button" value="Favorite"></a>
+    <div class="content_section" style="display: none;"><strong>{{'Body'}}</strong><br>{{article['Body'] | safe}}<br></div>
+
 </div>
 
 <div class="contents">
