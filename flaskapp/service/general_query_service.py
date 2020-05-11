@@ -159,7 +159,7 @@ def _do_free_text_query(s, query_str: str, option):
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
     s = s.highlight('abstract', fragment_size=500, number_of_fragments=1)
-    s = s.highlight('title', number_of_fragments=0)
+    s = s.highlight('title', fragment_size=150, number_of_fragments=1)
     s = s.highlight('author',  number_of_fragments=0)
     s = s.highlight('body', number_of_fragments=1, fragment_size=300)
     s = s.highlight('chemicals_title_abstract_whole', fragment_size=100, number_of_fragments=1)
@@ -195,15 +195,10 @@ def _extract_response(response):
 
         if 'highlight' in hit.meta:
             if 'title' in hit.meta.highlight:
-                if len(hit.meta.highlight.title[0]) > 60:
-                    result['title'] = hit.meta.highlight.title[0][:60] + '...'
-                else:
-                    result['title'] = hit.meta.highlight.title[0]
+                result['title'] = hit.meta.highlight.title[0]
             else:
-                if len(hit.title) > 60:
-                    result['title'] = hit.title[:60] + '...'
-                else:
-                    result['title'] = hit.title[:60]
+                result['title'] = hit.title
+
 
             if 'abstract' in hit.meta.highlight:
                 result['abstract'] = hit.meta.highlight.abstract[0]
