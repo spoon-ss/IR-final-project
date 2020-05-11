@@ -160,7 +160,7 @@ def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
     s = s.highlight('abstract', fragment_size=500, number_of_fragments=1)
     s = s.highlight('title', fragment_size=150, number_of_fragments=1)
-    s = s.highlight('author',  number_of_fragments=0)
+    s = s.highlight('author', fragment_size=100, number_of_fragments=1)
     s = s.highlight('body', number_of_fragments=1, fragment_size=300)
     s = s.highlight('chemicals_title_abstract_whole', fragment_size=100, number_of_fragments=1)
     s = s.highlight('chemicals_title_abstract_ngram', fragment_size=100, number_of_fragments=1)
@@ -213,7 +213,7 @@ def _extract_response(response):
             if 'author' in hit.meta.highlight:
                 result['author'] = hit.meta.highlight.author[0]
             else:
-                result['author'] = hit.author
+                result['author'] = hit.author[0:100]
 
             if 'chemicals_title_abstract_whole' in hit.meta.highlight:
                 result['chemicals'] = _extract_highlight_str(hit.meta.highlight.chemicals_title_abstract_whole[0])

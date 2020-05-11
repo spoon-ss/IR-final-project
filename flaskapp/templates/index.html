@@ -1,98 +1,143 @@
 <!doctype html>
 <style>
-	.dropbtn {
-	  background-color: #5f788a;
-	  color: white;
-	  padding: 6px;
-	  font-size: 16px;
-	  height: 35px;
-	  border: none;
-	}
-	
-	#short1 {width: 110px; display:inline;}
-	#short2 {width: 110px; display:inline;}
-	.center {text-align: center; padding-top:15%;}
-	#inline1 {float: left;}
-	#mainbox {width: 90%; float:left;}
-	#searchbtn {width: 10%; float:left;}
-	button#btn {width: 100%; height: 38px; background-color: #5f788a}
-	button#btn:hover {background-color: #428bca; cursor:pointer;}
-	.fa-search {color:white;}
-	#option {
-	  width: 100%;
-	  padding: 20px 0;
-	  text-align: center;
-	  margin-top: 10px;
-	  display: none;
-	}
+    .dropbtn {
+        background-color: #5f788a;
+        color: white;
+        padding: 6px;
+        font-size: 16px;
+        height: 35px;
+        border: none;
+    }
+
+    #short1 {
+        width: 110px;
+        display: inline;
+    }
+
+    #short2 {
+        width: 110px;
+        display: inline;
+    }
+
+    .center {
+        text-align: center;
+        padding-top: 15%;
+    }
+
+    #inline1 {
+        float: left;
+    }
+
+    #mainbox {
+        width: 90%;
+        float: left;
+    }
+
+    #searchbtn {
+        width: 10%;
+        float: left;
+    }
+
+    button#btn {
+        width: 100%;
+        height: 38px;
+        background-color: #5f788a
+    }
+
+    button#btn:hover {
+        background-color: #428bca;
+        cursor: pointer;
+    }
+
+    .fa-search {
+        color: white;
+    }
+
+    #option {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 10px;
+        display: none;
+    }
 </style>
 <head>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script>
-        $( function() {
-          $('input[name="mintime"]').datepicker({
-              dateFormat: "yy-mm-dd",
-              keyboardNavigation: false
-          })
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        $(function () {
+            $('input[name="mintime"]').datepicker({
+                dateFormat: "yy-mm-dd",
+                keyboardNavigation: false
+            })
         });
-        $( function() {
-          $('input[name="maxtime"]').datepicker({
-              dateFormat: "yy-mm-dd",
-              keyboardNavigation: false
-          })
+        $(function () {
+            $('input[name="maxtime"]').datepicker({
+                dateFormat: "yy-mm-dd",
+                keyboardNavigation: false
+            })
         });
-  </script>
+    </script>
 </head>
 
 
 {% extends "layout.html" %}
 {% block content %}
 
-<body bgcolor="white">
+    <body bgcolor="white">
 
-<div style="width:100%" class='center'>
-	<h2>Covid Dataset Free Search</h2>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+
+            <div style="width:100%" class='center'>
+                <h2>Covid Dataset Free Search</h2>
 
 
-	<form action="/results" name="search" method="get">
-		<dl>
-		    <dd id="mainbox"><input id="autocomplete inline1" name="query" class="form-control" placeholder="Search.."></input>
-			<dd id="searchbtn"><button type="submit" value="Search" id="btn"><i class="fa fa-search"></i></button>
-		</dl>
-		<button class="dropbtn" type="button" onclick="showhide()">More Options</button>
-		<div id="option">
-			<dl>
-				<dd>Text search optins:
-				<input type="radio" id="conjunctive" name="type" value="conjunctive">
-				<label for="conjunctive">Conjunctive</label>
-				<input type="radio" id="disjunctive" name="type" value="disjunctive" checked = "checked">
-				<label for="disjunctive">Disjunctive</label><br>
-				<input type="text" hidden="hidden" name="page" value="1">
-				<dd>Publish time: min <input type="text" class="form-control" id = "short1" name="mintime"> max <input type="text" class="form-control"  id = "short2" name="maxtime">
-				<dd>Search in authors: <input type="text" class="form-control" style="width:300px" id = "short1" name="author">
-				<dd><a href="{{ url_for('topic') }}" class="fa fa-book">View our data distribution</a>
-			</dl>
-		</div>
-	</form>
-</div>
-<script>
-function showhide() {
-  var x = document.getElementById("option");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
+                <form action="/results" name="search" method="get">
+                    <dl>
+                        <dd id="mainbox"><input id="autocomplete inline1" name="query" class="form-control"
+                                                placeholder="Search.."></input>
+                        <dd id="searchbtn">
+                            <button type="submit" value="Search" id="btn"><i class="fa fa-search"></i></button>
+                    </dl>
+                    <button class="dropbtn" type="button" onclick="showhide()">More Options</button>
+                    <div id="option">
+                        <dl>
+                            <dd>Text search optins:
+                                <input type="radio" id="conjunctive" name="type" value="conjunctive">
+                                <label for="conjunctive">Conjunctive</label>
+                                <input type="radio" id="disjunctive" name="type" value="disjunctive" checked="checked">
+                                <label for="disjunctive">Disjunctive</label><br>
+                                <input type="text" hidden="hidden" name="page" value="1">
+                            <dd>Publish time: min <input type="text" class="form-control" id="short1" name="mintime">
+                                max <input type="text" class="form-control" id="short2" name="maxtime">
+                            <dd>Search in authors: <input type="text" class="form-control" style="width:300px"
+                                                          id="short1" name="author">
+                            <dd><a href="{{ url_for('topic') }}" class="fa fa-book">View our data distribution</a>
+                        </dl>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<script type="text/javascript">
+    <script>
+        function showhide() {
+            var x = document.getElementById("option");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
         $("#autocomplete").autocomplete({
-            source: function(request, response) {
+            source: function (request, response) {
                 $.getJSON('{{ url_for("autocomplete") }}', {
                     search: request
                 }, response);
@@ -100,5 +145,5 @@ function showhide() {
             minLength: 2
         });
     </script>
-</body>
+    </body>
 {% endblock content %}

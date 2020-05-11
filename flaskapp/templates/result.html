@@ -75,10 +75,6 @@
         display: none;
     }
 
-    .title {
-
-    }
-
     textarea {
         height: 40px;
     }
@@ -115,11 +111,11 @@
     button#btn {
         width: 100%;
         height: 38px;
-        background-color: #4CAF50
+        background-color: #5f788a
     }
 
     button#btn:hover {
-        background-color: #3e8e41;
+        background-color: #428bca;
         cursor: pointer;
     }
 
@@ -128,7 +124,7 @@
     }
 
     .dropbtn {
-        background-color: #4CAF50;
+        background-color: #5f788a;
         color: white;
         padding: 6px;
         font-size: 16px;
@@ -145,68 +141,81 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="searchbox">
-        <h3> Covid Dataset Free Search </h3>
-        <form action="/results" name="search" method="get">
-            <dl class="mainsearch">
-                <dd id="mainbox"><textarea rows="1" cols="60" id="autocomplete" class="form-control"
-                                           name="query">{{ queries['query'] }}</textarea>
-                <dd id="searchbtn">
-                    <button type="submit" value="Search" id="btn"><i class="fa fa-search"></i></button>
-            </dl>
+        <div class="row">
+            <div class="col-md-8 offset-md-2 center">
 
-            <button class="dropbtn" type="button" onclick="showhide()">More Options</button>
-            <div id="option">
-                <dl>
-                    <dd>Text search optins:
-                        {% if queries['type'] == "conjunctive" %}
-                            <input type="radio" id="conjunctive" name="type" value="conjunctive" checked=checked>
-                        {% else %}
-                            <input type="radio" id="conjunctive" name="type" value="conjunctive">
-                        {% endif %}
-                        <label for="conjunctive">Conjunctive</label>
-                        {% if queries['type'] == "disjunctive" %}
-                            <input type="radio" id="disjunctive" name="type" value="disjunctive" checked=checked>
-                        {% else %}
-                            <input type="radio" id="disjunctive" name="type" value="disjunctive">
-                        {% endif %}
-                        <label for="disjunctive">Disjunctive</label><br>
-                    <dd>Publish time: min <input type="text" class="form-control" name="mintime" id="short1"
-                                                 value={{ queries['mintime'] }}> max <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="short2" name="maxtime"
-                                                                                            value={{ queries['maxtime'] }}>
-                    <dd>Search in authors: <input type="text" id="short3" class="form-control" style="width:300px"
-                                                  name="author" value="{{ queries['author'] }}">
-                        <input type="text" hidden="hidden" name="page" value="1">
-                </dl>
-                <button class="dropbtn" type="button" onclick="showhide2()">Synonyms Replace</button>
-                <div id="syns">
-                    <table>
-                        <thead>
-                        {% for key in synonyms %}
-                            {% if synonyms[key]|length > 1 %}
-                                <th>{{ key }}</th>
-                            {% endif %}
-                        {% endfor %}
-                        </thead>
-                        <tbody>
-                        {% for key in synonyms %}
-                            {% if synonyms[key]|length > 1 %}
-                                <td>
-                                    <select name=sysnonyms onchange="myFunction()" id={{ key }} method="GET" action="/">
-                                        {% for synonym in synonyms[key][:-1] %}
-                                            <option value="{{ synonym }}" SELECTED>{{ synonym }}</option>"
-                                        {% endfor %}
-                                    </select>
-                                </td>
-                            {% endif %}
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <dd><a href="{{ url_for('topic') }}" class="fa fa-book">View our data distribution</a><br>
+                <h3> Covid Dataset Free Search </h3>
+                <form action="/results" name="search" method="get">
+                    <dl class="mainsearch">
+                        <dd id="mainbox"><textarea rows="1" cols="60" id="autocomplete" class="form-control"
+                                                   name="query">{{ queries['query'] }}</textarea>
+                        <dd id="searchbtn">
+                            <button type="submit" value="Search" id="btn"><i class="fa fa-search"></i></button>
+                    </dl>
+                    <button class="dropbtn" type="button" onclick="showhide()">More Options</button>
+                    <div id="option">
+                        <dl>
+                            <dd>Text search optins:
+                                {% if queries['type'] == "conjunctive" %}
+                                    <input type="radio" id="conjunctive" name="type" value="conjunctive"
+                                           checked=checked>
+                                {% else %}
+                                    <input type="radio" id="conjunctive" name="type" value="conjunctive">
+                                {% endif %}
+                                <label for="conjunctive">Conjunctive</label>
+                                {% if queries['type'] == "disjunctive" %}
+                                    <input type="radio" id="disjunctive" name="type" value="disjunctive"
+                                           checked=checked>
+                                {% else %}
+                                    <input type="radio" id="disjunctive" name="type" value="disjunctive">
+                                {% endif %}
+                                <label for="disjunctive">Disjunctive</label><br>
+                            <dd>Publish time: min <input type="text" class="form-control" name="mintime" id="short1"
+                                                         value={{ queries['mintime'] }}> max <input type="text"
+                                                                                                    class="form-control"
+                                                                                                    id="short2"
+                                                                                                    name="maxtime"
+                                                                                                    value={{ queries['maxtime'] }}>
+                            <dd>Search in authors: <input type="text" id="short3" class="form-control"
+                                                          style="width:300px" name="author"
+                                                          value="{{ queries['author'] }}">
+                                <input type="text" hidden="hidden" name="page" value="1">
+                        </dl>
+
+                        <button class="dropbtn" type="button" onclick="showhide2()">Synonyms Replace</button>
+
+                        <div id="syns">
+                            <table>
+                                <thead>
+                                {% for key in synonyms %}
+                                    {% if synonyms[key]|length > 1 %}
+                                        <th>{{ key }}</th>
+                                    {% endif %}
+                                {% endfor %}
+                                </thead>
+                                <tbody>
+                                {% for key in synonyms %}
+                                    {% if synonyms[key]|length > 1 %}
+                                        <td>
+                                            <select name=sysnonyms onchange="myFunction()" id={{ key }} method="GET"
+                                                    action="/">
+                                                {% for synonym in synonyms[key][:-1] %}
+                                                    <option value="{{ synonym }}" SELECTED>{{ synonym }}</option>"
+                                                {% endfor %}
+                                            </select>
+                                        </td>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <dd><a href="{{ url_for('topic') }}" class="fa fa-book">View our data distribution</a><br>
+                    </div>
+                </form>
             </div>
-        </form>
+
+        </div>
+
         <p style="font-size:14px">Found {{ res_num }} results. Showing {{ 1+(page_num-1)*10 }} -
             {% if (10+(page_num-1)*10) > res_num %}{{ res_num }}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
         <br>
@@ -230,15 +239,20 @@
         </p>
         {% if res_num %}
             {% for res in results %}
-                <ul>
-                    <a href="/documents/{{ res }}" target="_blank">  {{ results[res]['title']|safe }} </a>
-                    <p class="author"><b>Author: </b>{{ results[res]['author'][0:50] | safe }}</p>
-                    <p class="results"><b>Abstract: </b>{{ results[res]['abstract'] | safe }}</p>
-                    <p class="body"> {{ results[res]['body'] | safe }}</p>
-                    {% if  results[res]['chemicals'] != "" %}
-                        <p><b>Chemicals Contained: </b>{{ results[res]['chemicals'] | safe }}</p>
-                    {% endif %}
-                </ul>
+                <div style="margin-top: 50px; margin-bottom: 50px;">
+
+                    <ul>
+                        <p style="font-size: 20px;"><a href="/documents/{{ res }}"
+                              target="_blank">  {{ results[res]['title']|safe }} </a><span>{{ results[res]['score'] }}</span>
+                        </p>
+                        <p class="author"><b>Author: </b>{{ results[res]['author'] | safe }}</p>
+                        <p class="results"><b>Abstract: </b>{{ results[res]['abstract'] | safe }}</p>
+                        <p class="body">{{ results[res]['body'] | safe }}</p>
+                        {% if results[res]['chemicals'] != "" %}
+                            <p><b>Chemicals Contained: </b>{{ results[res]['chemicals'] | safe }}</p>
+                        {% endif %}
+                    </ul>
+                </div>
             {% endfor %}
         {% else %}
             {% for res in results %}
