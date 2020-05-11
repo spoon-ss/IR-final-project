@@ -14,21 +14,23 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-        <title>Covid-19 - {{ title }}</title>
+        <title>Flask APP - {{ title }}</title>
     {% else %}
-        <title>Covid-19</title>
+        <title>Flask APP</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">COVID-19 Search and Navigate</a>
+          <a class="navbar-brand mr-4" href="/">Flask APP</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -45,6 +47,18 @@
         </div>
       </nav>
     </header>
+
+    <div id='translate_ser'> 
+      <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+          }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+      </script>
+      <div id="google_translate_element"></div>  
+    </div>
+
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
@@ -61,6 +75,8 @@
         </div>
       </div>
     </main>
+
+  
 
 
     <!-- Optional JavaScript -->
