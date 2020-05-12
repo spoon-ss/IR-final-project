@@ -93,7 +93,7 @@ def _extract_free_text_query_text(s: str) -> dict:
 def _do_chemical_query(query_list: list, option):
     q = None
     for chem in query_list:
-        new_q = Q('multi_match', query=chem, type='phrase_prefix', fields=['chemicals_title_abstract_whole^9',
+        new_q = Q('multi_match', query=chem,  fields=['chemicals_title_abstract_whole^9',
                                                      "chemicals_body_whole^8",
                                                      "chemicals_title_abstract_ngram^3",
                                                      "chemicals_body_ngram^1"])
@@ -199,7 +199,7 @@ def _extract_response(response):
             if 'title' in hit.meta.highlight:
                 result['title'] = hit.meta.highlight.title[0]
             else:
-                result['title'] = hit.title
+                result['title'] = hit.title[0:100] + "..."
 
 
             if 'abstract' in hit.meta.highlight:
@@ -230,7 +230,7 @@ def _extract_response(response):
 
         else:
             if len(hit.title) > 60:
-                result['title'] = hit.title[:60] + '...'
+                result['title'] = hit.title[:100] + '...'
             else:
                 result['title'] = hit.title
             result['abstract'] = hit.abstract
