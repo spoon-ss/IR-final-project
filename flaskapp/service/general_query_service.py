@@ -298,7 +298,7 @@ def extract_stop_words(query_text):
 
 
 def get_more_like_this(s, query_text):
-    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract', 'body']))
+    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract', 'body^3']))
     # get first top 10 similar articles
     response = s[1:11].execute()
     return _extract_response(response)
