@@ -32,6 +32,8 @@ def results():
     min_time_str = request.args.get('mintime')
     max_time_str = request.args.get('maxtime')
     page_num = int(request.args.get('page'))
+    query_chn = [] # query in Chinese
+    lang_input = request.args.get('language')  # input language type
 
     query_option = None
     if request.args.get('type') == 'conjunctive':
@@ -50,6 +52,12 @@ def results():
         min_date = date.fromisoformat(min_time_str)
 
     translate_service = TranslateService()
+    trans_q = []
+    if lang_input == "cn":
+        # query contain Chinese
+        query_chn = query_str 
+        query_str = translate_service.translate(query_str)
+        trans_q = query_str
 
     query_service = GeneralQueryService(INDEX_NAME)
     result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
@@ -63,7 +71,7 @@ def results():
     queries.pop('page')
     return render_template('result.html', stop_len=len(stops_words_included), stops=stops_words_included,
                            results=result_dict, res_num=total_hits,
-                           page_num=page_num, queries=queries, synonyms=synonyms)
+                           page_num=page_num, queries=queries, synonyms=synonyms,trans_q =trans_q)
 
 
 
