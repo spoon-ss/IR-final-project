@@ -220,10 +220,10 @@
             </div>
 
         </div>
-        
+
         {% if trans_q != [] %}
-        <h6>Translated Query: {{trans_q}}</h6>
-        {% endif %}  
+            <h6>Translated Query: {{ trans_q }}</h6>
+        {% endif %}
 
         <p style="font-size:14px">Found {{ res_num }} results. Showing {{ 1+(page_num-1)*10 }} -
             {% if (10+(page_num-1)*10) > res_num %}{{ res_num }}{% else %}{{ 10+(page_num-1)*10 }}{% endif %}</p>
@@ -252,8 +252,9 @@
 
                     <ul>
                         <p style="font-size: 18px;"><a href="/documents/{{ res }}"
-                              target="_blank">  {{ results[res]['title']|safe }} </a><span>{{ results[res]['score'] }}</span>
+                                                       target="_blank">  {{ results[res]['title']|safe }} </a><span>{{ results[res]['score'] }}</span>
                         </p>
+                        <p><b>Publish time: </b> {{ results[res]['publish_time'] }}</p>
                         <p class="author"><b>Author: </b>{{ results[res]['author'] | safe }}</p>
                         <p class="results"><b>Abstract: </b>{{ results[res]['abstract'] | safe }}</p>
                         <p class="body">{{ results[res]['body'] | safe }}</p>
