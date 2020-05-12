@@ -1,10 +1,13 @@
+"""
+This module implements query translation funcitonality.
+Author: Junda Li
+"""
+
 from googletrans import Translator
 import jieba
 
 
 class TranslateService:
-    CHINESE_OPTION = "chinese"
-    ENGLISH_OPTION = "english"
     
     def __init__(self, ser_url='translate.google.com'):
         self.translator = Translator(service_urls=[ser_url])
@@ -15,7 +18,7 @@ class TranslateService:
         output = self.translator.translate(txt)
         return output.text.lower()
     
-    def tokenizer_chn(self,txt):
+    def tokenizer_chn(self,query):
         "Tokenize Chinese querty to Chinese query"
         result = list(jieba.cut_for_search(query))
         return result
@@ -33,7 +36,8 @@ class TranslateService:
         chntoks = self.ctoks2Eng(chntoks)
         translated = self.ctoks2Eng(chntoks)
         return translated
-    
+
+
   
   
     
