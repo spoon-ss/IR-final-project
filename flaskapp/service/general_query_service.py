@@ -60,7 +60,8 @@ def _do_abstraction_query(s, abstraction_query, query_option):
                         s = s.query('multi_match', query=q0, fields=['title^2', 'abstract'])
     return s
 
-
+"""
+"""
 def _do_author_query(s, author_query):
     if len(author_query) > 0:
         s = s.query('match', author=author_query)
@@ -91,9 +92,12 @@ def _extract_free_text_query_text(s: str) -> dict:
 
 
 def _do_chemical_query(query_list: list, option):
+    """
+    Execute the chemical name search.
+    """
     q = None
     for chem in query_list:
-        new_q = Q('multi_match', query=chem, type='phrase_prefix', fields=['chemicals_title_abstract_whole^9',
+        new_q = Q('multi_match', query=chem,  fields=['chemicals_title_abstract_whole^9',
                                                      "chemicals_body_whole^8",
                                                      "chemicals_title_abstract_ngram^3",
                                                      "chemicals_body_ngram^1"])
@@ -108,6 +112,9 @@ def _do_chemical_query(query_list: list, option):
 
 
 def _do_phrase_query(query_list: list, option):
+    """
+    Execute the phrase query search
+    """
     q = None
     for phrase in query_list:
         new_q = Q('multi_match', query=phrase, type='phrase_prefix', fields=['title^2', 'abstract'])
@@ -121,6 +128,9 @@ def _do_phrase_query(query_list: list, option):
 
 
 def _do_text_query(query_str: str, option):
+    """
+    Execute text query
+    """
     if query_str == "":
         return None
     if option == GeneralQueryService.CONJUNCTIVE_OPTION:
@@ -134,6 +144,9 @@ def _do_text_query(query_str: str, option):
 
 
 def _do_free_text_query(s, query_str: str, option):
+    """
+    Execute all free text query
+    """
     extract_dict = _extract_free_text_query_text(query_str)
     # s = _do_abstraction_query(s, extract_dict['normal'], option)
     q_list = []
@@ -199,7 +212,7 @@ def _extract_response(response):
             if 'title' in hit.meta.highlight:
                 result['title'] = hit.meta.highlight.title[0]
             else:
-                result['title'] = hit.title
+                result['title'] = hit.title[0:100] + "..."
 
 
             if 'abstract' in hit.meta.highlight:
@@ -230,7 +243,7 @@ def _extract_response(response):
 
         else:
             if len(hit.title) > 60:
-                result['title'] = hit.title[:60] + '...'
+                result['title'] = hit.title[:100] + '...'
             else:
                 result['title'] = hit.title
             result['abstract'] = hit.abstract
