@@ -34,7 +34,7 @@ def results():
     page_num = int(request.args.get('page'))
     query_chn = [] # query in Chinese
     lang_input = request.args.get('language')  # input language type
-
+    # set query type
     query_option = None
     if request.args.get('type') == 'conjunctive':
         query_option = GeneralQueryService.CONJUNCTIVE_OPTION
@@ -42,7 +42,7 @@ def results():
         query_option = GeneralQueryService.DISJUNCTIVE_OPTION
     else:
         raise RuntimeError("Illegal Request")
-
+    # set date range
     max_date = date.max
     if len(max_time_str) != 0:
         max_date = date.fromisoformat(max_time_str)
@@ -50,7 +50,7 @@ def results():
     min_date = date.min
     if len(min_time_str) != 0:
         min_date = date.fromisoformat(min_time_str)
-
+    # get translation
     translate_service = TranslateService()
     trans_q = []
     if lang_input == "cn":
@@ -58,10 +58,10 @@ def results():
         query_chn = query_str 
         query_str = translate_service.translate(query_str)
         trans_q = query_str
-
+    # get general query
     query_service = GeneralQueryService(INDEX_NAME)
     result = query_service.query(query_str, author_str, min_date, max_date, query_option, page_num)
-
+    # get query result
     result_dict = result['result_dict']
     stops_words_included = result['stop_words_included']
     synonyms = result['synonyms']
@@ -211,7 +211,7 @@ def delete_post(doc_id):
     flash('Your favorite has been deleted!', 'success')
     return redirect(url_for('home'))
 
-
+# display topic graph
 @app.route("/topic")
 def topic():
     return render_template('topic.html', title='Topic')
