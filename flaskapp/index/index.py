@@ -32,7 +32,7 @@ es = Elasticsearch()
 text_analyzer = analyzer('my_tokenfilter',
                          type='custom',
                          tokenizer='standard',
-                         filter=['lowercase', 'stop'])
+                         filter=['lowercase', 'stop', 'porter_stem'])
 
 # n-gram tokenizer for chemical name;
 three_gram_filter = token_filter('3-gram-filter', type='ngram', min_gram=5, max_gram=5)
@@ -99,12 +99,13 @@ def buildIndex(file_path, size=None):
     # Every item to be indexed must have a unique key.
 
     def actions():
-        # mid is movie id (used as key into movies dictionary)
+        # mid is doc id (used as key into doc dictionary)
         for mid in range(0, len(data_dict)):
             yield {
                 "_index": INDEX_NAME,
                 "_type": '_doc',
                 "_id": mid,
+                "paper_id": data_dict[str(mid)]['paper_id'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
                 "body": data_dict[str(mid)]['body'],
