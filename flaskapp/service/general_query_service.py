@@ -345,7 +345,6 @@ class GeneralQueryService:
         # get article detail and the 'more like this' result
         response = self.search.query('ids', values=query_id).execute()
         article_dic = dict()
-        article_dic['paper_id'] = response.hits[0].paper_id
         article_dic['Title'] = response.hits[0].title
         article_dic['Abstract'] = response.hits[0].abstract
         article_dic['Body'] = response.hits[0].body.replace("\n", "</br></br>")
