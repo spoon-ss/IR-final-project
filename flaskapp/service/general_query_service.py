@@ -93,7 +93,7 @@ def _extract_free_text_query_text(s: str) -> dict:
 def _do_chemical_query(query_list: list, option):
     q = None
     for chem in query_list:
-        new_q = Q('multi_match', query=chem, fields=['chemicals_title_abstract_whole^9',
+        new_q = Q('multi_match', query=chem, type='phrase_prefix', fields=['chemicals_title_abstract_whole^9',
                                                      "chemicals_body_whole^8",
                                                      "chemicals_title_abstract_ngram^3",
                                                      "chemicals_body_ngram^1"])
@@ -121,6 +121,8 @@ def _do_phrase_query(query_list: list, option):
 
 
 def _do_text_query(query_str: str, option):
+    if query_str == "":
+        return None
     if option == GeneralQueryService.CONJUNCTIVE_OPTION:
         new_q = Q('multi_match', query=query_str, fields=['title^2', 'abstract', 'body^0.5'],
                   fuzziness=1, max_expansions=2, operator='and')
@@ -159,13 +161,13 @@ def _do_free_text_query(s, query_str: str, option):
 def _do_highlight(s):
     s = s.highlight_options(pre_tags='<mark>', post_tags='</mark>')
     s = s.highlight('abstract', fragment_size=500, number_of_fragments=1)
-    s = s.highlight('title', fragment_size=150, number_of_fragments=1)
+    s = s.highlight('title', fragment_size=150, number_of_fragments=0)
     s = s.highlight('author', fragment_size=100, number_of_fragments=1)
     s = s.highlight('body', number_of_fragments=1, fragment_size=300)
-    s = s.highlight('chemicals_title_abstract_whole', fragment_size=100, number_of_fragments=1)
-    s = s.highlight('chemicals_title_abstract_ngram', fragment_size=100, number_of_fragments=1)
-    s = s.highlight('chemicals_body_whole', fragment_size=100, number_of_fragments=1)
-    s = s.highlight('chemicals_body_ngram', fragment_size=100, number_of_fragments=1)
+    s = s.highlight('chemicals_title_abstract_whole', fragment_size=300, number_of_fragments=1)
+    s = s.highlight('chemicals_title_abstract_ngram', fragment_size=300, number_of_fragments=1)
+    s = s.highlight('chemicals_body_whole', fragment_size=300, number_of_fragments=1)
+    s = s.highlight('chemicals_body_ngram', fragment_size=300, number_of_fragments=1)
     return s
 
 
@@ -235,6 +237,8 @@ def _extract_response(response):
             result['chemicals'] = ""
             result['author'] = hit.author
             result['body'] = ""
+        publish_time = hit.publish_time
+        result['publish_time'] = "" if publish_time == str(date.min) else publish_time
         result_dict[hit.meta.id] = result
     return result_dict
 
@@ -294,7 +298,7 @@ def extract_stop_words(query_text):
 
 
 def get_more_like_this(s, query_text):
-    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract', 'body^3']))
+    s = s.query(MoreLikeThis(like=query_text, fields=['title', 'abstract', 'body^3'], stop_words=get_stop_words()))
     # get first top 10 similar articles
     response = s[1:11].execute()
     return _extract_response(response)
@@ -343,7 +347,7 @@ class GeneralQueryService:
         article_dic = dict()
         article_dic['Title'] = response.hits[0].title
         article_dic['Abstract'] = response.hits[0].abstract
-        article_dic['Body'] = response.hits[0].body
+        article_dic['Body'] = response.hits[0].body.replace("\n", "</br></br>")
         article_dic['Author'] = response.hits[0].author
         article_dic['Publish Time'] = response.hits[0].publish_time
         text = article_dic['Title'] + article_dic['Abstract']

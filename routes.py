@@ -95,6 +95,7 @@ def about():
     return render_template('about.html', title='About')
 
 
+# register of user account
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -132,6 +133,7 @@ def logout():
     return redirect(url_for('home'))
 
 
+# helper function for upload picture
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
@@ -146,6 +148,7 @@ def save_picture(form_picture):
     return picture_fn
 
 
+# user information update
 @app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -167,6 +170,7 @@ def account():
                            image_file=image_file, form=form)
 
 
+# save favorite articles
 @app.route("/doc/new/<int:doc_id>", methods=['GET', 'POST'])
 @login_required
 def new_post(doc_id):
@@ -183,6 +187,7 @@ def new_post(doc_id):
     return documents(str(doc_id))
 
 
+# Show my favorite document
 @app.route("/my_favorite")
 @login_required
 def my_doc():
@@ -194,7 +199,7 @@ def my_doc():
     return render_template('my_favorite.html', docs=zip(docs, article_dics))
 
 
-
+# remove favorite
 @app.route("/doc/<int:post_id>/delete", methods=['POST'])
 @login_required
 def delete_post(doc_id):
@@ -205,6 +210,7 @@ def delete_post(doc_id):
     db.session.commit()
     flash('Your favorite has been deleted!', 'success')
     return redirect(url_for('home'))
+
 
 @app.route("/topic")
 def topic():
