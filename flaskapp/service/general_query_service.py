@@ -280,8 +280,10 @@ def get_stop_words():
 
 
 def get_synonyms(abstraction_query):
+    # get all items in the query
     phrases = process_abstraction_query(abstraction_query)
     d = collections.defaultdict(list)
+    #find all their synonyms
     for p in phrases:
         synonyms = []
 
@@ -295,6 +297,7 @@ def get_synonyms(abstraction_query):
             d[p].sort(key=p.lower().__eq__)
         elif len(d[p]) > 0:
             d[p].append(p)
+    #save the to a dictionary
     for key in d:
         tmp = []
         for i in range(len(phrases)):
