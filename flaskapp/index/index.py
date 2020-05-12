@@ -52,7 +52,7 @@ chemical_whole_analyzer = analyzer('chem_whole_analyzer',
 # This defines fields and their properties (type and analysis applied).
 # You can use existing es analyzers or use ones you define yourself as above.
 class Article(Document):
-    # sha = Text()
+
     title = Text(analyzer=text_analyzer)
     abstract = Text(analyzer=text_analyzer)
     body = Text(analyzer=text_analyzer)
@@ -101,13 +101,10 @@ def buildIndex(file_path, size=None):
     def actions():
         # mid is movie id (used as key into movies dictionary)
         for mid in range(0, len(data_dict)):
-            # print("document: " + str(mid))
-            # print(convert_date(data_dict[str(mid)]['publish_time']))
             yield {
                 "_index": INDEX_NAME,
                 "_type": '_doc',
                 "_id": mid,
-                # "sha": data_dict[str(mid)]['sha'],
                 "title": data_dict[str(mid)]['title'],
                 "abstract": data_dict[str(mid)]['abstract'],
                 "body": data_dict[str(mid)]['body'],
@@ -117,10 +114,6 @@ def buildIndex(file_path, size=None):
                 "chemicals_title_abstract_ngram": data_dict[str(mid)]['chemicals_title_abstract'],
                 "chemicals_body_whole": data_dict[str(mid)]['chemicals_body'],
                 "chemicals_body_ngram": data_dict[str(mid)]['chemicals_body'],
-                # movies[str(mid)]['runtime'] # You would like to convert runtime to integer (in minutes)
-                # --- Add more fields here ---
-
-                # uncomment the next line after full text json is added.
                 "suggestion": data_dict[str(mid)]['title']
             }
 
