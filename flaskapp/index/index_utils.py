@@ -62,7 +62,7 @@ def _convert_date(date_ob):
 
 
 def _extract_chemical_from_text(line: str):
-    split_line = line[0:2000]
+    split_line = line[0:10000]
     last_space = split_line.rfind(" ")
     if last_space == -1:
         last_space = len(split_line)

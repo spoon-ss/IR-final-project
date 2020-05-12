@@ -93,7 +93,7 @@ def _extract_free_text_query_text(s: str) -> dict:
 def _do_chemical_query(query_list: list, option):
     q = None
     for chem in query_list:
-        new_q = Q('multi_match', query=chem, fields=['chemicals_title_abstract_whole^9',
+        new_q = Q('multi_match', query=chem, type='phrase_prefix', fields=['chemicals_title_abstract_whole^9',
                                                      "chemicals_body_whole^8",
                                                      "chemicals_title_abstract_ngram^3",
                                                      "chemicals_body_ngram^1"])
